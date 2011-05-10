@@ -1,8 +1,8 @@
 # --
 # Kernel/Modules/AgentTimeAccounting.pm - time accounting module
-# Copyright (C) 2001-2010 OTRS AG, http://otrs.org/
+# Copyright (C) 2001-2011 OTRS AG, http://otrs.org/
 # --
-# $Id: AgentTimeAccounting.pm,v 1.41 2010-07-02 09:45:46 jp Exp $
+# $Id: AgentTimeAccounting.pm,v 1.41.2.1 2011-05-10 18:42:25 en Exp $
 # --
 # This software comes with ABSOLUTELY NO WARRANTY. For details, see
 # the enclosed file COPYING for license information (AGPL). If you
@@ -19,7 +19,7 @@ use Date::Pcalc qw(Today Days_in_Month Day_of_Week Add_Delta_YMD);
 use Time::Local;
 
 use vars qw($VERSION);
-$VERSION = qw($Revision: 1.41 $) [1];
+$VERSION = qw($Revision: 1.41.2.1 $) [1];
 
 sub new {
     my ( $Type, %Param ) = @_;
@@ -368,9 +368,12 @@ sub Run {
             # generate JavaScript array which will be output to the template
             my @JSProjectList;
             for my $Project ( @{$ProjectList} ) {
-                push @JSProjectList,
-                    '{id:' . ( $Project->{Key} || '0' ) . ' , name:\'' . $Project->{Value} . '\'}';
 
+                my $ProjectNmame = $Project->{Value};
+                $ProjectNmame =~ s{[']}{\\'}gxms;
+
+                push @JSProjectList,
+                    '{id:' . ( $Project->{Key} || '0' ) . ' , name:\'' . $ProjectNmame . '\'}';
                 if ( $Project->{Key} eq $Param{ProjectID} ) {
                     $Param{ProjectName} = $Project->{Value};
                 }
@@ -389,8 +392,9 @@ sub Run {
                 OnChange => "FillActionList($ID);",
             );
 
-# action list initially only contains empty and selected element as well as elements configured for selected project
-# if no constraints are configured, all actions will be displayed
+            # action list initially only contains empty and selected element as well as
+            # elements configured for selected project if no constraints are configured,
+            # all actions will be displayed
             my $ActionData = $Self->_ActionListConstraints(
                 ProjectID             => $UnitRef->{ProjectID},
                 ProjectList           => $ProjectList,
