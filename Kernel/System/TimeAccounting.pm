@@ -1,8 +1,8 @@
 #--
 # Kernel/System/TimeAccounting.pm - all time accounting functions
-# Copyright (C) 2001-2011 OTRS AG, http://otrs.org/
+# Copyright (C) 2001-2012 OTRS AG, http://otrs.org/
 # --
-# $Id: TimeAccounting.pm,v 1.53.2.2 2011-10-13 16:45:09 en Exp $
+# $Id: TimeAccounting.pm,v 1.53.2.3 2012-08-22 13:06:57 mh Exp $
 # --
 # This software comes with ABSOLUTELY NO WARRANTY. For details, see
 # the enclosed file COPYING for license information (AGPL). If you
@@ -15,7 +15,7 @@ use strict;
 use warnings;
 
 use vars qw(@ISA $VERSION);
-$VERSION = qw($Revision: 1.53.2.2 $) [1];
+$VERSION = qw($Revision: 1.53.2.3 $) [1];
 
 use Date::Pcalc qw(Today Days_in_Month Day_of_Week check_date);
 
@@ -223,9 +223,9 @@ sub UserReporting {
     $Param{Day} ||= Days_in_Month( $Param{Year}, $Param{Month} );
 
     my %UserCurrentPeriod = $Self->UserCurrentPeriodGet(%Param);
-    my $YearStart         = 0;
-    my $MonthStart        = 0;
-    my $DayStart          = 0;
+    my $YearStart         = 1970;
+    my $MonthStart        = 1;
+    my $DayStart          = 1;
     my $YearEnd           = $Param{Year};
     my $MonthEnd          = $Param{Month};
     my $DayEnd            = $Param{Day};
@@ -1119,9 +1119,9 @@ sub WorkingUnitsCompletnessCheck {
     );
 
     my $WorkingDays = 0;
-    my $YearStart   = 0;
-    my $MonthStart  = 0;
-    my $DayStart    = 0;
+    my $YearStart   = 1970;
+    my $MonthStart  = 1;
+    my $DayStart    = 1;
     my $YearEnd     = $Year;
     my $MonthEnd    = $Month;
     my $DayEnd      = $Day;
@@ -1679,6 +1679,6 @@ did not receive this file, see L<http://www.gnu.org/licenses/agpl.txt>.
 
 =head1 VERSION
 
-$Revision: 1.53.2.2 $ $Date: 2011-10-13 16:45:09 $
+$Revision: 1.53.2.3 $ $Date: 2012-08-22 13:06:57 $
 
 =cut
