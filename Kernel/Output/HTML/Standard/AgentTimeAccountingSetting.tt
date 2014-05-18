@@ -208,7 +208,7 @@
             </div>
             <div class="Content">
                 <ul>
-                    <li>[% Translate("Required fields are marked with a "*".") | html %]</li>
+                    <li>[% Translate('Required fields are marked with a "*".') | html %]</li>
                 </ul>
             </div>
         </div>
