@@ -8,24 +8,24 @@
 # --
 
 <fieldset class="TableLike W300px">
-    <label>$Text{"Year"}:</label>
+    <label>[% Translate("Year") | html %]:</label>
     <p class="Value">
-        $QData{"Year"}
+        [% Data.Year | html %]
     </p>
     <div class="Clear"></div>
 
-    <label>$Text{"Month"}:</label>
+    <label>[% Translate("Month") | html %]:</label>
     <p class="Value">
-        $Text{"$Data{"Month"}"}
+        [% Translate(Data.Month) | html %]
     </p>
     <div class="Clear"></div>
 
-    <label>$Text{"Day"}:</label>
+    <label>[% Translate("Day") | html %]:</label>
     <p class="Value">
-        $QData{"Day"}
+        [% Data.Day | html %]
     </p>
     <div class="Clear"></div>
 </fieldset>
 <p class="SpacingTop Center">
-    $Text{"Do you really want to delete the Time Accounting of this day?"}
+    [% Translate("Do you really want to delete the Time Accounting of this day?") | html %]
 </p>
