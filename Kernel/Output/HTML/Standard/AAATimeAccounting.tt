@@ -8,4 +8,4 @@
 # --
 
 # Common
-$Text{"Time Accounting"}
+[% Translate("Time Accounting") | html %]
