@@ -7,15 +7,18 @@
 # did not receive this file, see http://www.gnu.org/licenses/agpl.txt.
 # --
 
+2.2.2 - 2014-??-??
+ - 2014-09-18 Fixed bug#10494 - Today's Entry does not become available at the time expected on OTRS with timezone offset.
+
 2.1.2 - 2012-??-??
-- 2013-09-23 Fixed bug#9340 - Column title not matching in TimeAccounting statistics.
-- 2013-09-23 Fixed bug#9424 - Overtime calculation does not use VacationDaysOneTime from users calendar.
-- 2013-09-23 Fixed bug#9740 - Status of invalid project reverts to valid.
-- 2012-04-17 Added Italian translation, thanks to Massimo Bianchi.
-- 2012-02-14 Added Hungarian translation, thanks to Béla Csábi.
+ - 2013-09-23 Fixed bug#9340 - Column title not matching in TimeAccounting statistics.
+ - 2013-09-23 Fixed bug#9424 - Overtime calculation does not use VacationDaysOneTime from users calendar.
+ - 2013-09-23 Fixed bug#9740 - Status of invalid project reverts to valid.
+ - 2012-04-17 Added Italian translation, thanks to Massimo Bianchi.
+ - 2012-02-14 Added Hungarian translation, thanks to Béla Csábi.
 
 2.1.1 - 2012-02-14
-- First stable release for OTRS 3.1.x.
+ - First stable release for OTRS 3.1.x.
 
 2.1.0 RC1 - 2012-02-07
  - 2012-02-15 Fixed problem with onchange handler on dropdown of incomplete working days selection.
