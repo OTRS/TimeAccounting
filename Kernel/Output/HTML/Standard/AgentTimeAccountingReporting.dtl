@@ -106,10 +106,10 @@
                     </thead>
                     <tbody>
 <!-- dtl:block:Action -->
-                        <tr class="MasterAction">
+                        <tr class="MasterAction" data-project-id="$QData{"ProjectID"}">
 <!-- dtl:block:Project -->
                             <td rowspan="$Data{"RowSpan"}" class="RowSpan">
-                                <strong><a href="$Env{"Baselink"}Action=$Env{"Action"};Subaction=ProjectReporting;ProjectID=$LQData{"ProjectID"}" class="MasterActionLink">
+                                <strong><a href="$Env{"Baselink"}Action=$Env{"Action"};Subaction=ProjectReporting;ProjectID=$LQData{"ProjectID"}" class="$QData{"Class"}">
                                 $Data{"Project"}
                             </a></strong>
 <!-- dtl:block:ProjectDescription -->
@@ -143,7 +143,7 @@
 <!-- dtl:js_on_document_complete -->
 <script type="text/javascript">//<![CDATA[
 $('.MasterAction').bind('click', function (Event) {
-    var $MasterActionLink = $(this).find('.MasterActionLink');
+    var $MasterActionLink = $(this).parents().find('.MasterActionLink' + $(this).attr('data-project-id'));
     // only act if the link was not clicked directly
     if (Event.target !== $MasterActionLink.get(0)) {
         window.location = $MasterActionLink.attr('href');

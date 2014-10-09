@@ -6,6 +6,9 @@
 # the enclosed file COPYING for license information (AGPL). If you
 # did not receive this file, see http://www.gnu.org/licenses/agpl.txt.
 # --
+2.3.4 - 2014-??-??
+ - 2014-10-09 Fixed bug#10791 - Time Accounting reporting - error.
+
 2.3.3 - 2014-10-07
  - 2014-09-18 Fixed bug#10494 - Today's Entry does not become available at the time expected on OTRS with timezone offset.
  - 2014-04-23 Fixed bug#10486 - Can not insert a new entry with just using period.

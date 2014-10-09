@@ -1855,6 +1855,7 @@ sub Run {
             {
                 my $ActionRef = $ActionsRef->{$ActionID};
 
+                $Param{ProjectID}  = $ProjectID;
                 $Param{Action}     = $ActionRef->{Name};
                 $Param{Hours}      = sprintf( "%.2f", $ActionRef->{PerMonth} || 0 );
                 $Param{HoursTotal} = sprintf( "%.2f", $ActionRef->{Total} || 0 );
@@ -1881,6 +1882,7 @@ sub Run {
                             ProjectDescription => $ProjectDescription,
                             Project            => $ProjectRef->{Name},
                             ProjectID          => $ProjectID,
+                            Class              => 'MasterActionLink' . $ProjectID,
                         },
                     );
                 }
