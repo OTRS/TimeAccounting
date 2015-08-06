@@ -162,13 +162,9 @@ $Selenium->RunTest(
         $Selenium->get("${ScriptAlias}index.pl?Action=AgentTimeAccountingReporting");
 
         # select month and year that are used for testing
-        $Selenium->find_element( "#Month_Search", 'css' )->click();
-        sleep 1;
-        $Selenium->find_element("//*[text()='$MonthStart']")->click();
-        $Selenium->find_element( "#Year_Search", 'css' )->click();
-        sleep 1;
-        $Selenium->find_element("//*[text()='$YearStart']")->click();
-        $Selenium->find_element( "#NavigationSelect", 'css' )->click();
+        $Selenium->find_element( "#Month option[value='$MonthStart']", 'css' )->click();
+        $Selenium->find_element( "#Year option[value='$YearStart']",   'css' )->click();
+        $Selenium->find_element( "#NavigationSelect",                  'css' )->click();
 
         # chek page layout
         $Selenium->find_element( "table",             'css' );
