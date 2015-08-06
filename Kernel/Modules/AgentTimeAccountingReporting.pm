@@ -330,6 +330,7 @@ sub Run {
         Sort        => 'NumericKey',
         Translation => 1,
         Title       => $LayoutObject->{LanguageObject}->Translate("Month"),
+        Class       => 'Modernize',
     );
 
     my @Year = ( $Year - 4 .. $Year + 1 );
@@ -340,6 +341,7 @@ sub Run {
         Name        => 'Year',
         Translation => 0,
         Title       => $LayoutObject->{LanguageObject}->Translate("Year"),
+        Class       => 'Modernize',
     );
 
     ( $Param{YearBack}, $Param{MonthBack}, $Param{DayBack} )

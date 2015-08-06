@@ -314,11 +314,6 @@ shell> bin/otrs.PackageManager.pl -a install -p /path/to/$Name-$Version.opm
         <para>Default setting for the standard weekly hours.</para>
     </section>
     <section>
-        <title>TimeAccounting::EnableAutoCompletion.</title>
-        <para>Group: TimeAccounting, Subgroup: Frontend::Agent.</para>
-        <para>If enabled, the dropdown elements in the edit screen are changed to autocompletion fields.</para>
-    </section>
-    <section>
         <title>TimeAccounting::InputHoursWithoutStartEndTime.</title>
         <para>Group: TimeAccounting, Subgroup: Frontend::Agent.</para>
         <para>Specifies if working hours can be inserted without start and end times.</para>
