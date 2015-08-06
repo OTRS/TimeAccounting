@@ -35,9 +35,6 @@
                 <Loader>
                     <CSS>TimeAccounting.Defaults.css</CSS>
                     <CSS>TimeAccounting.Table.css</CSS>
-                    <JavaScript>thirdparty/jquery-ui-button-1.10.3/jquery-ui-button.js</JavaScript>
-                    <JavaScript>thirdparty/jquery-combobox/jquery-combobox.js</JavaScript>
-                    <JavaScript>Core.UI.ComboBox.js</JavaScript>
                     <JavaScript>TimeAccounting.Agent.ConfirmationDialog.js</JavaScript>
                     <JavaScript>TimeAccounting.Agent.EditTimeRecords.js</JavaScript>
                     <JavaScript>TimeAccounting.Agent.Datepicker.js</JavaScript>
