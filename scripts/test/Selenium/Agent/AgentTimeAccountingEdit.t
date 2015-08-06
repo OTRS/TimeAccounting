@@ -124,8 +124,11 @@ $Selenium->RunTest(
         # navigate to AgentTimeAccountingEdit
         $Selenium->get("${ScriptAlias}index.pl?Action=AgentTimeAccountingEdit");
 
-        # check time accounting edit field IDs
-        for my $Row ( 1 .. 9 ) {
+        # add addional row
+        $Selenium->find_element("//button[\@id='MoreInputFields'][\@type='button']")->click();
+
+        # check time accounting edit field IDs, first and added row
+        for my $Row ( 1, 9 ) {
             for my $EditFieldID (
                 qw(ProjectID ActionID Remark StartTime EndTime Period)
                 )
@@ -133,11 +136,6 @@ $Selenium->RunTest(
                 my $Element = $Selenium->find_element( "#$EditFieldID$Row", 'css' );
                 $Element->is_enabled();
                 $Element->is_displayed();
-            }
-            if ( $Row eq 8 ) {
-
-                # add addional row
-                $Selenium->find_element("//button[\@id='MoreInputFields'][\@type='button']")->click();
             }
         }
         for my $EditRestID (
@@ -150,11 +148,15 @@ $Selenium->RunTest(
         }
 
         # edit time accounting for test created user
-        $Selenium->find_element( "#ProjectID1 option[value='$ProjectID']", 'css' )->click();
-        $Selenium->find_element( "#ActionID1 option[value='$ActionID']",   'css' )->click();
-        $Selenium->find_element( "#StartTime1",                            'css' )->send_keys('10:00');
-        $Selenium->find_element( "#EndTime1",                              'css' )->send_keys('16:00');
-        $Selenium->find_element( "#Remark1",                               'css' )->send_keys('Selenium test remark');
+        $Selenium->find_element( "#ProjectID1_Search", 'css' )->click();
+        sleep 1;
+        $Selenium->find_element("//*[text()='$ProjectTitle']")->click();
+        $Selenium->find_element( "#ActionID1_Search", 'css' )->click();
+        sleep 1;
+        $Selenium->find_element("//*[text()='$ActionTitle']")->click();
+        $Selenium->find_element( "#StartTime1", 'css' )->send_keys('10:00');
+        $Selenium->find_element( "#EndTime1",   'css' )->send_keys('16:00');
+        $Selenium->find_element( "#Remark1",    'css' )->send_keys('Selenium test remark');
 
         # verify that period calculate correct time
         $Self->Is(
