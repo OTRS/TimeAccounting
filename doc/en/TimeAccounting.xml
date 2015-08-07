@@ -61,7 +61,7 @@
         <title>Time Accounting Edit</title>
         <para>
             Allows to set working hours, vacation, sick leaves and overtime leaves on a day basis,
-            the working ours can be set by defining the start and the end dates, or a period of
+            the working hours can be set by defining the start and the end dates, or a period of
             time.
         </para>
         <para>
@@ -312,11 +312,6 @@ shell> bin/otrs.PackageManager.pl -a install -p /path/to/$Name-$Version.opm
         <title>TimeAccounting::DefaultUserWeeklyHours.</title>
         <para>Group: TimeAccounting, Subgroup: Frontend::Agent.</para>
         <para>Default setting for the standard weekly hours.</para>
-    </section>
-    <section>
-        <title>TimeAccounting::EnableAutoCompletion.</title>
-        <para>Group: TimeAccounting, Subgroup: Frontend::Agent.</para>
-        <para>If enabled, the dropdown elements in the edit screen are changed to autocompletion fields.</para>
     </section>
     <section>
         <title>TimeAccounting::InputHoursWithoutStartEndTime.</title>
@@ -591,13 +586,23 @@ shell> bin/otrs.PackageManager.pl -a install -p /path/to/$Name-$Version.opm
             command on the command line:
         </para>
         <screen>
-shell> perl bin/otrs.UnitTest.pl -n TimeAccounting
+shell> perl bin/otrs.Console.pl Dev::UnitTest::Run --test TimeAccounting
+        </screen>
+        <para>Selenium unit tests</para>
+        <para>
+            To run the Selenium unit tests, make sure you have a complete Selenium environment setup in your Kernel/Config.pm file and a running a WebDriver.
+        </para>
+        <screen>
+shell> perl bin/otrs.Console.pl Dev::UnitTest::Run --test AgentTimeAccountingEdit:AgentTimeAccountingOverviw::AgentTimeAccountingReporting
+shell> perl bin/otrs.Console.pl Dev::UnitTest::Run --test AgentTimeAccountingSetting:AgentTimeAccountingView
+shell> perl bin/otrs.Console.pl Dev::UnitTest::Run --test Notification/TimeAccounting
+shell> perl bin/otrs.Console.pl Dev::UnitTest::Run --test ToolBat/IncompleteWorkingDays
         </screen>
         <para>Run all available unit tests</para>
         <para>
             To run all available unit tests, use the following command on the command line:
         </para>
-        <screen>shell> perl bin/otrs.UnitTest.pl</screen>
+        <screen>shell> perl bin/otrs.Console.pl Dev::UnitTest::Run</screen>
     </section>
 </chapter>
 
