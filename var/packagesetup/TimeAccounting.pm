@@ -16,6 +16,8 @@ our @ObjectDependencies = (
     'Kernel::System::Group',
     'Kernel::System::SysConfig',
     'Kernel::System::Valid',
+    'Kernel::System::SysConfig',
+    'Kernel::Config',
 );
 
 =head1 NAME
@@ -296,8 +298,7 @@ change configurations to match the new module location.
 
 =cut
 
-sub _MigrateConfigs
-{
+sub _MigrateConfigs {
     # create needed objects
     my $SysConfigObject = $Kernel::OM->Get('Kernel::System::SysConfig');
     my $ConfigObject    = $Kernel::OM->Get('Kernel::Config');
@@ -321,7 +322,8 @@ sub _MigrateConfigs
     $Setting = $ConfigObject->Get('Frontend::ToolBarModule');
 
     # update module location
-    $Setting->{'201-TimeAccounting::IncompleteWorkingDays'}->{Module} = "Kernel::Output::HTML::ToolBar::IncompleteWorkingDays";
+    $Setting->{'201-TimeAccounting::IncompleteWorkingDays'}->{Module}
+        = "Kernel::Output::HTML::ToolBar::IncompleteWorkingDays";
 
     # set new setting
     $Success = $SysConfigObject->ConfigItemUpdate(
