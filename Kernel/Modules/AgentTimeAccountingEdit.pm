@@ -778,23 +778,46 @@ sub Run {
             || $ServerErrorData{$ErrorIndex}{ProjectID}
             || '';
         $Param{ProjectName} = '';
+        my $Class = '';
 
-        $Frontend{ProjectOption} = $LayoutObject->BuildSelection(
-            Data        => $ProjectList->{AllProjects},
-            Name        => "ProjectID[$ID]",
-            ID          => "ProjectID$ID",
-            Translation => 0,
-            Class       => 'Modernize Validate_TimeAccounting_Project ProjectSelection '
-                . ( $Errors{$ErrorIndex}{ProjectIDInvalid} || '' ),
-            OnChange => "TimeAccounting.Agent.EditTimeRecords.FillActionList($ID);",
-            Title    => $LayoutObject->{LanguageObject}->Translate("Project"),
-            Filters  => {
-                OldProjects => {
-                    Name   => $LayoutObject->{LanguageObject}->Translate('Previous Project'),
-                    Values => $ProjectList->{OldProjects},
+        if ( $Kernel::OM->Get('Kernel::Config')->Get("TimeAccounting::EnableAutoCompletion") ) {
+
+            $Class = 'Modernize';
+
+            # build selection for modern input field
+            $Frontend{ProjectOption} = $LayoutObject->BuildSelection(
+                Data        => $ProjectList->{AllProjects},
+                Name        => "ProjectID[$ID]",
+                ID          => "ProjectID$ID",
+                Translation => 0,
+                Class       => 'Validate_TimeAccounting_Project ProjectSelection '
+                    . ( $Errors{$ErrorIndex}{ProjectIDInvalid} || '' )
+                    . $Class,
+                OnChange => "TimeAccounting.Agent.EditTimeRecords.FillActionList($ID);",
+                Title    => $LayoutObject->{LanguageObject}->Translate("Project"),
+                Filters  => {
+                    LastProjects => {
+                        Name   => $LayoutObject->{LanguageObject}->Translate('Previous Project'),
+                        Values => $ProjectList->{LastProjects},
+                    },
                 },
-            },
-        );
+            );
+        }
+        else {
+
+            # build selection for simple dropdown
+            my @Projects = ( @{ $ProjectList->{LastProjects} }, @{ $ProjectList->{AllProjects} } );
+            $Frontend{ProjectOption} = $LayoutObject->BuildSelection(
+                Data        => \@Projects,
+                Name        => "ProjectID[$ID]",
+                ID          => "ProjectID$ID",
+                Translation => 0,
+                Class       => 'Validate_TimeAccounting_Project ProjectSelection '
+                    . ( $Errors{$ErrorIndex}{ProjectIDInvalid} || '' ),
+                OnChange => "TimeAccounting.Agent.EditTimeRecords.FillActionList($ID);",
+                Title    => $LayoutObject->{LanguageObject}->Translate("Project"),
+            );
+        }
 
         # action list initially only contains empty and selected element as well as elements
         #    configured for selected project
@@ -827,10 +850,11 @@ sub Run {
             Name        => "ActionID[$ID]",
             ID          => "ActionID$ID",
             Translation => 0,
-            Class       => 'Modernize Validate_DependingRequiredAND Validate_Depending_ProjectID'
+            Class       => 'Validate_DependingRequiredAND Validate_Depending_ProjectID'
                 . $ID
                 . ' ActionSelection '
-                . ( $Errors{$ErrorIndex}{ActionIDInvalid} || '' ),
+                . ( $Errors{$ErrorIndex}{ActionIDInvalid} || '' )
+                . $Class,
             Title => $LayoutObject->{LanguageObject}->Translate("Task"),
         );
 
@@ -1368,13 +1392,14 @@ sub _ProjectList {
         %{ $Self->{LastProjectsRef} } = map { $_ => 1 } @LastProjects;
     }
 
-    my @OldProjects = (
+    my @LastProjects = (
         {
             Key   => '',
             Value => '',
         },
     );
 
+    # add the separator
     PROJECTID:
     for my $ProjectID (
         sort { $Project{Project}{$a} cmp $Project{Project}{$b} }
@@ -1386,24 +1411,35 @@ sub _ProjectList {
             Key   => $ProjectID,
             Value => $Project{Project}{$ProjectID},
         );
-        push @OldProjects, \%Hash;
-
-        # at the moment it is not possible mark the selected project
-        # in the favorite list (I think a bug in Build selection?!)
+        push @LastProjects, \%Hash;
     }
 
-    @OldProjects = $Self->_ProjectListConstraints(
-        List       => \@OldProjects,
+    @LastProjects = $Self->_ProjectListConstraints(
+        List       => \@LastProjects,
         SelectedID => $Param{SelectedID} || '',
     );
 
+    my @AllProjects;
+
+    # check if AutoCompletion is disabled
+    # in this case a separator is needed betwen two lists of projects (last and all)
+    if ( !$Kernel::OM->Get('Kernel::Config')->Get("TimeAccounting::EnableAutoCompletion") ) {
+        push @LastProjects, {
+            Key      => '0',
+            Value    => '--------------------',
+            Disabled => 1,
+        };
+    }
+    else {
+        @AllProjects = (
+            {
+                Key   => '',
+                Value => '',
+            },
+        );
+    }
+
     # add all allowed projects to the list
-    my @AllProjects = (
-        {
-            Key   => '',
-            Value => '',
-        },
-    );
     PROJECTID:
     for my $ProjectID (
         sort { $Project{Project}{$a} cmp $Project{Project}{$b} }
@@ -1428,8 +1464,8 @@ sub _ProjectList {
     );
 
     my %Projects = (
-        OldProjects => \@OldProjects,
-        AllProjects => \@AllProjects,
+        LastProjects => \@LastProjects,
+        AllProjects  => \@AllProjects,
     );
 
     return \%Projects;
