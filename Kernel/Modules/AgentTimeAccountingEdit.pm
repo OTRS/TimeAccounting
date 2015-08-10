@@ -790,26 +790,39 @@ sub Run {
             Title    => $LayoutObject->{LanguageObject}->Translate("Project"),
         );
 
-        my $Class = '';
+        my $Class = $ConfigObject->Get("TimeAccounting::EnableAutoCompletion") ? ' Modernize' : '';
 
-        if ( $ConfigObject->Get("TimeAccounting::EnableAutoCompletion") ) {
+        # set params for modern inputs
+        $ProjectOptionParams{Class} .= $Class;
 
-            # set class (it will be used later for tasks/actions)
-            $Class = 'Modernize';
+        if (
+            $ConfigObject->Get("TimeAccounting::EnableAutoCompletion")
+            && $ConfigObject->Get("TimeAccounting::UseFilter")
+            )
+        {
 
-            # set params for modern inputs
-            $ProjectOptionParams{Data} = $ProjectList->{AllProjects};
-            $ProjectOptionParams{Class} .= $Class;
+            # add filter for the previous projects
+            $ProjectOptionParams{Data}    = $ProjectList->{AllProjects};
             $ProjectOptionParams{Filters} = {
                 LastProjects => {
                     Name   => $LayoutObject->{LanguageObject}->Translate('Previous Project'),
                     Values => $ProjectList->{LastProjects},
                 },
             };
+
+            # if there are the previus projects, expand filter dialog
+            if ( scalar @{ $ProjectList->{LastProjects} } > 1 ) {
+                $ProjectOptionParams{ExpandFilters} = 1;
+
+                # make the filter active by default if 'ActiveFilter' is enabled
+                if ( $ConfigObject->Get("TimeAccounting::ActiveFilter") ) {
+                    $ProjectOptionParams{Filters}->{LastProjects}->{Active} = 1;
+                }
+            }
         }
         else {
-
             # set params for traditional selects
+            # and modern input fileds if filter is not used
             my @Projects = ( @{ $ProjectList->{LastProjects} }, @{ $ProjectList->{AllProjects} } );
             $ProjectOptionParams{Data} = \@Projects;
         }
@@ -820,8 +833,8 @@ sub Run {
         );
 
         # action list initially only contains empty and selected element as well as elements
-        #    configured for selected project
-        #    if no constraints are configured, all actions will be displayed
+        # configured for selected project
+        # if no constraints are configured, all actions will be displayed
         my $ActionData = $Self->_ActionListConstraints(
             ProjectID => $UnitRef->{ProjectID} || $ServerErrorData{$ErrorIndex}{ProjectID},
             ProjectList           => $ProjectList,
@@ -1420,15 +1433,23 @@ sub _ProjectList {
     );
 
     my @AllProjects;
+    my $ConfigObject = $Kernel::OM->Get('Kernel::Config');
 
     # check if AutoCompletion is disabled
     # in this case a separator is needed betwen two lists of projects (last and all)
-    if ( !$Kernel::OM->Get('Kernel::Config')->Get("TimeAccounting::EnableAutoCompletion") ) {
-        push @LastProjects, {
-            Key      => '0',
-            Value    => '--------------------',
-            Disabled => 1,
-        };
+    if (
+        !$ConfigObject->Get("TimeAccounting::EnableAutoCompletion")
+        || !$ConfigObject->Get("TimeAccounting::UseFilter")
+        )
+    {
+        if ( scalar @LastProjects > 1 ) {
+            push @LastProjects, {
+                Key      => '0',
+                Value    => ' -',
+                Disabled => 1,
+            };
+        }
+
     }
     else {
         @AllProjects = (
