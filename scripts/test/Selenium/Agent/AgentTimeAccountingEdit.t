@@ -46,6 +46,13 @@ $Selenium->RunTest(
             Value => \%Week,
         );
 
+        # disable MassEntry fetures
+        $Kernel::OM->Get('Kernel::System::SysConfig')->ConfigItemUpdate(
+            Valid => 1,
+            Key   => 'AllowMassEntryForUser',
+            Value => 0,
+        );
+
         # create test user and login
         my $TestUserLogin = $Helper->TestUserCreate(
             Groups => [ 'admin', 'users', 'time_accounting' ],
@@ -139,7 +146,7 @@ $Selenium->RunTest(
             }
         }
         for my $EditRestID (
-            qw(Month Day Year DayDatepickerIcon NavigationSelect LeaveDay Sick Overtime)
+            qw(Month Day Year DayDatepickerIcon NavigationSelect IncompleteWorkingDaysList LeaveDay Sick Overtime)
             )
         {
             my $Element = $Selenium->find_element( "#$EditRestID", 'css' );
