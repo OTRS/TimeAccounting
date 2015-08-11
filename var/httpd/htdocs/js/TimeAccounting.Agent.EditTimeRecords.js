@@ -336,11 +336,8 @@ TimeAccounting.Agent.EditTimeRecords = (function (TargetNS) {
         // initiate period calculation
         InitPeriodCalculation();
 
-        // Select only one checkbox in the group 'Absence'
-        $(".Absence input:checkbox").click(function () {
-            $(".Absence input:checkbox").prop("checked", false);
-            $(this).prop("checked", true);
-        });
+        // Select only one checkbox in the with class 'Absence'
+        TargetNS.CheckGroupSelect('.Absence');
     };
 
 
@@ -370,17 +367,17 @@ TimeAccounting.Agent.EditTimeRecords = (function (TargetNS) {
                 {
                     Label: Language.Submit,
                     Function: function () {
-                        var $SelectedRadio = $('#MassEntryConfirmRadio li input:radio:checked'),
+                        var $SelectedCheck = $('#MassEntryConfirmRadio li input:checkbox:checked'),
                             AbsenceReason,
                             CollectedDates = '';
 
-                        if (!$SelectedRadio.length) {
+                        if (!$SelectedCheck.length) {
                             alert(Language.MsgAbsenceReason);
                             return false;
                         }
 
                         // set absence reason
-                        AbsenceReason = $SelectedRadio.data('absence');
+                        AbsenceReason = $SelectedCheck.attr('name');
                         if (AbsenceReason === 'LeaveDay') {
                             $('#MassEntry input[name=LeaveDay]').val(1);
                         }
@@ -422,7 +419,25 @@ TimeAccounting.Agent.EditTimeRecords = (function (TargetNS) {
                     }
                 }
             ]);
+
+            // Select only one checkbox in the with class 'MassAbsence'
+            TargetNS.CheckGroupSelect('.MassAbsence');
             return false;
+        });
+    };
+
+    /**
+     * @name CheckGroupSelect
+     * @memberof TimeAccounting.Agent.EditTimeRecords
+     * @function
+     * @param {String} Class - class where there is group of checkboxes
+     * @description
+     *      This function select only one checkbox in a group with class 'Class'
+     */
+    TargetNS.CheckGroupSelect = function(Class) {
+        $(Class + " input:checkbox").click(function () {
+            $(Class + " input:checkbox").prop("checked", false);
+            $(this).prop("checked", true);
         });
     };
 
