@@ -139,7 +139,7 @@ $Selenium->RunTest(
             }
         }
         for my $EditRestID (
-            qw(Month Day Year DayDatepickerIcon NavigationSelect IncompleteWorkingDaysList LeaveDay Sick Overtime)
+            qw(Month Day Year DayDatepickerIcon NavigationSelect LeaveDay Sick Overtime)
             )
         {
             my $Element = $Selenium->find_element( "#$EditRestID", 'css' );
