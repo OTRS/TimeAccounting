@@ -13,6 +13,7 @@ TimeAccounting.Agent = TimeAccounting.Agent || {};
 
 TimeAccounting.Agent.EditTimeRecords = (function (Namespace) {
     Namespace.RunUnitTests = function(){
+
         /*
          * Create a form container for the tests
          */
@@ -155,6 +156,7 @@ TimeAccounting.Agent.EditTimeRecords = (function (Namespace) {
              */
             $('#TestForm').remove();
         });
+
     };
 
     return Namespace;
