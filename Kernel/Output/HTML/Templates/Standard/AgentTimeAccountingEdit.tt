@@ -107,9 +107,9 @@ $('#NavigationSelect').bind('click', function(){
                 <div id="MassEntryConfirmDialog" class="Hidden">
                     <h2>[% Translate("Please choose the reason for your absence for the selected days") | html %].</h2>
                     <ul id="MassEntryConfirmRadio" class="MassAbsence">
-                        <li><input type="checkbox" name="LeaveDay" id="ConfirmLeaveDay"  /><label for="ConfirmLeaveDay">[% Translate("On vacation") | html %]</label></li>
-                        <li><input type="checkbox" name="Sick" id="ConfirmSick"  /><label for="ConfirmSick">[% Translate("On sick leave") | html %]</label></li>
-                        <li><input type="checkbox" name="Overtime" id="ConfirmOvertime"  /><label for="ConfirmOvertime">[% Translate("On overtime leave") | html %]</label></li>
+                        <li><input type="checkbox" name="LeaveDay" id="ConfirmLeaveDay" /><label for="ConfirmLeaveDay">[% Translate("On vacation") | html %]</label></li>
+                        <li><input type="checkbox" name="Sick" id="ConfirmSick" /><label for="ConfirmSick">[% Translate("On sick leave") | html %]</label></li>
+                        <li><input type="checkbox" name="Overtime" id="ConfirmOvertime" /><label for="ConfirmOvertime">[% Translate("On overtime leave") | html %]</label></li>
                     </ul>
                 </div>
 [% WRAPPER JSOnDocumentComplete %]
