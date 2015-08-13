@@ -12,6 +12,7 @@ use strict;
 use warnings;
 
 use Date::Pcalc qw( Add_Delta_Days Add_Delta_YMD );
+use Kernel::Language qw(Translatable);
 
 our @ObjectDependencies = (
     'Kernel::System::Log',
@@ -68,7 +69,7 @@ sub GetObjectAttributes {
 
     my @Attributes = (
         {
-            Name             => 'Project',
+            Name             => Translatable('Project'),
             UseAsXvalue      => 1,
             UseAsValueSeries => 0,
             UseAsRestriction => 1,
@@ -78,7 +79,7 @@ sub GetObjectAttributes {
             Values           => $ProjectList{Project},
         },
         {
-            Name             => 'User',
+            Name             =>  Translatable('User'),
             UseAsXvalue      => 1,
             UseAsValueSeries => 0,
             UseAsRestriction => 1,
@@ -88,20 +89,20 @@ sub GetObjectAttributes {
             Values           => \%UserList,
         },
         {
-            Name             => 'Sort sequence',
+            Name             =>  Translatable('Sort sequence'),
             UseAsXvalue      => 0,
             UseAsValueSeries => 1,
             UseAsRestriction => 0,
             Element          => 'SortSequence',
             Block            => 'SelectField',
-            Translation      => 0,
+            Translation      => 1,
             Values           => {
                 Up   => 'ascending',
                 Down => 'descending',
             },
         },
         {
-            Name             => 'Task',
+            Name             =>  Translatable('Task'),
             UseAsXvalue      => 0,
             UseAsValueSeries => 0,
             UseAsRestriction => 1,
@@ -111,7 +112,7 @@ sub GetObjectAttributes {
             Values           => \%ActionList,
         },
         {
-            Name             => 'Period',
+            Name             =>  Translatable('Period'),
             UseAsXvalue      => 0,
             UseAsValueSeries => 0,
             UseAsRestriction => 1,
@@ -357,12 +358,137 @@ sub GetStatTable {
 sub GetStatTablePreview {
     my ( $Self, %Param ) = @_;
 
-    # TODO: check and implement a faster solution
-    return $Self->GetStatTable(
-        %Param,
-        Preview => 1,
-    );
-}
+    my @StatArray;
+    my @UserIDs;
+
+    $Kernel::OM->Get('Kernel::System::Log')->Dumper('@StatArray', \$Param{XValue}{Element});
+
+    # Users as X-value
+    if ( $Param{XValue}{Element} && $Param{XValue}{Element} eq 'User' ) {
+
+        # user have been selected as x-value
+        @UserIDs = @{ $Param{XValue}{SelectedValues} };
+
+        $Kernel::OM->Get('Kernel::System::Log')->Dumper('@UserIDs', \@UserIDs);
+
+        # get time accounting object
+        my $TimeAccountingObject = $Kernel::OM->Get('Kernel::System::TimeAccounting');
+
+        # get list of needed data
+        my %ProjectData = $TimeAccountingObject->ProjectSettingsGet();
+        my %ProjectList = %{ $ProjectData{Project} || {} };
+
+        my %ActionData = $TimeAccountingObject->ActionSettingsGet();
+        my %ActionList = map { ( $_ => $ActionData{$_}->{Action} ) } keys %ActionData;
+
+        my @SortedProjectIDs = sort { $ProjectList{$a} cmp $ProjectList{$b} } keys %ProjectList;
+        my @SortedActionIDs  = sort { $ActionList{$a} cmp $ActionList{$b} } keys %ActionList;
+
+        # re-sort projects depending on selected sequence
+        if ( $Param{ValueSeries} && $Param{ValueSeries}[0]{SelectedValues}[0] eq 'Down' ) {
+            @SortedProjectIDs = reverse @SortedProjectIDs;
+        }
+
+        # iterate over sorted project list
+        SORTEDPROJECTID:
+        for my $SortedProjectID (@SortedProjectIDs) {
+
+            # check for unselected projects
+            next SORTEDPROJECTID if $Param{Restrictions}->{Project} && !grep {
+                $_ == $SortedProjectID
+            } @{ $Param{Restrictions}->{Project} || [] };
+
+            # iterate over sorted action list
+            SORTEDACTIONID:
+            for my $SortedActionID (@SortedActionIDs) {
+
+                # check for unselected actions
+                next SORTEDACTIONID if $Param{Restrictions}->{ProjectAction} && !grep {
+                    $_ == $SortedActionID
+                } @{ $Param{Restrictions}->{ProjectAction} || [] };
+
+                my @RowData;
+
+                # add descriptive first column
+                my $RowLabel = "$ProjectList{$SortedProjectID}::$ActionList{$SortedActionID}";
+                push @RowData, $RowLabel;
+
+                # iterate over selected users
+                USERID:
+                for my $UserID (@UserIDs) {
+
+                    # safe user data to row data
+                    push @RowData, int rand 50;
+                }
+
+                # store current row to global stat array
+                push @StatArray, \@RowData;
+                 $Kernel::OM->Get('Kernel::System::Log')->Dumper('Debug - ModuleName', 'VariableName', \@RowData);
+            }
+        }
+    }
+
+    # Projects as X-value
+    else {
+
+        # projects have been selected as x-value
+        my @ProjectIDs = @{ $Param{XValue}{SelectedValues} };
+
+        # get user object
+        my $UserObject = $Kernel::OM->Get('Kernel::System::User');
+
+        # we need to get all users
+        my %UserIDs = $UserObject->UserList(
+            Type  => 'Short',
+            Valid => 1,
+        );
+
+        @UserIDs = keys %UserIDs;
+
+        # get list of needed data
+        my %UserList = $UserObject->UserList(
+            Type  => 'Long',
+            Valid => 1,
+        );
+
+        my @SortedUserIDs = sort { $UserList{$a} cmp $UserList{$b} } keys %UserList;
+
+        # re-sort users depending on selected sequence
+        if ( $Param{ValueSeries} && $Param{ValueSeries}[0]{SelectedValues}[0] eq 'Down' ) {
+            @SortedUserIDs = reverse @SortedUserIDs;
+        }
+
+        # iterate over sorted user list
+        SORTEDUSERID:
+        for my $SortedUserID (@SortedUserIDs) {
+
+            # check for unselected users
+            next SORTEDUSERID if $Param{Restrictions}->{User} && !grep {
+                $_ == $SortedUserID
+            } @{ $Param{Restrictions}->{User} || [] };
+
+            my @RowData;
+
+            # add descriptive first column
+            my $RowLabel = $UserList{$SortedUserID};
+            push @RowData, $RowLabel;
+
+            # iterate over selected projects
+            PROJECTID:
+            for my $ProjectID (@ProjectIDs) {
+
+                # safe user data to row data
+                push @RowData, int rand 50;
+            }
+
+            # store current row to global stat array
+            push @StatArray, \@RowData;
+        }
+
+    }
+
+    return @StatArray;
+ }
 
 sub ExportWrapper {
     my ( $Self, %Param ) = @_;
