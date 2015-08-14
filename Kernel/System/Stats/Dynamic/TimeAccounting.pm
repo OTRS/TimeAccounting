@@ -13,6 +13,7 @@ use warnings;
 
 use Date::Pcalc qw( Add_Delta_Days Add_Delta_YMD );
 use Kernel::Language qw(Translatable);
+use Kernel::System::VariableCheck qw(IsArrayRefWithData);
 
 our @ObjectDependencies = (
     'Kernel::System::Log',
@@ -79,7 +80,7 @@ sub GetObjectAttributes {
             Values           => $ProjectList{Project},
         },
         {
-            Name             =>  Translatable('User'),
+            Name             => Translatable('User'),
             UseAsXvalue      => 1,
             UseAsValueSeries => 0,
             UseAsRestriction => 1,
@@ -89,7 +90,7 @@ sub GetObjectAttributes {
             Values           => \%UserList,
         },
         {
-            Name             =>  Translatable('Sort sequence'),
+            Name             => Translatable('Sort sequence'),
             UseAsXvalue      => 0,
             UseAsValueSeries => 1,
             UseAsRestriction => 0,
@@ -102,7 +103,7 @@ sub GetObjectAttributes {
             },
         },
         {
-            Name             =>  Translatable('Task'),
+            Name             => Translatable('Task'),
             UseAsXvalue      => 0,
             UseAsValueSeries => 0,
             UseAsRestriction => 1,
@@ -112,12 +113,12 @@ sub GetObjectAttributes {
             Values           => \%ActionList,
         },
         {
-            Name             =>  Translatable('Period'),
+            Name             => Translatable('Period'),
             UseAsXvalue      => 0,
             UseAsValueSeries => 0,
             UseAsRestriction => 1,
             Element          => 'Period',
-            TimePeriodFormat => 'DateInputFormat',    # 'DateInputFormatLong',
+            TimePeriodFormat => 'DateInputFormat',        # 'DateInputFormatLong',
             Block            => 'Time',
             Values           => {
                 TimeStart => 'TimeAccountingPeriodStart',
@@ -213,7 +214,7 @@ sub GetStatTable {
         my @SortedActionIDs  = sort { $ActionList{$a} cmp $ActionList{$b} } keys %ActionList;
 
         # re-sort projects depending on selected sequence
-        if ( $Param{ValueSeries} && $Param{ValueSeries}[0]{SelectedValues}[0] eq 'Down' ) {
+        if ( IsArrayRefWithData( $Param{ValueSeries} ) && $Param{ValueSeries}[0]{SelectedValues}[0] eq 'Down' ) {
             @SortedProjectIDs = reverse @SortedProjectIDs;
         }
 
@@ -308,7 +309,7 @@ sub GetStatTable {
         my @SortedUserIDs = sort { $UserList{$a} cmp $UserList{$b} } keys %UserList;
 
         # re-sort users depending on selected sequence
-        if ( $Param{ValueSeries} && $Param{ValueSeries}[0]{SelectedValues}[0] eq 'Down' ) {
+        if ( IsArrayRefWithData( $Param{ValueSeries} ) && $Param{ValueSeries}[0]{SelectedValues}[0] eq 'Down' ) {
             @SortedUserIDs = reverse @SortedUserIDs;
         }
 
@@ -361,15 +362,11 @@ sub GetStatTablePreview {
     my @StatArray;
     my @UserIDs;
 
-    $Kernel::OM->Get('Kernel::System::Log')->Dumper('@StatArray', \$Param{XValue}{Element});
-
     # Users as X-value
     if ( $Param{XValue}{Element} && $Param{XValue}{Element} eq 'User' ) {
 
         # user have been selected as x-value
         @UserIDs = @{ $Param{XValue}{SelectedValues} };
-
-        $Kernel::OM->Get('Kernel::System::Log')->Dumper('@UserIDs', \@UserIDs);
 
         # get time accounting object
         my $TimeAccountingObject = $Kernel::OM->Get('Kernel::System::TimeAccounting');
@@ -385,7 +382,7 @@ sub GetStatTablePreview {
         my @SortedActionIDs  = sort { $ActionList{$a} cmp $ActionList{$b} } keys %ActionList;
 
         # re-sort projects depending on selected sequence
-        if ( $Param{ValueSeries} && $Param{ValueSeries}[0]{SelectedValues}[0] eq 'Down' ) {
+        if ( IsArrayRefWithData( $Param{ValueSeries} ) && $Param{ValueSeries}[0]{SelectedValues}[0] eq 'Down' ) {
             @SortedProjectIDs = reverse @SortedProjectIDs;
         }
 
@@ -423,7 +420,6 @@ sub GetStatTablePreview {
 
                 # store current row to global stat array
                 push @StatArray, \@RowData;
-                 $Kernel::OM->Get('Kernel::System::Log')->Dumper('Debug - ModuleName', 'VariableName', \@RowData);
             }
         }
     }
@@ -454,7 +450,7 @@ sub GetStatTablePreview {
         my @SortedUserIDs = sort { $UserList{$a} cmp $UserList{$b} } keys %UserList;
 
         # re-sort users depending on selected sequence
-        if ( $Param{ValueSeries} && $Param{ValueSeries}[0]{SelectedValues}[0] eq 'Down' ) {
+        if ( IsArrayRefWithData( $Param{ValueSeries} ) && $Param{ValueSeries}[0]{SelectedValues}[0] eq 'Down' ) {
             @SortedUserIDs = reverse @SortedUserIDs;
         }
 
@@ -488,7 +484,7 @@ sub GetStatTablePreview {
     }
 
     return @StatArray;
- }
+}
 
 sub ExportWrapper {
     my ( $Self, %Param ) = @_;
@@ -691,7 +687,7 @@ sub _GetStatData {
                 -1,
             );
 
-            # calculate unix timestamp for start and stop date
+            # calculate UNIX timestamps for start and stop date
             $StartDate = $TimeObject->Date2SystemTime(
                 Year   => $NewStartDate[0],
                 Month  => $NewStartDate[1],
