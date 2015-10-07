@@ -12,3 +12,4 @@ scripts/install-git-hooks.pl
 scripts/uninstall-git-hooks.pl
 OTRSCodePolicy*
 perltidy.LOG
+*.old
