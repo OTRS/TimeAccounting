@@ -133,15 +133,10 @@ $Selenium->RunTest(
         my $ScriptAlias = $ConfigObject->Get('ScriptAlias');
 
         # navigate to AgentTimeAccountingEdit
-        $Selenium->get("${ScriptAlias}index.pl?Action=AgentTimeAccountingEdit");
-
-        # wait until form has loaded, if necessary
-        $Selenium->WaitFor(
-            JavaScript => "return typeof(\$) === 'function' && \$('#DeleteTimeAccountingEntry').length"
-        );
+        $Selenium->VerifiedGet("${ScriptAlias}index.pl?Action=AgentTimeAccountingEdit");
 
         # add additional row
-        $Selenium->find_element("//button[\@id='MoreInputFields'][\@type='button']")->click();
+        $Selenium->find_element("//button[\@id='MoreInputFields'][\@type='button']")->VerifiedClick();
 
         # check time accounting edit field IDs, first and added row
         for my $Row ( 1, 9 ) {
@@ -179,16 +174,15 @@ $Selenium->RunTest(
             '6.00',
             "Period time correctly calculated",
         );
-        sleep 1;
 
         # submit work accounting edit time record
-        $Selenium->find_element("//button[\@value='Submit'][\@type='submit']")->click();
+        $Selenium->find_element("//button[\@value='Submit'][\@type='submit']")->VerifiedClick();
 
         # verify submit message
         my $SubmitMessage = 'Successful insert!';
         $Self->True(
             index( $Selenium->get_page_source(), $SubmitMessage ) > -1,
-            "$SubmitMessage - found",
+            "$SubmitMessage is found",
         );
 
         # get DB object
@@ -201,32 +195,32 @@ $Selenium->RunTest(
                 Table   => 'time_accounting_project',
                 Where   => 'project',
                 Bind    => '',
-                Message => "$ProjectTitle - deleted",
+                Message => "$ProjectTitle is deleted",
             },
             {
                 Quoted  => $ActionTitle,
                 Table   => 'time_accounting_action',
                 Where   => 'action',
                 Bind    => '',
-                Message => "$ActionTitle - deleted",
+                Message => "$ActionTitle is deleted",
             },
             {
                 Table   => 'time_accounting_table',
                 Where   => 'user_id',
                 Bind    => $TestUserID,
-                Message => "Test user $TestUserID - removed from accounting table",
+                Message => "Test user $TestUserID is removed from accounting table",
             },
             {
                 Table   => 'time_accounting_user',
                 Where   => 'user_id',
                 Bind    => $TestUserID,
-                Message => "Test user $TestUserID - removed from accounting setting",
+                Message => "Test user $TestUserID is removed from accounting setting",
             },
             {
                 Table   => 'time_accounting_user_period',
                 Where   => 'user_id',
                 Bind    => $TestUserID,
-                Message => "Test user $TestUserID - removed from accounting period",
+                Message => "Test user $TestUserID is removed from accounting period",
             },
         );
 
