@@ -163,10 +163,12 @@ $Selenium->RunTest(
             "\$('#ProjectID1').val('$ProjectID').trigger('redraw.InputField').trigger('change');"
         );
         $Selenium->execute_script("\$('#ActionID1').val('$ActionID').trigger('redraw.InputField').trigger('change');");
-        $Selenium->find_element("//*[text()='$ActionTitle']")->click();
-        $Selenium->find_element( "#StartTime1", 'css' )->send_keys('10:00');
-        $Selenium->find_element( "#EndTime1",   'css' )->send_keys('16:00');
         $Selenium->find_element( "#Remark1",    'css' )->send_keys('Selenium test remark');
+        $Selenium->find_element( "#StartTime1", 'css' )->send_keys('10:00');
+        $Selenium->find_element( "#EndTime1",   'css' )->send_keys( '16:00', "\t" );
+
+        # submit work accounting edit time record
+        $Selenium->find_element("//button[\@value='Submit'][\@type='submit']")->VerifiedClick();
 
         # verify that period calculate correct time
         $Self->Is(
@@ -174,9 +176,6 @@ $Selenium->RunTest(
             '6.00',
             "Period time correctly calculated",
         );
-
-        # submit work accounting edit time record
-        $Selenium->find_element("//button[\@value='Submit'][\@type='submit']")->VerifiedClick();
 
         # verify submit message
         my $SubmitMessage = 'Successful insert!';
