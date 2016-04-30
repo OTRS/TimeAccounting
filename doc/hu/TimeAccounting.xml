@@ -1,0 +1,742 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<!DOCTYPE book PUBLIC "-//OASIS//DTD DocBook XML V4.4//EN"
+    "http://www.oasis-open.org/docbook/xml/4.4/docbookx.dtd">
+
+<book lang="hu">
+
+
+<!--
+************************************ Customer part ******************************************
+-->
+<!-- ********** -->
+<!-- 1. Preface -->
+<!-- ********** -->
+<bookinfo>
+    <!--
+************************************** Head ***********************************************
+-->
+<title>$Name</title>
+    <edition>$Description, verzió: $Version</edition> <copyright>
+<year>$YearStamp</year> <holder>$Vendor, $URL</holder> </copyright>
+<date>$DateStamp</date>
+    <legalnotice>
+        <para>$License</para>
+        <para>
+            Ez a mű az alábbi gyártó szerzői joga alatt áll: $Vendor, Norsk-Data-Str. 1,
+61352 Bad Homburg, Németország.
+        </para>
+        <para>Összeállítás dátuma: $DateStamp</para>
+    </legalnotice>
+</bookinfo>
+
+
+
+
+
+
+<preface id="preface">
+    <title>Előszó</title>
+    <para>
+        A TimeAccounting modul az OTRS keretrendszert bővíti ki lehetővé téve annak
+követését, hogy az ügyintézők mennyi időt töltenek a különböző feladatokkal,
+szabadságokkal, túlórákkal és betegszabadságokkal.
+    </para>
+    <para>
+        Ha kérdései vannak ezzel a dokumentummal kapcsolatban, vagy további
+információkra van szüksége, akkor lépjen be az OTRS azonosítójával a
+portal.otrs.com címen lévő ügyfélportálunkra, és hozzon létre egy
+jegyet. Még nincs OTRS azonosítója? Regisztráljon <ulink
+url="https://portal.otrs.com/otrs/customer.pl#Signup">itt
+ingyenesen</ulink>.
+    </para>
+</preface>
+
+
+
+
+<!-- *************** -->
+<!-- 2. Feature List -->
+<!-- *************** -->
+<chapter>
+    <title>Funkciólista</title>
+    <section>
+        <title>Időelszámolás áttekintése</title>
+        <para>
+            Megjeleníti a jelenleg bejelentkezett felhasználónak a saját napi munkaideje
+összegzését (havi alapon), a szabadságon eltöltött napok és a
+betegszabadságok eltöltött napok összegzését, valamint az egyes projekteken
+és feladatokon vett munkaidő eloszlását.
+        </para>
+    </section>
+    <section>
+        <title>Időelszámolás szerkesztése</title>
+        <para>
+            Lehetővé teszi a munkaidő, szabadságok, betegszabadságok és csúsztatások
+beállítását napi alapokon. A munkaidő beállítható a kezdési és a befejezési
+dátumok vagy egy időszak meghatározásával.
+        </para>
+        <para>
+            A munkaidő regisztrálható projektenként vagy feladatonként. Előre kitöltött
+választólisták használhatók a regisztrálási folyamat gyorsításához és a
+helyesírási hibák kiküszöböléséhez.
+        </para>
+    </section>
+    <section>
+        <title>Időelszámolás jelentése</title>
+        <para>
+            Adminisztrátoroknak és menedzsereknek tervezve jeleníti meg a havi alapú
+időszámítási információk összegzését az egyes regisztrált felhasználókhoz
+(munkaidő, csúsztatások, betegszabadságok és szabadságok). Valamint
+megjeleníti az időszámítási információk összegzését az egyes projektekhez és
+feladatokhoz is (a velük eltöltött időt).
+        </para>
+    </section>
+    <section>
+        <title>Időelszámolás beállítások</title>
+        <para>
+            Szintén adminisztrátoroknak és menedzsereknek tervezve teszi lehetővé több
+projekt és feladat létrehozását. Megengedi továbbá a felhasználók beosztását
+saját naptárak és munkaidőszakok (kezdési dátum, befejezési dátum,
+szabadságon eltöltött napok száma, heti órák és megengedett túlórák)
+meghatározásával.
+        </para>
+    </section>
+    <section>
+        <title>Időelszámolás statisztikák</title>
+        <para>
+            Egy új statisztikatípus került hozzáadásra a munkaidő megjelenítéséhez
+projektek vagy felhasználók alapján.
+        </para>
+    </section>
+    <section>
+        <title>Időelszámolás értesítés</title>
+        <para>
+            Egy emlékeztető értesítés az ügyintézőknek a munkaidejük beillesztéséhez (a
+rendszerbeállításokban állítható be a legtöbb bejegyzés nélküli nap
+meghatározása az értesítés megjelenítéséhez).
+        </para>
+    </section>
+    <section>
+        <title>Eszköztárikon az időelszámolási bejegyzés nélküli napokhoz</title>
+        <para>
+            A munkaidő regisztrálása nélküli napok számát megjelenítő számláló állítható
+be a képernyő felső részén (hasonlóan a zárolt jegyek vagy a felelős jegyek
+számlálóihoz). Az ikonra kattintva az ügyintézők átirányításra kerülnek az
+időelszámolás szerkesztése képernyőre a hiányzó feljegyzések kitöltéséhez.
+        </para>
+    </section>
+    <section>
+        <title>Időelszámolás regisztrálásának kikényszerítése</title>
+        <para>
+            Egy rendszerbeállítási lehetőséggel beállítható, hogy a rendszer blokkolva
+legyen, ne tegye lehetővé semmilyen művelet végrehajtását, ha az
+időelszámolási regisztrálások nélküli napoknak egy bizonyos számát
+meghaladják (az ügyintézők átirányításra kerülnek az időelszámolás
+szerkesztése képernyőre a hiányzó feljegyzések kitöltéséhez).
+        </para>
+    </section>
+    <section>
+        <title>Tömeges bejegyzések</title>
+        <para>
+            Alapértelmezett le van tiltva. Ez a funkció lehetővé teszi az ügyintézőknek
+a különleges időelszámolási információk (mint például szabadság, csúsztatás
+és betegszabadság) beállítását egyszerre több napra.
+        </para>
+    </section>
+</chapter>
+
+
+
+
+<!-- ********************** -->
+<!-- 3. System Requirements -->
+<!-- ********************** -->
+<chapter>
+    <title>Rendszerkövetelmények</title>
+    <section>
+        <title>Keretrendszer</title>
+        <para>A következő OTRS keretrendszer szükséges:</para>
+        <para>$Framework</para>
+    </section>
+    <section>
+        <title>Csomagok</title>
+        <para>A következő csomagok szükségesek:</para>
+        <para>$PackageRequired</para>
+    </section>
+    <section>
+        <title>Operációs rendszer</title>
+        <para>Ez a csomag a következő operációs rendszerek egyikét igényli:</para>
+        <para>$OS</para>
+    </section>
+    <section>
+        <title>Harmadik féltől származó szoftver</title>
+        <para>Ez a harmadik féltől származó szoftver szükséges a csomag használatához:</para>
+        <itemizedlist>
+            <listitem>
+                <para>Nincs.</para>
+            </listitem>
+        </itemizedlist>
+    </section>
+</chapter>
+
+
+
+
+<!-- *************** -->
+<!-- 4. Installation -->
+<!-- *************** -->
+<chapter>
+    <title>Telepítés</title>
+    <para>
+        A következő lépések elmagyarázzák, hogy hogyan kell telepíteni a csomagot.
+    </para>
+    <para>
+        Miután sikeresen befejezte a telepítést, kövesse az „Első lépések”
+fejezetben leírt utasításokat.
+    </para>
+    <section>
+        <title>Adminisztrátori felület</title>
+        <para>
+            Használja a következő URL-t a csomag telepítéséhez, hogy használhassa az
+adminisztrátori felületet (ne feledje, hogy az „admin” csoportban kell
+lennie).
+        </para>
+        <para>
+            <ulink url="http://localhost/otrs/index.pl?Action=AdminPackageManager">
+http://localhost/otrs/index.pl?Action=AdminPackageManager </ulink>
+        </para>
+    </section>
+    <section>
+        <title>Parancssor</title>
+        <para>
+            Ha esetleg valamilyen okból nem tudja használni az adminisztrátori
+felületet, akkor használhatja a következő parancssori eszközt helyette
+(„bin/otrs.Console.pl Admin::Package::Install”).
+        </para>
+        <para>
+            <screen>
+shell> bin/otrs.Console.pl Admin::Package::Install /path/to/$Name-$Version.opm
+            </screen>
+        </para>
+    </section>
+</chapter>
+
+
+
+
+<!-- **************** -->
+<!-- 5. Configuration -->
+<!-- **************** -->
+<chapter>
+    <title>Beállítás</title>
+    <para>A csomag a rendszerbeállításokon keresztül állítható be az adminisztrátori
+felületen. A következő beállítási lehetőségek érhetők el:</para>
+    <section>
+        <title>Frontend::Module###AgentTimeAccountingEdit.</title>
+        <para>Csoport: TimeAccounting, alcsoport: Frontend::Agent::ModuleRegistration.</para>
+        <para>Előtétprogram-modul regisztráció az ügyintézői felülethez.</para>
+    </section>
+    <section>
+        <title>Frontend::Module###AgentTimeAccountingOverview.</title>
+        <para>Csoport: TimeAccounting, alcsoport: Frontend::Agent::ModuleRegistration.</para>
+        <para>Előtétprogram-modul regisztráció az ügyintézői felülethez.</para>
+    </section>
+    <section>
+        <title>Frontend::Module###AgentTimeAccountingReporting.</title>
+        <para>Csoport: TimeAccounting, alcsoport: Frontend::Agent::ModuleRegistration.</para>
+        <para>Előtétprogram-modul regisztráció az ügyintézői felülethez.</para>
+    </section>
+    <section>
+        <title>Frontend::Module###AgentTimeAccountingSetting.</title>
+        <para>Csoport: TimeAccounting, alcsoport: Frontend::Agent::ModuleRegistration.</para>
+        <para>Előtétprogram-modul regisztráció az ügyintézői felülethez.</para>
+    </section>
+    <section>
+        <title>Frontend::Module###AgentTimeAccountingView.</title>
+        <para>Csoport: TimeAccounting, alcsoport: Frontend::Agent::ModuleRegistration.</para>
+        <para>Előtétprogram-modul regisztráció az ügyintézői felülethez.</para>
+    </section>
+    <section>
+        <title>Frontend::NotifyModule###888-TimeAccounting.</title>
+        <para>Csoport: TimeAccounting, alcsoport: Frontend::Agent::ModuleNotify.</para>
+        <para>Ez az értesítési modul egy figyelmeztetést ad, ha túl sok befejezetlen
+munkanap található.</para>
+    </section>
+    <section>
+        <title>Frontend::ToolBarModule###201-TimeAccounting::IncompleteWorkingDays.</title>
+        <para>Csoport: TimeAccounting, alcsoport: Frontend::Agent::ToolBarModule.</para>
+        <para>Ügyintézői felület értesítési modul a felhasználó befejezetlen munkanapjai
+számának megtekintéséhez.</para>
+    </section>
+    <section>
+        <title>PreApplicationModule###AgentTimeAccounting.</title>
+        <para>Csoport: TimeAccounting, alcsoport: Frontend::Agent.</para>
+        <para>Ez a modul kikényszeríti a beszúrásokat az időelszámolásban.</para>
+    </section>
+    <section>
+        <title>Stats::DynamicObjectRegistration###TimeAccounting.</title>
+        <para>Csoport: TimeAccounting, alcsoport: Core::Stats.</para>
+        <para>Meghatározza, hogy a statisztika modul előállíthat-e időelszámolási
+információkat.</para>
+    </section>
+    <section>
+        <title>TimeAccounting::ActionListConstraints.</title>
+        <para>Csoport: TimeAccounting, alcsoport:
+Frontend::Agent::TimeAccounting::ViewEdit.</para>
+        <para>Reguláris kifejezések a kijelölt projekt szerinti korlátozó művelet
+listájához. A kulcs a projektekhez tartalmaz reguláris kifejezést, a
+tartalom pedig a műveletekhez.</para>
+    </section>
+    <section>
+        <title>TimeAccounting::ActiveFilter.</title>
+        <para>Csoport: TimeAccounting, alcsoport:
+Frontend::Agent::TimeAccounting::ViewEdit.</para>
+        <para>Ha engedélyezve van, akkor az előző projektek szűrője alapértelmezetten be
+van kapcsolva, ha vannak előző projektek. Csak akkor használható, ha az
+EnableAutoCompletion és a TimeAccounting::UseFilter engedélyezve van.</para>
+    </section>
+    <section>
+        <title>TimeAccounting::AllowMassEntryForUser.</title>
+        <para>Csoport: TimeAccounting, alcsoport:
+Frontend::Agent::TimeAccounting::ViewEdit.</para>
+        <para>Ha engedélyezve van, akkor a felhasználónak megengedett egyszerre több
+dátumhoz „szabadságon”, „betegszabadságon” és „csúsztatáson” érték megadása.</para>
+    </section>
+    <section>
+        <title>TimeAccounting::DefaultActionName.</title>
+        <para>Csoport: TimeAccounting, alcsoport:
+Frontend::Agent::TimeAccounting::ViewSetting.</para>
+        <para>Alapértelmezett név az új műveletekhez.</para>
+    </section>
+    <section>
+        <title>TimeAccounting::DefaultActionStatus.</title>
+        <para>Csoport: TimeAccounting, alcsoport:
+Frontend::Agent::TimeAccounting::ViewSetting.</para>
+        <para>Alapértelmezett állapot az új műveletekhez.</para>
+    </section>
+    <section>
+        <title>TimeAccounting::DefaultProjectName.</title>
+        <para>Csoport: TimeAccounting, alcsoport:
+Frontend::Agent::TimeAccounting::ViewSetting.</para>
+        <para>Alapértelmezett név az új projektekhez.</para>
+    </section>
+    <section>
+        <title>TimeAccounting::DefaultProjectStatus.</title>
+        <para>Csoport: TimeAccounting, alcsoport:
+Frontend::Agent::TimeAccounting::ViewSetting.</para>
+        <para>Alapértelmezett állapot az új projektekhez.</para>
+    </section>
+    <section>
+        <title>TimeAccounting::DefaultUserDateEnd.</title>
+        <para>Csoport: TimeAccounting, alcsoport:
+Frontend::Agent::TimeAccounting::ViewSetting.</para>
+        <para>Alapértelmezett beállítás a befejezési dátumhoz.</para>
+    </section>
+    <section>
+        <title>TimeAccounting::DefaultUserDateStart.</title>
+        <para>Csoport: TimeAccounting, alcsoport:
+Frontend::Agent::TimeAccounting::ViewSetting.</para>
+        <para>Alapértelmezett beállítás a kezdési dátumhoz.</para>
+    </section>
+    <section>
+        <title>TimeAccounting::DefaultUserDescription.</title>
+        <para>Csoport: TimeAccounting, alcsoport:
+Frontend::Agent::TimeAccounting::ViewSetting.</para>
+        <para>Alapértelmezett beállítás a leíráshoz.</para>
+    </section>
+    <section>
+        <title>TimeAccounting::DefaultUserLeaveDays.</title>
+        <para>Csoport: TimeAccounting, alcsoport:
+Frontend::Agent::TimeAccounting::ViewSetting.</para>
+        <para>Alapértelmezett beállítás a szabadság napjaihoz.</para>
+    </section>
+    <section>
+        <title>TimeAccounting::DefaultUserOvertime.</title>
+        <para>Csoport: TimeAccounting, alcsoport:
+Frontend::Agent::TimeAccounting::ViewSetting.</para>
+        <para>Alapértelmezett beállítás a túlórához.</para>
+    </section>
+    <section>
+        <title>TimeAccounting::DefaultUserStatus.</title>
+        <para>Csoport: TimeAccounting, alcsoport:
+Frontend::Agent::TimeAccounting::ViewSetting.</para>
+        <para>Alapértelmezett állapot az új felhasználókhoz.</para>
+    </section>
+    <section>
+        <title>TimeAccounting::DefaultUserWeeklyHours.</title>
+        <para>Csoport: TimeAccounting, alcsoport:
+Frontend::Agent::TimeAccounting::ViewSetting.</para>
+        <para>Alapértelmezett beállítás a szabványos heti munkaórákhoz.</para>
+    </section>
+    <section>
+        <title>TimeAccounting::EnableAutoCompletion.</title>
+        <para>Csoport: TimeAccounting, alcsoport:
+Frontend::Agent::TimeAccounting::ViewEdit.</para>
+        <para>Ha engedélyezve van, akkor a szerkesztési képernyőn lévő lenyíló elemek
+korszerűsített automatikusan kiegészített mezőkre lesznek megváltoztatva.</para>
+    </section>
+    <section>
+        <title>TimeAccounting::Frontend::ReportingProject###ShowOnlyActiveUsers.</title>
+        <para>Csoport: TimeAccounting, alcsoport:
+Frontend::Agent::TimeAccoutning::ViewReportingProject.</para>
+        <para>Ha engedélyezve van, akkor csak azok a felhasználók lesznek megjelenítve,
+akik munkaidőt adtak hozzá a kijelölt projekthez.</para>
+    </section>
+    <section>
+        <title>TimeAccounting::InputHoursWithoutStartEndTime.</title>
+        <para>Csoport: TimeAccounting, alcsoport:
+Frontend::Agent::TimeAccounting::ViewEdit.</para>
+        <para>Megadja, hogy a munkaidő beszúrható-e kezdési és befejezési idők nélkül.</para>
+    </section>
+    <section>
+        <title>TimeAccounting::MaxAllowedInsertDays.</title>
+        <para>Csoport: TimeAccounting, alcsoport: Frontend::Agent.</para>
+        <para>Hány nappal ezelőtthöz illeszthet be munkaegységeket.</para>
+    </section>
+    <section>
+        <title>TimeAccounting::MaxIntervalOfIncompleteDays.</title>
+        <para>Csoport: TimeAccounting, alcsoport: Frontend::Agent.</para>
+        <para>A munkanapok legnagyobb száma, amelyek után a munkaegységeket be kell
+szúrni.</para>
+    </section>
+    <section>
+        <title>TimeAccounting::MaxIntervalOfIncompleteDaysBeforeWarning.</title>
+        <para>Csoport: TimeAccounting, alcsoport: Frontend::Agent.</para>
+        <para>A munkaegységek bejegyzés nélküli munkanapok legnagyobb száma, amelyek után
+egy figyelmeztetés lesz megjelenítve.</para>
+    </section>
+    <section>
+        <title>TimeAccounting::Project2RemarkRegExp.</title>
+        <para>Csoport: TimeAccounting, alcsoport:
+Frontend::Agent::TimeAccounting::ViewEdit.</para>
+        <para>Meghatározza azokat a projekteket, amelyekhez észrevétel szükséges. Ha a
+reguláris kifejezés illeszkedik a projektre, akkor be kell illesztenie egy
+észrevételt is. A reguláris kifejezés az smx paramétert használja.</para>
+    </section>
+    <section>
+        <title>TimeAccounting::ProjectListConstraints.</title>
+        <para>Csoport: TimeAccounting, alcsoport:
+Frontend::Agent::TimeAccounting::ViewEdit.</para>
+        <para>Reguláris kifejezések a felhasználócsoportok szerinti korlátozó projekt
+listájához. A kulcs a projektekhez tartalmaz reguláris kifejezést, a
+tartalom pedig csoportok vesszővel elválasztott listáját tartalmazza.</para>
+    </section>
+    <section>
+        <title>TimeAccounting::ReduceTime.</title>
+        <para>Csoport: TimeAccounting, alcsoport:
+Frontend::Agent::TimeAccounting::ViewEdit.</para>
+        <para>Akkor kell használni, ha néhány művelet csökkentette a munkaidőt (például ha
+csak az utazási idő fele van kifizetve: Kulcs =&gt; utazás; Tartalom =&gt;
+50).</para>
+    </section>
+    <section>
+        <title>TimeAccounting::UseFilter.</title>
+        <para>Csoport: TimeAccounting, alcsoport:
+Frontend::Agent::TimeAccounting::ViewEdit.</para>
+        <para>Ha engedélyezve van, akkor az előző projektek szűrője használható a
+projektek két listája helyett (legutóbbi és összes). Csak akkor használható,
+ha a TimeAccounting::EnableAutoCompletion engedélyezve van.</para>
+    </section>
+</chapter>
+
+
+
+
+<!-- ******** -->
+<!-- 6. Usage -->
+<!-- ******** -->
+<chapter>
+    <title>Használat</title>
+    <para>
+        Ez a csomag egy új „time_accouting” nevű csoportot ad hozzá. Ezen csoporton
+beállított jogosultságtól függően az ügyintézőknek lehetőségük van bizonyos
+műveletek végrehajtására. Általában az „írás-olvasás” jogosultság megléte
+teszi lehetővé az ügyintézőknek az összes képernyő használatát, míg a „csak
+olvasás” jogosultságok csak a személyes áttekintő (időelszámolás áttekintő)
+és a munkaidő regisztrálása (időelszámolás szerkesztése) képernyőkhöz teszik
+lehetővé a hozzáférést.
+    </para>
+    <section>
+        <title>Új projekt létrehozása</title>
+        <para>Ez a sablon azt mutatja be, hogy hogyan lehet új projektet létrehozni az
+azon történő munkaidő regisztrálásához.</para>
+        <note>
+            <para>
+                Ennél és a következő példáknál szükség van a „time_accouting” csoportban egy
+„írás-olvasás” jogosultsággal rendelkező felhasználóra.
+            </para>
+        </note>
+        <orderedlist>
+            <listitem><para>Az időelszámolás menüben válassza ki a „Beállítások” menüpontot.</para></listitem>
+            <listitem>
+                <para>
+                    Kattintson a „Projekt hozzáadása” gombra az oldalsávon lévő műveletek
+listában, amely a képernyő bal oldalán található.
+                </para>
+            </listitem>
+            <listitem>
+                <para>
+                    Az új képernyőn töltse ki a projekt nevét és a leírást, ha szükséges
+(győződjön meg arról, hogy az állapot „érvényes” értékre van-e állítva).
+                </para>
+            </listitem>
+            <listitem>
+                <para>
+                    Kattintson az „Elküldés” gombra.
+                </para>
+            </listitem>
+            <listitem>
+                <para>
+                    A fő beállítások ablakra történő átirányítás után figyelje meg, hogy az új
+projekt megjelenik a projektlistában a képernyő közepén.
+                </para>
+            </listitem>
+        </orderedlist>
+        <note><para>Esetlegesen regisztráljon további projekteket az előző lépések
+megismétlésével.</para></note>
+    </section>
+    <section>
+        <title>Új feladat létrehozása</title>
+        <para>Ez a sablon azt mutatja be, hogy hogyan lehet új feladatot létrehozni az
+azon történő munkaidő regisztrálásához.</para>
+        <note>
+            <para>A feladatok elérhetők az összes projekthez.</para>
+        </note>
+        <orderedlist>
+            <listitem><para>Az időelszámolás menüben válassza ki a „Beállítások” menüpontot.</para></listitem>
+            <listitem>
+                <para>
+                    Kattintson a „Feladat hozzáadása” gombra az oldalsávon lévő műveletek
+listában, amely a képernyő bal oldalán található.
+                </para>
+            </listitem>
+            <listitem>
+                <para>
+                    Az új képernyőn töltse ki a feladat nevét (győződjön meg arról, hogy az
+állapot „érvényes” értékre van-e állítva).
+                </para>
+            </listitem>
+            <listitem>
+                <para>
+                    Kattintson az „Elküldés” gombra.
+                </para>
+            </listitem>
+            <listitem>
+                <para>
+                    A fő beállítások ablakra történő átirányítás után figyelje meg, hogy az új
+feladat megjelenik a feladatlistában a képernyő közepén.
+                </para>
+            </listitem>
+        </orderedlist>
+        <note><para>Esetlegesen regisztráljon további feladatokat az előző lépések
+megismétlésével.</para></note>
+    </section>
+    <section>
+        <title>Felhasználó hozzáadása</title>
+        <para>Ez a példa az mutatja be, hogy hogyan lehet egy ügyintézőt hozzáadni az
+időelszámoláshoz.</para>
+        <orderedlist>
+            <listitem><para>Az időelszámolás menüben válassza ki a „Beállítások” menüpontot.</para></listitem>
+            <listitem>
+                <para>
+                    Válasszon egy felhasználót az oldalsávon lévő műveletek listából, amely a
+képernyő bal oldalán található.
+                </para>
+            </listitem>
+            <listitem><para>Kattintson az „Új felhasználó” gombra.</para></listitem>
+            <listitem><para>Az új képernyőn töltse ki a megjegyzéseket, ha szükséges.</para></listitem>
+            <listitem>
+                <para>
+                    Ennél a példánál bejelölés nélkül fogjuk hagyni a „Túlóra megjelenítése” és
+a „Projektlétrehozás engedélyezése” jelölőnégyzeteket, és az alapértelmezett
+naptárat fogjuk használni.
+                </para>
+            </listitem>
+            <listitem>
+                <para>
+                    Az időszak táblázatban válasszon egy közeli dátumot az „Időszak kezdetéhez”
+(különben a felhasználónak ki kell majd töltenie számos időelszámolási
+feljegyzést a kikényszerítési irányelv miatt).
+                </para>
+            </listitem>
+            <listitem>
+                <para>
+                    Esetlegesen változtassa meg az „Időszak végét”, és hagyjon minden egyéb
+oszlopot alapértelmezetten (ennél a példánál).
+                </para>
+            </listitem>
+            <listitem>
+                <para>
+                    Kattintson az „Elküldés” gombra.
+                </para>
+            </listitem>
+            <listitem>
+                <para>
+                    A fő beállítások ablakra történő átirányítás után figyelje meg, hogy az új
+felhasználó megjelenik a felhasználólistában a képernyő közepén.
+                </para>
+            </listitem>
+        </orderedlist>
+    </section>
+    <section>
+        <title>Munkaidő regisztrálása</title>
+        <para>Ez a példa az mutatja be, hogy hogyan regisztrálni a munkaidőt az
+időelszámoláshoz.</para>
+        <note>
+            <para>
+                Az időelszámolásnál egy korábban hozzáadott felhasználó szükséges ehhez a
+példához. Ennek a felhasználónak legalább „csak olvasás” jogosultságok is
+szükségesek a „time_accouting” csoporton.
+            </para>
+        </note>
+        <orderedlist>
+            <listitem><para>Lépjen be az OTRS-be a megfelelő felhasználóval.</para></listitem>
+            <listitem><para>Az időelszámolás menüben válassza ki a „Szerkesztés” menüpontot.</para></listitem>
+            <listitem>
+                <para>
+                    Navigáljon a kívánt dátumra a bal és jobb nyilak használatával az
+oldalsávban lévő „Dátum navigáció” felületi elemen a képernyő bal oldalán (a
+navigáció automatikus a nyilakra kattintva). Alternatívaként egy dátum
+meghatározható a lenti vezérlőkkel is. Kattintson az „Elküldés” gombra a
+felületi elemen belül a kiválasztott dátumra ugráshoz.
+                </para>
+            </listitem>
+            <listitem>
+                <para>
+                    Válasszon egy projektet és egy feladatot a táblázat első sorában a képernyő
+középső részén.
+                </para>
+            </listitem>
+            <listitem>
+                <para>
+                    Gépeljen be egy megjegyzést az „Észrevételek” oszlopba.
+                </para>
+            </listitem>
+            <listitem>
+                <para>
+                    Most töltse ki a munkaidőt. Ezt a „Kezdés” és „Befejezés” idők beállításával
+lehet megtenni „ÓÓ:PP” formátumban, vagy regisztrálja az időszakot a
+megfelelő oszlopban.
+                </para>
+                <example>
+                    <title>Munkaidő beállítása két és fél órára</title>
+                    <para>
+                        Képzelje el, hogy a munkaidő 11:00 órától 13:30-ig tart. Állítson be 11:00
+órát a „Kezdés” oszlopba és 13:30-at a „Befejezés” oszlopba, vagy ennek
+alternatívájaként egyszerűen állítson be 2.5 értéket (két és fél óra) az
+„Időszak” oszlopba.
+                    </para>
+                </example>
+            </listitem>
+            <listitem>
+                <para>
+                    A munkaidő egy vagy több sorba történő beállítása után győződjön meg arról,
+hogy az „Összesen” sor (a táblázat láblécében) az elvárt értékkel
+rendelkezik-e, az összes munkaidő összegével. Ezután kattintson az
+„Elküldés” gombra a képernyő alsó részén.
+                </para>
+            </listitem>
+        </orderedlist>
+    </section>
+</chapter>
+
+
+
+
+
+
+
+
+
+<!--
+***************************************** Technical part ************************************
+-->
+<!-- ********************************* -->
+<!-- 7. Technical Implementation Detail -->
+<!-- ********************************* -->
+<!--
+<chapter>
+
+    <title>Technical Implementation Details</title>
+    <para></para>
+</chapter>
+ -->
+<!-- *********** -->
+<!-- 8. Filelist -->
+<!-- *********** -->
+<chapter>
+    <title>Fájllista</title>
+    <para>Ez a lista jeleníti meg az összes tartalmazott fájlt és a hivatkozott
+jogosultságokat.</para>
+    <para>$Filelist</para>
+</chapter>
+
+
+
+
+<!-- ******* -->
+<!-- 9. Test -->
+<!-- ******* -->
+<chapter>
+    <title>Tesztek</title>
+    <para>Ezt a modult a jelenlegi legkorszerűbb minőségben tesztelték.</para>
+    <section>
+        <title>Tesztesetek</title>
+        <para>
+            A csomag teszteléséhez kövesse a „Használat” szakaszban bemutatott
+példákat. Az összes tesztesetnek az elvárt eredményekkel kell visszatérnie,
+ahogy az egyes példák elején meg van határozva.
+        </para>
+    </section>
+    <section>
+        <title>Egységtesztek</title>
+        <para>
+            A modul minőségének biztosításához számos, úgynevezett egységtesztet hoztak
+létre a modul funkcionalitásainak teszteléséhez. Ezek az egységtesztek
+parancssoron keresztül futtathatók.
+        </para>
+        <para>
+            FIGYELEM: soha ne futtasson egységteszteket egy termelési rendszeren, mivel
+a rendszerhez hozzáadott tesztadatok többé nem lesznek
+eltávolíthatók. Mindig tesztrendszert használjon.
+        </para>
+        <para>A csomagra jellemző egységtesztek futtatása</para>
+        <para>
+            Csak azon egységtesztek futtatásához, amelyet ez a csomag fog szállítani,
+használja a következő parancsot a parancssorban:
+        </para>
+        <screen>
+shell> perl bin/otrs.Console.pl Dev::UnitTest::Run --test TimeAccounting
+        </screen>
+        <para>Selenium egységtesztek</para>
+        <para>
+            A Selenium egységtesztek futtatásához győződjön meg arról, hogy
+rendelkezik-e a teljes Selenium környezet beállításával a Kernel/Config.pm
+fájlban, és van-e futó WebDriver illesztőprogramja.
+        </para>
+        <screen>
+shell> perl bin/otrs.Console.pl Dev::UnitTest::Run --test AgentTimeAccountingEdit:AgentTimeAccountingOverview:AgentTimeAccountingReporting:
+AgentTimeAccountingSetting:AgentTimeAccountingView
+shell> perl bin/otrs.Console.pl Dev::UnitTest::Run --test Notification/TimeAccounting:ToolBar/IncompleteWorkingDays
+         </screen>
+         <para>Az összes elérhető egységteszt futtatása</para>
+         <para>
+             Az összes elérhető egységteszt futtatásához használja a következő parancsot
+a parancssorban:
+         </para>
+        <screen>shell> perl bin/otrs.Console.pl Dev::UnitTest::Run</screen>
+    </section>
+</chapter>
+
+
+
+
+<!-- ************* -->
+<!-- 10. Changelog -->
+<!-- ************* -->
+<chapter>
+    <title>Változásnapló</title>
+    <para>$ChangeLog</para>
+</chapter>
+
+</book>

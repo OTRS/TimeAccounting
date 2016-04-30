@@ -1,0 +1,1333 @@
+# Hungarian translation of doc-TimeAccounting.
+# Copyright (C) 2016 OTRS AG, http://otrs.com/
+# This file is distributed under the same license as the doc-TimeAccounting package.
+#
+# Balázs Úr <urbalazs@gmail.com>, 2016.
+msgid ""
+msgstr ""
+"Project-Id-Version: TimeAccounting 5.0.10\n"
+"POT-Creation-Date: 2016-04-30 23:44+0200\n"
+"PO-Revision-Date: 2016-04-30 23:49+0100\n"
+"Last-Translator: Balázs Úr <urbalazs@gmail.com>\n"
+"Language-Team: Hungarian <forditas@otrs-megoldasok.hu>\n"
+"Language: hu\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Generator: Lokalize 2.0\n"
+
+#. type: Attribute 'lang' of: <book>
+#: en/TimeAccounting.xml:5
+msgid "en"
+msgstr "hu"
+
+#. type: Content of: <book><bookinfo><title>
+#: en/TimeAccounting.xml:11
+msgid "$Name"
+msgstr "$Name"
+
+#. type: Content of: <book><bookinfo>
+#: en/TimeAccounting.xml:12
+msgid ""
+"<edition>$Description Version $Version</edition> <copyright> <year>"
+"$YearStamp</year> <holder>$Vendor, $URL</holder> </copyright> <date>"
+"$DateStamp</date>"
+msgstr ""
+"<edition>$Description, verzió: $Version</edition> <copyright> <year>"
+"$YearStamp</year> <holder>$Vendor, $URL</holder> </copyright> <date>"
+"$DateStamp</date>"
+
+#. type: Content of: <book><bookinfo><legalnotice><para>
+#: en/TimeAccounting.xml:19
+msgid "$License"
+msgstr "$License"
+
+#. type: Content of: <book><bookinfo><legalnotice><para>
+#: en/TimeAccounting.xml:21
+msgid ""
+"This work is copyrighted by $Vendor, Norsk-Data-Str. 1, 61352 Bad Homburg, "
+"Germany."
+msgstr ""
+"Ez a mű az alábbi gyártó szerzői joga alatt áll: $Vendor, Norsk-Data-Str. 1, "
+"61352 Bad Homburg, Németország."
+
+#. type: Content of: <book><bookinfo><legalnotice><para>
+#: en/TimeAccounting.xml:23
+msgid "Build Date: $DateStamp"
+msgstr "Összeállítás dátuma: $DateStamp"
+
+#. type: Content of: <book><preface><title>
+#: en/TimeAccounting.xml:35
+msgid "Preface"
+msgstr "Előszó"
+
+#. type: Content of: <book><preface><para>
+#: en/TimeAccounting.xml:37
+msgid ""
+"TimeAccounting module extends OTRS framework enabling the track of time that "
+"agents spend on different tasks, vacations, overtime and sick leaves."
+msgstr ""
+"A TimeAccounting modul az OTRS keretrendszert bővíti ki lehetővé téve annak "
+"követését, hogy az ügyintézők mennyi időt töltenek a különböző feladatokkal, "
+"szabadságokkal, túlórákkal és betegszabadságokkal."
+
+#. type: Content of: <book><preface><para>
+#: en/TimeAccounting.xml:41
+msgid ""
+"If you have questions regarding this document or if you need further "
+"information, please log in to our customer portal at portal.otrs.com with "
+"your OTRS ID and create a ticket.  You do not have an OTRS ID yet? Register "
+"<ulink url=\"https://portal.otrs.com/otrs/customer.pl#Signup\">here for "
+"free</ulink>."
+msgstr ""
+"Ha kérdései vannak ezzel a dokumentummal kapcsolatban, vagy további "
+"információkra van szüksége, akkor lépjen be az OTRS azonosítójával a portal."
+"otrs.com címen lévő ügyfélportálunkra, és hozzon létre egy jegyet. Még nincs "
+"OTRS azonosítója? Regisztráljon <ulink url=\"https://portal.otrs.com/otrs/"
+"customer.pl#Signup\">itt ingyenesen</ulink>."
+
+#. type: Content of: <book><chapter><title>
+#: en/TimeAccounting.xml:51
+msgid "Feature List"
+msgstr "Funkciólista"
+
+#. type: Content of: <book><chapter><section><title>
+#: en/TimeAccounting.xml:53
+msgid "Time Accounting Overview"
+msgstr "Időelszámolás áttekintése"
+
+#. type: Content of: <book><chapter><section><para>
+#: en/TimeAccounting.xml:55
+msgid ""
+"It displays for the current logged user a summary of its own working hours "
+"per day (month based), vacation days summary, sick leave days, and the "
+"distribution of its working hours on each project and tasks."
+msgstr ""
+"Megjeleníti a jelenleg bejelentkezett felhasználónak a saját napi munkaideje "
+"összegzését (havi alapon), a szabadságon eltöltött napok és a "
+"betegszabadságok eltöltött napok összegzését, valamint az egyes projekteken "
+"és feladatokon vett munkaidő eloszlását."
+
+#. type: Content of: <book><chapter><section><title>
+#: en/TimeAccounting.xml:61
+msgid "Time Accounting Edit"
+msgstr "Időelszámolás szerkesztése"
+
+#. type: Content of: <book><chapter><section><para>
+#: en/TimeAccounting.xml:63
+msgid ""
+"Allows to set working hours, vacation, sick leaves and overtime leaves on a "
+"day basis.  The working hours can be set by defining the start and the end "
+"dates, or a period of time."
+msgstr ""
+"Lehetővé teszi a munkaidő, szabadságok, betegszabadságok és csúsztatások "
+"beállítását napi alapokon. A munkaidő beállítható a kezdési és a befejezési "
+"dátumok vagy egy időszak meghatározásával."
+
+#. type: Content of: <book><chapter><section><para>
+#: en/TimeAccounting.xml:68
+msgid ""
+"The working hours can be registered per project and task. Pre-filled "
+"selection lists are used to speedup the register process and prevent typos."
+msgstr ""
+"A munkaidő regisztrálható projektenként vagy feladatonként. Előre kitöltött "
+"választólisták használhatók a regisztrálási folyamat gyorsításához és a "
+"helyesírási hibák kiküszöböléséhez."
+
+#. type: Content of: <book><chapter><section><title>
+#: en/TimeAccounting.xml:73
+msgid "Time Accounting Reporting"
+msgstr "Időelszámolás jelentése"
+
+#. type: Content of: <book><chapter><section><para>
+#: en/TimeAccounting.xml:75
+msgid ""
+"Designed for administrators and managers, shows a monthly based timing "
+"information summary for each registered user (working hours, overtime leave, "
+"sick leave and vacations), as well as timing information summary for each "
+"project and tasks (the time spend on each)."
+msgstr ""
+"Adminisztrátoroknak és menedzsereknek tervezve jeleníti meg a havi alapú "
+"időszámítási információk összegzését az egyes regisztrált felhasználókhoz "
+"(munkaidő, csúsztatások, betegszabadságok és szabadságok). Valamint "
+"megjeleníti az időszámítási információk összegzését az egyes projektekhez és "
+"feladatokhoz is (a velük eltöltött időt)."
+
+#. type: Content of: <book><chapter><section><title>
+#: en/TimeAccounting.xml:82
+msgid "Time Accounting Settings"
+msgstr "Időelszámolás beállítások"
+
+#. type: Content of: <book><chapter><section><para>
+#: en/TimeAccounting.xml:84
+msgid ""
+"Also designed for administrators and managers, it allows the creation of "
+"multiple projects and tasks. It also enables the assignment of the users "
+"defining their working calendar, working periods (begin date, end date, "
+"number of vacation days, hours per week and allowed overtime hours)."
+msgstr ""
+"Szintén adminisztrátoroknak és menedzsereknek tervezve teszi lehetővé több "
+"projekt és feladat létrehozását. Megengedi továbbá a felhasználók beosztását "
+"saját naptárak és munkaidőszakok (kezdési dátum, befejezési dátum, "
+"szabadságon eltöltött napok száma, heti órák és megengedett túlórák) "
+"meghatározásával."
+
+#. type: Content of: <book><chapter><section><title>
+#: en/TimeAccounting.xml:91
+msgid "Time Accounting Statistics"
+msgstr "Időelszámolás statisztikák"
+
+#. type: Content of: <book><chapter><section><para>
+#: en/TimeAccounting.xml:93
+msgid ""
+"A new statistics type has been added to show working hours based on projects "
+"or users."
+msgstr ""
+"Egy új statisztikatípus került hozzáadásra a munkaidő megjelenítéséhez "
+"projektek vagy felhasználók alapján."
+
+#. type: Content of: <book><chapter><section><title>
+#: en/TimeAccounting.xml:97
+msgid "Time Accounting Notification"
+msgstr "Időelszámolás értesítés"
+
+#. type: Content of: <book><chapter><section><para>
+#: en/TimeAccounting.xml:99
+msgid ""
+"A notification reminder for agents to insert their working hours (can be "
+"configured in SysConfig to define the maximum days without entry to display "
+"the notification)."
+msgstr ""
+"Egy emlékeztető értesítés az ügyintézőknek a munkaidejük beillesztéséhez (a "
+"rendszerbeállításokban állítható be a legtöbb bejegyzés nélküli nap "
+"meghatározása az értesítés megjelenítéséhez)."
+
+#. type: Content of: <book><chapter><section><title>
+#: en/TimeAccounting.xml:104
+msgid "Toolbar Shortcut For Days Without Time Accounting Entry"
+msgstr "Eszköztárikon az időelszámolási bejegyzés nélküli napokhoz"
+
+#. type: Content of: <book><chapter><section><para>
+#: en/TimeAccounting.xml:106
+msgid ""
+"A counter displaying the number of days without registering the working "
+"hours can be set in the upper part of the screen (similar to Locked tickets "
+"counter or Responsible tickets counter). When clicking on the icon, agents "
+"are redirected to the Time Accounting Edit screen, to fill the missing "
+"records."
+msgstr ""
+"A munkaidő regisztrálása nélküli napok számát megjelenítő számláló állítható "
+"be a képernyő felső részén (hasonlóan a zárolt jegyek vagy a felelős jegyek "
+"számlálóihoz). Az ikonra kattintva az ügyintézők átirányításra kerülnek az "
+"időelszámolás szerkesztése képernyőre a hiányzó feljegyzések kitöltéséhez."
+
+#. type: Content of: <book><chapter><section><title>
+#: en/TimeAccounting.xml:113
+msgid "Time Accounting Registration Enforcement"
+msgstr "Időelszámolás regisztrálásának kikényszerítése"
+
+#. type: Content of: <book><chapter><section><para>
+#: en/TimeAccounting.xml:115
+msgid ""
+"Configurable by a SysConfig setting, the system can be blocked, not allowing "
+"to perform any actions, if a certain number of days without time accounting "
+"registers has been passed (agents are redirected to Time Accounting Edit "
+"screen to fill the missing records)."
+msgstr ""
+"Egy rendszerbeállítási lehetőséggel beállítható, hogy a rendszer blokkolva "
+"legyen, ne tegye lehetővé semmilyen művelet végrehajtását, ha az "
+"időelszámolási regisztrálások nélküli napoknak egy bizonyos számát "
+"meghaladják (az ügyintézők átirányításra kerülnek az időelszámolás "
+"szerkesztése képernyőre a hiányzó feljegyzések kitöltéséhez)."
+
+#. type: Content of: <book><chapter><section><title>
+#: en/TimeAccounting.xml:122
+msgid "Mass Entries"
+msgstr "Tömeges bejegyzések"
+
+#. type: Content of: <book><chapter><section><para>
+#: en/TimeAccounting.xml:124
+msgid ""
+"Disabled by default, this feature allows agents to set special time "
+"accounting information (such as: on vacation, overtime leaves and sick "
+"leave) to multiple days at the same time."
+msgstr ""
+"Alapértelmezett le van tiltva. Ez a funkció lehetővé teszi az ügyintézőknek "
+"a különleges időelszámolási információk (mint például szabadság, csúsztatás "
+"és betegszabadság) beállítását egyszerre több napra."
+
+#. type: Content of: <book><chapter><title>
+#: en/TimeAccounting.xml:135
+msgid "System Requirements"
+msgstr "Rendszerkövetelmények"
+
+#. type: Content of: <book><chapter><section><title>
+#: en/TimeAccounting.xml:137
+msgid "Framework"
+msgstr "Keretrendszer"
+
+#. type: Content of: <book><chapter><section><para>
+#: en/TimeAccounting.xml:138
+msgid "The following OTRS framework is required:"
+msgstr "A következő OTRS keretrendszer szükséges:"
+
+#. type: Content of: <book><chapter><section><para>
+#: en/TimeAccounting.xml:139
+msgid "$Framework"
+msgstr "$Framework"
+
+#. type: Content of: <book><chapter><section><title>
+#: en/TimeAccounting.xml:142
+msgid "Packages"
+msgstr "Csomagok"
+
+#. type: Content of: <book><chapter><section><para>
+#: en/TimeAccounting.xml:143
+msgid "The following packages are required:"
+msgstr "A következő csomagok szükségesek:"
+
+#. type: Content of: <book><chapter><section><para>
+#: en/TimeAccounting.xml:144
+msgid "$PackageRequired"
+msgstr "$PackageRequired"
+
+#. type: Content of: <book><chapter><section><title>
+#: en/TimeAccounting.xml:147
+msgid "Operating System"
+msgstr "Operációs rendszer"
+
+#. type: Content of: <book><chapter><section><para>
+#: en/TimeAccounting.xml:148
+msgid "This package requires one of the following operating systems:"
+msgstr "Ez a csomag a következő operációs rendszerek egyikét igényli:"
+
+#. type: Content of: <book><chapter><section><para>
+#: en/TimeAccounting.xml:149
+msgid "$OS"
+msgstr "$OS"
+
+#. type: Content of: <book><chapter><section><title>
+#: en/TimeAccounting.xml:152
+msgid "Third Party Software"
+msgstr "Harmadik féltől származó szoftver"
+
+#. type: Content of: <book><chapter><section><para>
+#: en/TimeAccounting.xml:153
+msgid "This third party software is required to use this package:"
+msgstr ""
+"Ez a harmadik féltől származó szoftver szükséges a csomag használatához:"
+
+#. type: Content of: <book><chapter><section><itemizedlist><listitem><para>
+#: en/TimeAccounting.xml:156
+msgid "None."
+msgstr "Nincs."
+
+#. type: Content of: <book><chapter><title>
+#: en/TimeAccounting.xml:166
+msgid "Installation"
+msgstr "Telepítés"
+
+#. type: Content of: <book><chapter><para>
+#: en/TimeAccounting.xml:168
+msgid "The following instructions explain how to install the package."
+msgstr ""
+"A következő lépések elmagyarázzák, hogy hogyan kell telepíteni a csomagot."
+
+#. type: Content of: <book><chapter><para>
+#: en/TimeAccounting.xml:171
+msgid ""
+"After having successfully completed the installation, please follow the "
+"instructions provided in the chapter &quot;First steps&quot;."
+msgstr ""
+"Miután sikeresen befejezte a telepítést, kövesse az „Első lépések” "
+"fejezetben leírt utasításokat."
+
+#. type: Content of: <book><chapter><section><title>
+#: en/TimeAccounting.xml:175
+msgid "Admin Interface"
+msgstr "Adminisztrátori felület"
+
+#. type: Content of: <book><chapter><section><para>
+#: en/TimeAccounting.xml:177
+msgid ""
+"Please use the following URL to install the package utilizing the Admin "
+"Interface (please note that you need to be in the \"admin\" group)."
+msgstr ""
+"Használja a következő URL-t a csomag telepítéséhez, hogy használhassa az "
+"adminisztrátori felületet (ne feledje, hogy az „admin” csoportban kell "
+"lennie)."
+
+#. type: Content of: <book><chapter><section><para>
+#: en/TimeAccounting.xml:181
+msgid ""
+"<ulink url=\"http://localhost/otrs/index.pl?Action=AdminPackageManager\"> "
+"http://localhost/otrs/index.pl?Action=AdminPackageManager </ulink>"
+msgstr ""
+"<ulink url=\"http://localhost/otrs/index.pl?Action=AdminPackageManager\"> "
+"http://localhost/otrs/index.pl?Action=AdminPackageManager </ulink>"
+
+#. type: Content of: <book><chapter><section><title>
+#: en/TimeAccounting.xml:187
+msgid "Command Line"
+msgstr "Parancssor"
+
+#. type: Content of: <book><chapter><section><para>
+#: en/TimeAccounting.xml:189
+msgid ""
+"Whenever you cannot use the Admin Interface for whatever reason, you may use "
+"the following command line tool (\"bin/otrs.Console.pl Admin::Package::"
+"Install\") instead."
+msgstr ""
+"Ha esetleg valamilyen okból nem tudja használni az adminisztrátori "
+"felületet, akkor használhatja a következő parancssori eszközt helyette („bin/"
+"otrs.Console.pl Admin::Package::Install”)."
+
+#. type: Content of: <book><chapter><section><para><screen>
+#: en/TimeAccounting.xml:194
+#, no-wrap
+msgid ""
+"shell> bin/otrs.Console.pl Admin::Package::Install"
+" /path/to/$Name-$Version.opm\n"
+"            "
+msgstr ""
+"shell> bin/otrs.Console.pl Admin::Package::Install"
+" /path/to/$Name-$Version.opm\n"
+"            "
+
+#. type: Content of: <book><chapter><section><para>
+#: en/TimeAccounting.xml:193
+msgid "<placeholder type=\"screen\" id=\"0\"/>"
+msgstr "<placeholder type=\"screen\" id=\"0\"/>"
+
+#. type: Content of: <book><chapter><title>
+#: en/TimeAccounting.xml:204
+msgid "Configuration"
+msgstr "Beállítás"
+
+#. type: Content of: <book><chapter><para>
+#: en/TimeAccounting.xml:205
+msgid ""
+"The package can be configured via the SysConfig in the Admin Interface. The "
+"following configuration options are available:"
+msgstr ""
+"A csomag a rendszerbeállításokon keresztül állítható be az adminisztrátori "
+"felületen. A következő beállítási lehetőségek érhetők el:"
+
+#. type: Content of: <book><chapter><section><title>
+#: en/TimeAccounting.xml:207
+msgid "Frontend::Module###AgentTimeAccountingEdit."
+msgstr "Frontend::Module###AgentTimeAccountingEdit."
+
+#. type: Content of: <book><chapter><section><para>
+#: en/TimeAccounting.xml:208 en/TimeAccounting.xml:213
+#: en/TimeAccounting.xml:218 en/TimeAccounting.xml:223
+#: en/TimeAccounting.xml:228
+msgid "Group: TimeAccounting, Subgroup: Frontend::Agent::ModuleRegistration."
+msgstr ""
+"Csoport: TimeAccounting, alcsoport: Frontend::Agent::ModuleRegistration."
+
+#. type: Content of: <book><chapter><section><para>
+#: en/TimeAccounting.xml:209 en/TimeAccounting.xml:214
+#: en/TimeAccounting.xml:219 en/TimeAccounting.xml:224
+#: en/TimeAccounting.xml:229
+msgid "Frontend module registration for the agent interface."
+msgstr "Előtétprogram-modul regisztráció az ügyintézői felülethez."
+
+#. type: Content of: <book><chapter><section><title>
+#: en/TimeAccounting.xml:212
+msgid "Frontend::Module###AgentTimeAccountingOverview."
+msgstr "Frontend::Module###AgentTimeAccountingOverview."
+
+#. type: Content of: <book><chapter><section><title>
+#: en/TimeAccounting.xml:217
+msgid "Frontend::Module###AgentTimeAccountingReporting."
+msgstr "Frontend::Module###AgentTimeAccountingReporting."
+
+#. type: Content of: <book><chapter><section><title>
+#: en/TimeAccounting.xml:222
+msgid "Frontend::Module###AgentTimeAccountingSetting."
+msgstr "Frontend::Module###AgentTimeAccountingSetting."
+
+#. type: Content of: <book><chapter><section><title>
+#: en/TimeAccounting.xml:227
+msgid "Frontend::Module###AgentTimeAccountingView."
+msgstr "Frontend::Module###AgentTimeAccountingView."
+
+#. type: Content of: <book><chapter><section><title>
+#: en/TimeAccounting.xml:232
+msgid "Frontend::NotifyModule###888-TimeAccounting."
+msgstr "Frontend::NotifyModule###888-TimeAccounting."
+
+#. type: Content of: <book><chapter><section><para>
+#: en/TimeAccounting.xml:233
+msgid "Group: TimeAccounting, Subgroup: Frontend::Agent::ModuleNotify."
+msgstr "Csoport: TimeAccounting, alcsoport: Frontend::Agent::ModuleNotify."
+
+#. type: Content of: <book><chapter><section><para>
+#: en/TimeAccounting.xml:234
+msgid ""
+"This notification module gives a warning if there are too many incomplete "
+"working days."
+msgstr ""
+"Ez az értesítési modul egy figyelmeztetést ad, ha túl sok befejezetlen "
+"munkanap található."
+
+#. type: Content of: <book><chapter><section><title>
+#: en/TimeAccounting.xml:237
+msgid "Frontend::ToolBarModule###201-TimeAccounting::IncompleteWorkingDays."
+msgstr "Frontend::ToolBarModule###201-TimeAccounting::IncompleteWorkingDays."
+
+#. type: Content of: <book><chapter><section><para>
+#: en/TimeAccounting.xml:238
+msgid "Group: TimeAccounting, Subgroup: Frontend::Agent::ToolBarModule."
+msgstr "Csoport: TimeAccounting, alcsoport: Frontend::Agent::ToolBarModule."
+
+#. type: Content of: <book><chapter><section><para>
+#: en/TimeAccounting.xml:239
+msgid ""
+"Agent interface notification module to see the number of incomplete working "
+"days for the user."
+msgstr ""
+"Ügyintézői felület értesítési modul a felhasználó befejezetlen munkanapjai "
+"számának megtekintéséhez."
+
+#. type: Content of: <book><chapter><section><title>
+#: en/TimeAccounting.xml:242
+msgid "PreApplicationModule###AgentTimeAccounting."
+msgstr "PreApplicationModule###AgentTimeAccounting."
+
+#. type: Content of: <book><chapter><section><para>
+#: en/TimeAccounting.xml:243 en/TimeAccounting.xml:338
+#: en/TimeAccounting.xml:343 en/TimeAccounting.xml:348
+msgid "Group: TimeAccounting, Subgroup: Frontend::Agent."
+msgstr "Csoport: TimeAccounting, alcsoport: Frontend::Agent."
+
+#. type: Content of: <book><chapter><section><para>
+#: en/TimeAccounting.xml:244
+msgid "This module forces inserts in TimeAccounting."
+msgstr "Ez a modul kikényszeríti a beszúrásokat az időelszámolásban."
+
+#. type: Content of: <book><chapter><section><title>
+#: en/TimeAccounting.xml:247
+msgid "Stats::DynamicObjectRegistration###TimeAccounting."
+msgstr "Stats::DynamicObjectRegistration###TimeAccounting."
+
+#. type: Content of: <book><chapter><section><para>
+#: en/TimeAccounting.xml:248
+msgid "Group: TimeAccounting, Subgroup: Core::Stats."
+msgstr "Csoport: TimeAccounting, alcsoport: Core::Stats."
+
+#. type: Content of: <book><chapter><section><para>
+#: en/TimeAccounting.xml:249
+msgid ""
+"Determines if the statistics module may generate time accounting information."
+msgstr ""
+"Meghatározza, hogy a statisztika modul előállíthat-e időelszámolási "
+"információkat."
+
+#. type: Content of: <book><chapter><section><title>
+#: en/TimeAccounting.xml:252
+msgid "TimeAccounting::ActionListConstraints."
+msgstr "TimeAccounting::ActionListConstraints."
+
+#. type: Content of: <book><chapter><section><para>
+#: en/TimeAccounting.xml:253 en/TimeAccounting.xml:258
+#: en/TimeAccounting.xml:263 en/TimeAccounting.xml:323
+#: en/TimeAccounting.xml:333 en/TimeAccounting.xml:353
+#: en/TimeAccounting.xml:358 en/TimeAccounting.xml:363
+#: en/TimeAccounting.xml:368
+msgid ""
+"Group: TimeAccounting, Subgroup: Frontend::Agent::TimeAccounting::ViewEdit."
+msgstr ""
+"Csoport: TimeAccounting, alcsoport: Frontend::Agent::TimeAccounting::"
+"ViewEdit."
+
+#. type: Content of: <book><chapter><section><para>
+#: en/TimeAccounting.xml:254
+msgid ""
+"Regular expressions for constraining action list according to selected "
+"project. Key contains regular expression for project(s), content contains "
+"regular expressions for action(s)."
+msgstr ""
+"Reguláris kifejezések a kijelölt projekt szerinti korlátozó művelet "
+"listájához. A kulcs a projektekhez tartalmaz reguláris kifejezést, a "
+"tartalom pedig a műveletekhez."
+
+#. type: Content of: <book><chapter><section><title>
+#: en/TimeAccounting.xml:257
+msgid "TimeAccounting::ActiveFilter."
+msgstr "TimeAccounting::ActiveFilter."
+
+#. type: Content of: <book><chapter><section><para>
+#: en/TimeAccounting.xml:259
+msgid ""
+"If enabled, the filter for the previous projects is active by default if "
+"there are the previous projects. It could be used only if "
+"EnableAutoCompletion and TimeAccounting::UseFilter are enabled."
+msgstr ""
+"Ha engedélyezve van, akkor az előző projektek szűrője alapértelmezetten be "
+"van kapcsolva, ha vannak előző projektek. Csak akkor használható, ha az "
+"EnableAutoCompletion és a TimeAccounting::UseFilter engedélyezve van."
+
+#. type: Content of: <book><chapter><section><title>
+#: en/TimeAccounting.xml:262
+msgid "TimeAccounting::AllowMassEntryForUser."
+msgstr "TimeAccounting::AllowMassEntryForUser."
+
+#. type: Content of: <book><chapter><section><para>
+#: en/TimeAccounting.xml:264
+msgid ""
+"If enabled, the user is allowed to enter &quot;on vacation leave&quot;, "
+"&quot;on sick leave&quot; and &quot;on overtime leave&quot; to multiple "
+"dates at once."
+msgstr ""
+"Ha engedélyezve van, akkor a felhasználónak megengedett egyszerre több "
+"dátumhoz „szabadságon”, „betegszabadságon” és „csúsztatáson” érték megadása."
+
+#. type: Content of: <book><chapter><section><title>
+#: en/TimeAccounting.xml:267
+msgid "TimeAccounting::DefaultActionName."
+msgstr "TimeAccounting::DefaultActionName."
+
+#. type: Content of: <book><chapter><section><para>
+#: en/TimeAccounting.xml:268 en/TimeAccounting.xml:273
+#: en/TimeAccounting.xml:278 en/TimeAccounting.xml:283
+#: en/TimeAccounting.xml:288 en/TimeAccounting.xml:293
+#: en/TimeAccounting.xml:298 en/TimeAccounting.xml:303
+#: en/TimeAccounting.xml:308 en/TimeAccounting.xml:313
+#: en/TimeAccounting.xml:318
+msgid ""
+"Group: TimeAccounting, Subgroup: Frontend::Agent::TimeAccounting::"
+"ViewSetting."
+msgstr ""
+"Csoport: TimeAccounting, alcsoport: Frontend::Agent::TimeAccounting::"
+"ViewSetting."
+
+#. type: Content of: <book><chapter><section><para>
+#: en/TimeAccounting.xml:269
+msgid "Default name for new actions."
+msgstr "Alapértelmezett név az új műveletekhez."
+
+#. type: Content of: <book><chapter><section><title>
+#: en/TimeAccounting.xml:272
+msgid "TimeAccounting::DefaultActionStatus."
+msgstr "TimeAccounting::DefaultActionStatus."
+
+#. type: Content of: <book><chapter><section><para>
+#: en/TimeAccounting.xml:274
+msgid "Default status for new actions."
+msgstr "Alapértelmezett állapot az új műveletekhez."
+
+#. type: Content of: <book><chapter><section><title>
+#: en/TimeAccounting.xml:277
+msgid "TimeAccounting::DefaultProjectName."
+msgstr "TimeAccounting::DefaultProjectName."
+
+#. type: Content of: <book><chapter><section><para>
+#: en/TimeAccounting.xml:279
+msgid "Default name for new projects."
+msgstr "Alapértelmezett név az új projektekhez."
+
+#. type: Content of: <book><chapter><section><title>
+#: en/TimeAccounting.xml:282
+msgid "TimeAccounting::DefaultProjectStatus."
+msgstr "TimeAccounting::DefaultProjectStatus."
+
+#. type: Content of: <book><chapter><section><para>
+#: en/TimeAccounting.xml:284
+msgid "Default status for new projects."
+msgstr "Alapértelmezett állapot az új projektekhez."
+
+#. type: Content of: <book><chapter><section><title>
+#: en/TimeAccounting.xml:287
+msgid "TimeAccounting::DefaultUserDateEnd."
+msgstr "TimeAccounting::DefaultUserDateEnd."
+
+#. type: Content of: <book><chapter><section><para>
+#: en/TimeAccounting.xml:289
+msgid "Default setting for date end."
+msgstr "Alapértelmezett beállítás a befejezési dátumhoz."
+
+#. type: Content of: <book><chapter><section><title>
+#: en/TimeAccounting.xml:292
+msgid "TimeAccounting::DefaultUserDateStart."
+msgstr "TimeAccounting::DefaultUserDateStart."
+
+#. type: Content of: <book><chapter><section><para>
+#: en/TimeAccounting.xml:294
+msgid "Default setting for date start."
+msgstr "Alapértelmezett beállítás a kezdési dátumhoz."
+
+#. type: Content of: <book><chapter><section><title>
+#: en/TimeAccounting.xml:297
+msgid "TimeAccounting::DefaultUserDescription."
+msgstr "TimeAccounting::DefaultUserDescription."
+
+#. type: Content of: <book><chapter><section><para>
+#: en/TimeAccounting.xml:299
+msgid "Default setting for description."
+msgstr "Alapértelmezett beállítás a leíráshoz."
+
+#. type: Content of: <book><chapter><section><title>
+#: en/TimeAccounting.xml:302
+msgid "TimeAccounting::DefaultUserLeaveDays."
+msgstr "TimeAccounting::DefaultUserLeaveDays."
+
+#. type: Content of: <book><chapter><section><para>
+#: en/TimeAccounting.xml:304
+msgid "Default setting for leave days."
+msgstr "Alapértelmezett beállítás a szabadság napjaihoz."
+
+#. type: Content of: <book><chapter><section><title>
+#: en/TimeAccounting.xml:307
+msgid "TimeAccounting::DefaultUserOvertime."
+msgstr "TimeAccounting::DefaultUserOvertime."
+
+#. type: Content of: <book><chapter><section><para>
+#: en/TimeAccounting.xml:309
+msgid "Default setting for overtime."
+msgstr "Alapértelmezett beállítás a túlórához."
+
+#. type: Content of: <book><chapter><section><title>
+#: en/TimeAccounting.xml:312
+msgid "TimeAccounting::DefaultUserStatus."
+msgstr "TimeAccounting::DefaultUserStatus."
+
+#. type: Content of: <book><chapter><section><para>
+#: en/TimeAccounting.xml:314
+msgid "Default status for new users."
+msgstr "Alapértelmezett állapot az új felhasználókhoz."
+
+#. type: Content of: <book><chapter><section><title>
+#: en/TimeAccounting.xml:317
+msgid "TimeAccounting::DefaultUserWeeklyHours."
+msgstr "TimeAccounting::DefaultUserWeeklyHours."
+
+#. type: Content of: <book><chapter><section><para>
+#: en/TimeAccounting.xml:319
+msgid "Default setting for the standard weekly hours."
+msgstr "Alapértelmezett beállítás a szabványos heti munkaórákhoz."
+
+#. type: Content of: <book><chapter><section><title>
+#: en/TimeAccounting.xml:322
+msgid "TimeAccounting::EnableAutoCompletion."
+msgstr "TimeAccounting::EnableAutoCompletion."
+
+#. type: Content of: <book><chapter><section><para>
+#: en/TimeAccounting.xml:324
+msgid ""
+"If enabled, the dropdown elements in the edit screen are changed to "
+"modernized autocompletion fields."
+msgstr ""
+"Ha engedélyezve van, akkor a szerkesztési képernyőn lévő lenyíló elemek "
+"korszerűsített automatikusan kiegészített mezőkre lesznek megváltoztatva."
+
+#. type: Content of: <book><chapter><section><title>
+#: en/TimeAccounting.xml:327
+msgid "TimeAccounting::Frontend::ReportingProject###ShowOnlyActiveUsers."
+msgstr "TimeAccounting::Frontend::ReportingProject###ShowOnlyActiveUsers."
+
+#. type: Content of: <book><chapter><section><para>
+#: en/TimeAccounting.xml:328
+msgid ""
+"Group: TimeAccounting, Subgroup: Frontend::Agent::TimeAccoutning::"
+"ViewReportingProject."
+msgstr ""
+"Csoport: TimeAccounting, alcsoport: Frontend::Agent::TimeAccoutning::"
+"ViewReportingProject."
+
+#. type: Content of: <book><chapter><section><para>
+#: en/TimeAccounting.xml:329
+msgid ""
+"If enabled, only users that has added working time to the selected project "
+"are shown."
+msgstr ""
+"Ha engedélyezve van, akkor csak azok a felhasználók lesznek megjelenítve, "
+"akik munkaidőt adtak hozzá a kijelölt projekthez."
+
+#. type: Content of: <book><chapter><section><title>
+#: en/TimeAccounting.xml:332
+msgid "TimeAccounting::InputHoursWithoutStartEndTime."
+msgstr "TimeAccounting::InputHoursWithoutStartEndTime."
+
+#. type: Content of: <book><chapter><section><para>
+#: en/TimeAccounting.xml:334
+msgid "Specifies if working hours can be inserted without start and end times."
+msgstr ""
+"Megadja, hogy a munkaidő beszúrható-e kezdési és befejezési idők nélkül."
+
+#. type: Content of: <book><chapter><section><title>
+#: en/TimeAccounting.xml:337
+msgid "TimeAccounting::MaxAllowedInsertDays."
+msgstr "TimeAccounting::MaxAllowedInsertDays."
+
+#. type: Content of: <book><chapter><section><para>
+#: en/TimeAccounting.xml:339
+msgid "For how many days ago you can insert working units."
+msgstr "Hány nappal ezelőtthöz illeszthet be munkaegységeket."
+
+#. type: Content of: <book><chapter><section><title>
+#: en/TimeAccounting.xml:342
+msgid "TimeAccounting::MaxIntervalOfIncompleteDays."
+msgstr "TimeAccounting::MaxIntervalOfIncompleteDays."
+
+#. type: Content of: <book><chapter><section><para>
+#: en/TimeAccounting.xml:344
+msgid ""
+"Maximum number of working days after which the working units have to be "
+"inserted."
+msgstr ""
+"A munkanapok legnagyobb száma, amelyek után a munkaegységeket be kell szúrni."
+
+#. type: Content of: <book><chapter><section><title>
+#: en/TimeAccounting.xml:347
+msgid "TimeAccounting::MaxIntervalOfIncompleteDaysBeforeWarning."
+msgstr "TimeAccounting::MaxIntervalOfIncompleteDaysBeforeWarning."
+
+#. type: Content of: <book><chapter><section><para>
+#: en/TimeAccounting.xml:349
+msgid ""
+"Maximum number of working days without working units entry after which a "
+"warning will be shown."
+msgstr ""
+"A munkaegységek bejegyzés nélküli munkanapok legnagyobb száma, amelyek után "
+"egy figyelmeztetés lesz megjelenítve."
+
+#. type: Content of: <book><chapter><section><title>
+#: en/TimeAccounting.xml:352
+msgid "TimeAccounting::Project2RemarkRegExp."
+msgstr "TimeAccounting::Project2RemarkRegExp."
+
+#. type: Content of: <book><chapter><section><para>
+#: en/TimeAccounting.xml:354
+msgid ""
+"Defines the projects for which a remark is required. If the RegExp matches "
+"on the project, you have to insert a remark too. The RegExp use the smx "
+"parameter."
+msgstr ""
+"Meghatározza azokat a projekteket, amelyekhez észrevétel szükséges. Ha a "
+"reguláris kifejezés illeszkedik a projektre, akkor be kell illesztenie egy "
+"észrevételt is. A reguláris kifejezés az smx paramétert használja."
+
+#. type: Content of: <book><chapter><section><title>
+#: en/TimeAccounting.xml:357
+msgid "TimeAccounting::ProjectListConstraints."
+msgstr "TimeAccounting::ProjectListConstraints."
+
+#. type: Content of: <book><chapter><section><para>
+#: en/TimeAccounting.xml:359
+msgid ""
+"Regular expressions for constraining project list according to user groups. "
+"Key contains regular expression for project(s), content contains comma "
+"separated list of groups."
+msgstr ""
+"Reguláris kifejezések a felhasználócsoportok szerinti korlátozó projekt "
+"listájához. A kulcs a projektekhez tartalmaz reguláris kifejezést, a "
+"tartalom pedig csoportok vesszővel elválasztott listáját tartalmazza."
+
+#. type: Content of: <book><chapter><section><title>
+#: en/TimeAccounting.xml:362
+msgid "TimeAccounting::ReduceTime."
+msgstr "TimeAccounting::ReduceTime."
+
+#. type: Content of: <book><chapter><section><para>
+#: en/TimeAccounting.xml:364
+msgid ""
+"To use if some actions reduced the working hours (for example, if only half "
+"of the traveling time is paid Key =&gt; traveling; Content =&gt; 50)."
+msgstr ""
+"Akkor kell használni, ha néhány művelet csökkentette a munkaidőt (például ha "
+"csak az utazási idő fele van kifizetve: Kulcs =&gt; utazás; Tartalom =&gt; "
+"50)."
+
+#. type: Content of: <book><chapter><section><title>
+#: en/TimeAccounting.xml:367
+msgid "TimeAccounting::UseFilter."
+msgstr "TimeAccounting::UseFilter."
+
+#. type: Content of: <book><chapter><section><para>
+#: en/TimeAccounting.xml:369
+msgid ""
+"If enabled, the filter for the previous projects can be used instead two "
+"list of projects (last and all ones). It could be used only if "
+"TimeAccounting::EnableAutoCompletion is enabled."
+msgstr ""
+"Ha engedélyezve van, akkor az előző projektek szűrője használható a "
+"projektek két listája helyett (legutóbbi és összes). Csak akkor használható, "
+"ha a TimeAccounting::EnableAutoCompletion engedélyezve van."
+
+#. type: Content of: <book><chapter><title>
+#: en/TimeAccounting.xml:377
+msgid "Usage"
+msgstr "Használat"
+
+#. type: Content of: <book><chapter><para>
+#: en/TimeAccounting.xml:379
+msgid ""
+"This package adds a new group called \"time_accouting\". Depending on the "
+"permission over this group, agents are allowed to execute certain actions, "
+"in general having \"rw\" permission allows agents to use all screens while "
+"\"ro\" permissions only allows access to personal overview (Time Accounting "
+"Overview) and working hours registration (Time Accounting Edit)  screens."
+msgstr ""
+"Ez a csomag egy új „time_accouting” nevű csoportot ad hozzá. Ezen csoporton "
+"beállított jogosultságtól függően az ügyintézőknek lehetőségük van bizonyos "
+"műveletek végrehajtására. Általában az „írás-olvasás” jogosultság megléte "
+"teszi lehetővé az ügyintézőknek az összes képernyő használatát, míg a „csak "
+"olvasás” jogosultságok csak a személyes áttekintő (időelszámolás áttekintő) "
+"és a munkaidő regisztrálása (időelszámolás szerkesztése) képernyőkhöz teszik "
+"lehetővé a hozzáférést."
+
+#. type: Content of: <book><chapter><section><title>
+#: en/TimeAccounting.xml:386
+msgid "Create A New Project"
+msgstr "Új projekt létrehozása"
+
+#. type: Content of: <book><chapter><section><para>
+#: en/TimeAccounting.xml:387
+msgid ""
+"This example shows how to create a new project to register working hours on."
+msgstr ""
+"Ez a sablon azt mutatja be, hogy hogyan lehet új projektet létrehozni az "
+"azon történő munkaidő regisztrálásához."
+
+#. type: Content of: <book><chapter><section><note><para>
+#: en/TimeAccounting.xml:390
+msgid ""
+"For this and following examples a user with \"rw\" in \"time_accouting\" "
+"group is needed."
+msgstr ""
+"Ennél és a következő példáknál szükség van a „time_accouting” csoportban egy "
+"„írás-olvasás” jogosultsággal rendelkező felhasználóra."
+
+#. type: Content of: <book><chapter><section><orderedlist><listitem><para>
+#: en/TimeAccounting.xml:395 en/TimeAccounting.xml:429
+#: en/TimeAccounting.xml:460
+msgid "From Time Accounting menu choose \"Settings\"."
+msgstr "Az időelszámolás menüben válassza ki a „Beállítások” menüpontot."
+
+#. type: Content of: <book><chapter><section><orderedlist><listitem><para>
+#: en/TimeAccounting.xml:398
+msgid ""
+"Click on \"Add Project\" from the Actions list in the sidebar, located in "
+"the left part of the screen."
+msgstr ""
+"Kattintson a „Projekt hozzáadása” gombra az oldalsávon lévő műveletek "
+"listában, amely a képernyő bal oldalán található."
+
+#. type: Content of: <book><chapter><section><orderedlist><listitem><para>
+#: en/TimeAccounting.xml:404
+msgid ""
+"In the new screen fill the name of the project and a description if needed "
+"(make sure that status is set to \"valid\")."
+msgstr ""
+"Az új képernyőn töltse ki a projekt nevét és a leírást, ha szükséges "
+"(győződjön meg arról, hogy az állapot „érvényes” értékre van-e állítva)."
+
+#. type: Content of: <book><chapter><section><orderedlist><listitem><para>
+#: en/TimeAccounting.xml:410 en/TimeAccounting.xml:444
+#: en/TimeAccounting.xml:490
+msgid "Click on \"Submit\" button."
+msgstr "Kattintson az „Elküldés” gombra."
+
+#. type: Content of: <book><chapter><section><orderedlist><listitem><para>
+#: en/TimeAccounting.xml:415
+msgid ""
+"After the redirect to the main Settings window, notice that the new project "
+"appears in the project list in the center of the screen."
+msgstr ""
+"A fő beállítások ablakra történő átirányítás után figyelje meg, hogy az új "
+"projekt megjelenik a projektlistában a képernyő közepén."
+
+#. type: Content of: <book><chapter><section><note><para>
+#: en/TimeAccounting.xml:420
+msgid "Optionally register more projects, repeating the same steps."
+msgstr ""
+"Esetlegesen regisztráljon további projekteket az előző lépések "
+"megismétlésével."
+
+#. type: Content of: <book><chapter><section><title>
+#: en/TimeAccounting.xml:423
+msgid "Create A New Task"
+msgstr "Új feladat létrehozása"
+
+#. type: Content of: <book><chapter><section><para>
+#: en/TimeAccounting.xml:424
+msgid ""
+"This example shows how to create a new task to register working hours on."
+msgstr ""
+"Ez a sablon azt mutatja be, hogy hogyan lehet új feladatot létrehozni az "
+"azon történő munkaidő regisztrálásához."
+
+#. type: Content of: <book><chapter><section><note><para>
+#: en/TimeAccounting.xml:426
+msgid "Tasks are available to all projects."
+msgstr "A feladatok elérhetők az összes projekthez."
+
+#. type: Content of: <book><chapter><section><orderedlist><listitem><para>
+#: en/TimeAccounting.xml:432
+msgid ""
+"Click on \"Add Task\" from the Actions list in the sidebar, located in the "
+"left part of the screen."
+msgstr ""
+"Kattintson a „Feladat hozzáadása” gombra az oldalsávon lévő műveletek "
+"listában, amely a képernyő bal oldalán található."
+
+#. type: Content of: <book><chapter><section><orderedlist><listitem><para>
+#: en/TimeAccounting.xml:438
+msgid ""
+"In the new screen fill the name of the task (make sure that status is set to "
+"\"valid\")."
+msgstr ""
+"Az új képernyőn töltse ki a feladat nevét (győződjön meg arról, hogy az "
+"állapot „érvényes” értékre van-e állítva)."
+
+#. type: Content of: <book><chapter><section><orderedlist><listitem><para>
+#: en/TimeAccounting.xml:449
+msgid ""
+"After the redirect to the main Settings window, notice that the new task "
+"appears in the task list in the center of the screen."
+msgstr ""
+"A fő beállítások ablakra történő átirányítás után figyelje meg, hogy az új "
+"feladat megjelenik a feladatlistában a képernyő közepén."
+
+#. type: Content of: <book><chapter><section><note><para>
+#: en/TimeAccounting.xml:454
+msgid "Optionally register more tasks, repeating the same steps."
+msgstr ""
+"Esetlegesen regisztráljon további feladatokat az előző lépések "
+"megismétlésével."
+
+#. type: Content of: <book><chapter><section><title>
+#: en/TimeAccounting.xml:457
+msgid "Add a User"
+msgstr "Felhasználó hozzáadása"
+
+#. type: Content of: <book><chapter><section><para>
+#: en/TimeAccounting.xml:458
+msgid "This example shows how to add an agent to the time accounting."
+msgstr ""
+"Ez a példa az mutatja be, hogy hogyan lehet egy ügyintézőt hozzáadni az "
+"időelszámoláshoz."
+
+#. type: Content of: <book><chapter><section><orderedlist><listitem><para>
+#: en/TimeAccounting.xml:463
+msgid ""
+"Select a user from the Actions list in the sidebar, located in the left part "
+"of the screen."
+msgstr ""
+"Válasszon egy felhasználót az oldalsávon lévő műveletek listából, amely a "
+"képernyő bal oldalán található."
+
+#. type: Content of: <book><chapter><section><orderedlist><listitem><para>
+#: en/TimeAccounting.xml:467
+msgid "Click on \"New user\"."
+msgstr "Kattintson az „Új felhasználó” gombra."
+
+#. type: Content of: <book><chapter><section><orderedlist><listitem><para>
+#: en/TimeAccounting.xml:468
+msgid "In the new screen fill the comments if needed."
+msgstr "Az új képernyőn töltse ki a megjegyzéseket, ha szükséges."
+
+#. type: Content of: <book><chapter><section><orderedlist><listitem><para>
+#: en/TimeAccounting.xml:471
+msgid ""
+"For this example we will leave unchecked \"Show Overtime\" and \"Allow "
+"project creation\" and we will use the default calendar."
+msgstr ""
+"Ennél a példánál bejelölés nélkül fogjuk hagyni a „Túlóra megjelenítése” és "
+"a „Projektlétrehozás engedélyezése” jelölőnégyzeteket, és az alapértelmezett "
+"naptárat fogjuk használni."
+
+#. type: Content of: <book><chapter><section><orderedlist><listitem><para>
+#: en/TimeAccounting.xml:477
+msgid ""
+"In the period table choose a near date for \"Period Begin\" (otherwise the "
+"user will have to fill several time accounting records, due to the "
+"enforcement policy)."
+msgstr ""
+"Az időszak táblázatban válasszon egy közeli dátumot az „Időszak "
+"kezdetéhez” (különben a felhasználónak ki kell majd töltenie számos "
+"időelszámolási feljegyzést a kikényszerítési irányelv miatt)."
+
+#. type: Content of: <book><chapter><section><orderedlist><listitem><para>
+#: en/TimeAccounting.xml:484
+msgid ""
+"Optionally change the \"Period End\" and leave all other columns with the "
+"defaults (for this example)."
+msgstr ""
+"Esetlegesen változtassa meg az „Időszak végét”, és hagyjon minden egyéb "
+"oszlopot alapértelmezetten (ennél a példánál)."
+
+#. type: Content of: <book><chapter><section><orderedlist><listitem><para>
+#: en/TimeAccounting.xml:495
+msgid ""
+"After the redirect to the main Settings window, notice that the new user "
+"appears in the user list in the center of the screen."
+msgstr ""
+"A fő beállítások ablakra történő átirányítás után figyelje meg, hogy az új "
+"felhasználó megjelenik a felhasználólistában a képernyő közepén."
+
+#. type: Content of: <book><chapter><section><title>
+#: en/TimeAccounting.xml:502
+msgid "Register Your Working Hours"
+msgstr "Munkaidő regisztrálása"
+
+#. type: Content of: <book><chapter><section><para>
+#: en/TimeAccounting.xml:503
+msgid ""
+"This example shows how to register the working hours in time accounting."
+msgstr ""
+"Ez a példa az mutatja be, hogy hogyan regisztrálni a munkaidőt az "
+"időelszámoláshoz."
+
+#. type: Content of: <book><chapter><section><note><para>
+#: en/TimeAccounting.xml:506
+msgid ""
+"A previously added user to time accounting is needed for this example. This "
+"user needs also at least \"ro\" permissions over \"time_accouting\" group."
+msgstr ""
+"Az időelszámolásnál egy korábban hozzáadott felhasználó szükséges ehhez a "
+"példához. Ennek a felhasználónak legalább „csak olvasás” jogosultságok is "
+"szükségesek a „time_accouting” csoporton."
+
+#. type: Content of: <book><chapter><section><orderedlist><listitem><para>
+#: en/TimeAccounting.xml:511
+msgid "Login to OTRS with a proper user."
+msgstr "Lépjen be az OTRS-be a megfelelő felhasználóval."
+
+#. type: Content of: <book><chapter><section><orderedlist><listitem><para>
+#: en/TimeAccounting.xml:512
+msgid "From Time Accounting menu choose \"Edit\"."
+msgstr "Az időelszámolás menüben válassza ki a „Szerkesztés” menüpontot."
+
+#. type: Content of: <book><chapter><section><orderedlist><listitem><para>
+#: en/TimeAccounting.xml:515
+msgid ""
+"Navigate to the desired date by using the left and right arrows in the "
+"\"Date Navigation\" widget located in the sidebar, at the left part of the "
+"screen (navigation is automatic by clicking the arrows). Alternatively a "
+"date can be defined with the controls below. Click on \"Submit\" button "
+"within the widget to go to the selected date."
+msgstr ""
+"Navigáljon a kívánt dátumra a bal és jobb nyilak használatával az "
+"oldalsávban lévő „Dátum navigáció” felületi elemen a képernyő bal oldalán (a "
+"navigáció automatikus a nyilakra kattintva). Alternatívaként egy dátum "
+"meghatározható a lenti vezérlőkkel is. Kattintson az „Elküldés” gombra a "
+"felületi elemen belül a kiválasztott dátumra ugráshoz."
+
+#. type: Content of: <book><chapter><section><orderedlist><listitem><para>
+#: en/TimeAccounting.xml:524
+msgid ""
+"Select a project and task in the first row of the table in the central part "
+"of the screen."
+msgstr ""
+"Válasszon egy projektet és egy feladatot a táblázat első sorában a képernyő "
+"középső részén."
+
+#. type: Content of: <book><chapter><section><orderedlist><listitem><para>
+#: en/TimeAccounting.xml:530
+msgid "Type a comment in the \"Remarks\" column."
+msgstr "Gépeljen be egy megjegyzést az „Észrevételek” oszlopba."
+
+#. type: Content of: <book><chapter><section><orderedlist><listitem><para>
+#: en/TimeAccounting.xml:535
+msgid ""
+"Now fill the working hours. It can be done by setting the \"Start\" and \"End"
+"\" times in \"HH:MM\" format or register the period of time in the proper "
+"column."
+msgstr ""
+"Most töltse ki a munkaidőt. Ezt a „Kezdés” és „Befejezés” idők beállításával "
+"lehet megtenni „ÓÓ:PP” formátumban, vagy regisztrálja az időszakot a "
+"megfelelő oszlopban."
+
+#. type: Content of: <book><chapter><section><orderedlist><listitem><example><title>
+#: en/TimeAccounting.xml:539
+msgid "Setting Working Hours For Two And A Half Hours"
+msgstr "Munkaidő beállítása két és fél órára"
+
+#. type: Content of: <book><chapter><section><orderedlist><listitem><example><para>
+#: en/TimeAccounting.xml:541
+msgid ""
+"Lets think that the working hours took place from 11:00 AM to 01:30 PM.  Set "
+"11:00 for the \"Start\" column and 13:30 for the \"End\" column, or "
+"alternatively to this, just set 2.5 (two and a half hours) in the \"Period\" "
+"column."
+msgstr ""
+"Képzelje el, hogy a munkaidő 11:00 órától 13:30-ig tart. Állítson be 11:00 "
+"órát a „Kezdés” oszlopba és 13:30-at a „Befejezés” oszlopba, vagy ennek "
+"alternatívájaként egyszerűen állítson be 2.5 értéket (két és fél óra) az "
+"„Időszak” oszlopba."
+
+#. type: Content of: <book><chapter><section><orderedlist><listitem><para>
+#: en/TimeAccounting.xml:550
+msgid ""
+"After setting working hours in one or more rows, make sure the \"Total\" (in "
+"the table footer) has the expected value, the sum of all working hours. Then "
+"click on \"Submit\" button on the lower part of the screen."
+msgstr ""
+"A munkaidő egy vagy több sorba történő beállítása után győződjön meg arról, "
+"hogy az „Összesen” sor (a táblázat láblécében) az elvárt értékkel "
+"rendelkezik-e, az összes munkaidő összegével. Ezután kattintson az "
+"„Elküldés” gombra a képernyő alsó részén."
+
+#. type: Content of: <book><chapter><title>
+#: en/TimeAccounting.xml:575
+msgid "File List"
+msgstr "Fájllista"
+
+#. type: Content of: <book><chapter><para>
+#: en/TimeAccounting.xml:576
+msgid "This list shows all included files and the referring permissions."
+msgstr ""
+"Ez a lista jeleníti meg az összes tartalmazott fájlt és a hivatkozott "
+"jogosultságokat."
+
+#. type: Content of: <book><chapter><para>
+#: en/TimeAccounting.xml:577
+msgid "$Filelist"
+msgstr "$Filelist"
+
+#. type: Content of: <book><chapter><title>
+#: en/TimeAccounting.xml:584
+msgid "Tests"
+msgstr "Tesztek"
+
+#. type: Content of: <book><chapter><para>
+#: en/TimeAccounting.xml:585
+msgid "This module has been tested on the current state of the art in quality."
+msgstr "Ezt a modult a jelenlegi legkorszerűbb minőségben tesztelték."
+
+#. type: Content of: <book><chapter><section><title>
+#: en/TimeAccounting.xml:587
+msgid "Test Cases"
+msgstr "Tesztesetek"
+
+#. type: Content of: <book><chapter><section><para>
+#: en/TimeAccounting.xml:589
+msgid ""
+"To test this package please follow the examples described in the \"Usage\" "
+"section. All the tests cases should return the expected results defined at "
+"the beginning of each example."
+msgstr ""
+"A csomag teszteléséhez kövesse a „Használat” szakaszban bemutatott példákat. "
+"Az összes tesztesetnek az elvárt eredményekkel kell visszatérnie, ahogy az "
+"egyes példák elején meg van határozva."
+
+#. type: Content of: <book><chapter><section><title>
+#: en/TimeAccounting.xml:594
+msgid "Unit Tests"
+msgstr "Egységtesztek"
+
+#. type: Content of: <book><chapter><section><para>
+#: en/TimeAccounting.xml:596
+msgid ""
+"To ensure the quality of the module, several so-called unit tests were "
+"created, to test the functionalities of this module. These unit tests can be "
+"run via command line."
+msgstr ""
+"A modul minőségének biztosításához számos, úgynevezett egységtesztet hoztak "
+"létre a modul funkcionalitásainak teszteléséhez. Ezek az egységtesztek "
+"parancssoron keresztül futtathatók."
+
+#. type: Content of: <book><chapter><section><para>
+#: en/TimeAccounting.xml:600
+msgid ""
+"ATTENTION: Please never run unit tests on a productive system, since the "
+"added test data to the system will no longer be removed. Always use a test "
+"system."
+msgstr ""
+"FIGYELEM: soha ne futtasson egységteszteket egy termelési rendszeren, mivel "
+"a rendszerhez hozzáadott tesztadatok többé nem lesznek eltávolíthatók. "
+"Mindig tesztrendszert használjon."
+
+#. type: Content of: <book><chapter><section><para>
+#: en/TimeAccounting.xml:603
+msgid "Run the package specific unit tests"
+msgstr "A csomagra jellemző egységtesztek futtatása"
+
+#. type: Content of: <book><chapter><section><para>
+#: en/TimeAccounting.xml:605
+msgid ""
+"To run only the unit test which will be delivered with this package, use the "
+"following command on the command line:"
+msgstr ""
+"Csak azon egységtesztek futtatásához, amelyet ez a csomag fog szállítani, "
+"használja a következő parancsot a parancssorban:"
+
+#. type: Content of: <book><chapter><section><screen>
+#: en/TimeAccounting.xml:609
+#, no-wrap
+msgid ""
+"shell> perl bin/otrs.Console.pl Dev::UnitTest::Run --test TimeAccounting\n"
+"        "
+msgstr ""
+"shell> perl bin/otrs.Console.pl Dev::UnitTest::Run --test TimeAccounting\n"
+"        "
+
+#. type: Content of: <book><chapter><section><para>
+#: en/TimeAccounting.xml:611
+msgid "Selenium unit tests"
+msgstr "Selenium egységtesztek"
+
+#. type: Content of: <book><chapter><section><para>
+#: en/TimeAccounting.xml:613
+msgid ""
+"To run the Selenium unit tests, make sure you have a complete Selenium "
+"environment setup in your Kernel/Config.pm file and a running a WebDriver."
+msgstr ""
+"A Selenium egységtesztek futtatásához győződjön meg arról, hogy rendelkezik-"
+"e a teljes Selenium környezet beállításával a Kernel/Config.pm fájlban, és "
+"van-e futó WebDriver illesztőprogramja."
+
+#. type: Content of: <book><chapter><section><screen>
+#: en/TimeAccounting.xml:616
+#, no-wrap
+msgid ""
+"shell> perl bin/otrs.Console.pl Dev::UnitTest::Run --test"
+" AgentTimeAccountingEdit:AgentTimeAccountingOverview:AgentTimeAccountingReport"
+"ing:\n"
+"AgentTimeAccountingSetting:AgentTimeAccountingView\n"
+"shell> perl bin/otrs.Console.pl Dev::UnitTest::Run --test"
+" Notification/TimeAccounting:ToolBar/IncompleteWorkingDays\n"
+"         "
+msgstr ""
+"shell> perl bin/otrs.Console.pl Dev::UnitTest::Run --test"
+" AgentTimeAccountingEdit:AgentTimeAccountingOverview:AgentTimeAccountingReport"
+"ing:\n"
+"AgentTimeAccountingSetting:AgentTimeAccountingView\n"
+"shell> perl bin/otrs.Console.pl Dev::UnitTest::Run --test"
+" Notification/TimeAccounting:ToolBar/IncompleteWorkingDays\n"
+"         "
+
+#. type: Content of: <book><chapter><section><para>
+#: en/TimeAccounting.xml:620
+msgid "Run all available unit tests"
+msgstr "Az összes elérhető egységteszt futtatása"
+
+#. type: Content of: <book><chapter><section><para>
+#: en/TimeAccounting.xml:622
+msgid ""
+"To run all available unit tests, use the following command on the command "
+"line:"
+msgstr ""
+"Az összes elérhető egységteszt futtatásához használja a következő parancsot "
+"a parancssorban:"
+
+#. type: Content of: <book><chapter><section><screen>
+#: en/TimeAccounting.xml:624
+#, no-wrap
+msgid "shell> perl bin/otrs.Console.pl Dev::UnitTest::Run"
+msgstr "shell> perl bin/otrs.Console.pl Dev::UnitTest::Run"
+
+#. type: Content of: <book><chapter><title>
+#: en/TimeAccounting.xml:632
+msgid "ChangeLog"
+msgstr "Változásnapló"
+
+#. type: Content of: <book><chapter><para>
+#: en/TimeAccounting.xml:633
+msgid "$ChangeLog"
+msgstr "$ChangeLog"
+
