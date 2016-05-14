@@ -7,9 +7,10 @@
 # did not receive this file, see http://www.gnu.org/licenses/agpl.txt.
 # --
 4.0.2 -2015-??-??
-- 2015-10-06 Added Galician language, thanks to the translation team.
-- 2015-10-06 Added Malay language, thanks to the translation team.
-- 2015-10-06 Added Serbian language, thanks to the translation team.
+ - 2016-05-13 Fixed bug#12076 - "User's project overview" wrong "Monthly" hours and protect list.
+ - 2015-10-06 Added Galician language, thanks to the translation team.
+ - 2015-10-06 Added Malay language, thanks to the translation team.
+ - 2015-10-06 Added Serbian language, thanks to the translation team.
 
 4.0.1 - 2014-11-25
  - 2014-11-20 Added Swahili language.
