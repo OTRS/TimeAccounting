@@ -1,0 +1,1110 @@
+# SOME DESCRIPTIVE TITLE
+# Copyright (C) YEAR Free Software Foundation, Inc.
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"POT-Creation-Date: 2016-04-30 23:44+0200\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#. type: Attribute 'lang' of: <book>
+#: en/TimeAccounting.xml:5
+msgid "en"
+msgstr ""
+
+#. type: Content of: <book><bookinfo><title>
+#: en/TimeAccounting.xml:11
+msgid "$Name"
+msgstr ""
+
+#. type: Content of: <book><bookinfo>
+#: en/TimeAccounting.xml:12
+msgid ""
+"<edition>$Description Version $Version</edition> <copyright> "
+"<year>$YearStamp</year> <holder>$Vendor, $URL</holder> </copyright> "
+"<date>$DateStamp</date>"
+msgstr ""
+
+#. type: Content of: <book><bookinfo><legalnotice><para>
+#: en/TimeAccounting.xml:19
+msgid "$License"
+msgstr ""
+
+#. type: Content of: <book><bookinfo><legalnotice><para>
+#: en/TimeAccounting.xml:21
+msgid ""
+"This work is copyrighted by $Vendor, Norsk-Data-Str. 1, 61352 Bad Homburg, "
+"Germany."
+msgstr ""
+
+#. type: Content of: <book><bookinfo><legalnotice><para>
+#: en/TimeAccounting.xml:23
+msgid "Build Date: $DateStamp"
+msgstr ""
+
+#. type: Content of: <book><preface><title>
+#: en/TimeAccounting.xml:35
+msgid "Preface"
+msgstr ""
+
+#. type: Content of: <book><preface><para>
+#: en/TimeAccounting.xml:37
+msgid ""
+"TimeAccounting module extends OTRS framework enabling the track of time that "
+"agents spend on different tasks, vacations, overtime and sick leaves."
+msgstr ""
+
+#. type: Content of: <book><preface><para>
+#: en/TimeAccounting.xml:41
+msgid ""
+"If you have questions regarding this document or if you need further "
+"information, please log in to our customer portal at portal.otrs.com with "
+"your OTRS ID and create a ticket.  You do not have an OTRS ID yet? Register "
+"<ulink url=\"https://portal.otrs.com/otrs/customer.pl#Signup\">here for "
+"free</ulink>."
+msgstr ""
+
+#. type: Content of: <book><chapter><title>
+#: en/TimeAccounting.xml:51
+msgid "Feature List"
+msgstr ""
+
+#. type: Content of: <book><chapter><section><title>
+#: en/TimeAccounting.xml:53
+msgid "Time Accounting Overview"
+msgstr ""
+
+#. type: Content of: <book><chapter><section><para>
+#: en/TimeAccounting.xml:55
+msgid ""
+"It displays for the current logged user a summary of its own working hours "
+"per day (month based), vacation days summary, sick leave days, and the "
+"distribution of its working hours on each project and tasks."
+msgstr ""
+
+#. type: Content of: <book><chapter><section><title>
+#: en/TimeAccounting.xml:61
+msgid "Time Accounting Edit"
+msgstr ""
+
+#. type: Content of: <book><chapter><section><para>
+#: en/TimeAccounting.xml:63
+msgid ""
+"Allows to set working hours, vacation, sick leaves and overtime leaves on a "
+"day basis.  The working hours can be set by defining the start and the end "
+"dates, or a period of time."
+msgstr ""
+
+#. type: Content of: <book><chapter><section><para>
+#: en/TimeAccounting.xml:68
+msgid ""
+"The working hours can be registered per project and task. Pre-filled "
+"selection lists are used to speedup the register process and prevent typos."
+msgstr ""
+
+#. type: Content of: <book><chapter><section><title>
+#: en/TimeAccounting.xml:73
+msgid "Time Accounting Reporting"
+msgstr ""
+
+#. type: Content of: <book><chapter><section><para>
+#: en/TimeAccounting.xml:75
+msgid ""
+"Designed for administrators and managers, shows a monthly based timing "
+"information summary for each registered user (working hours, overtime leave, "
+"sick leave and vacations), as well as timing information summary for each "
+"project and tasks (the time spend on each)."
+msgstr ""
+
+#. type: Content of: <book><chapter><section><title>
+#: en/TimeAccounting.xml:82
+msgid "Time Accounting Settings"
+msgstr ""
+
+#. type: Content of: <book><chapter><section><para>
+#: en/TimeAccounting.xml:84
+msgid ""
+"Also designed for administrators and managers, it allows the creation of "
+"multiple projects and tasks. It also enables the assignment of the users "
+"defining their working calendar, working periods (begin date, end date, "
+"number of vacation days, hours per week and allowed overtime hours)."
+msgstr ""
+
+#. type: Content of: <book><chapter><section><title>
+#: en/TimeAccounting.xml:91
+msgid "Time Accounting Statistics"
+msgstr ""
+
+#. type: Content of: <book><chapter><section><para>
+#: en/TimeAccounting.xml:93
+msgid ""
+"A new statistics type has been added to show working hours based on projects "
+"or users."
+msgstr ""
+
+#. type: Content of: <book><chapter><section><title>
+#: en/TimeAccounting.xml:97
+msgid "Time Accounting Notification"
+msgstr ""
+
+#. type: Content of: <book><chapter><section><para>
+#: en/TimeAccounting.xml:99
+msgid ""
+"A notification reminder for agents to insert their working hours (can be "
+"configured in SysConfig to define the maximum days without entry to display "
+"the notification)."
+msgstr ""
+
+#. type: Content of: <book><chapter><section><title>
+#: en/TimeAccounting.xml:104
+msgid "Toolbar Shortcut For Days Without Time Accounting Entry"
+msgstr ""
+
+#. type: Content of: <book><chapter><section><para>
+#: en/TimeAccounting.xml:106
+msgid ""
+"A counter displaying the number of days without registering the working "
+"hours can be set in the upper part of the screen (similar to Locked tickets "
+"counter or Responsible tickets counter). When clicking on the icon, agents "
+"are redirected to the Time Accounting Edit screen, to fill the missing "
+"records."
+msgstr ""
+
+#. type: Content of: <book><chapter><section><title>
+#: en/TimeAccounting.xml:113
+msgid "Time Accounting Registration Enforcement"
+msgstr ""
+
+#. type: Content of: <book><chapter><section><para>
+#: en/TimeAccounting.xml:115
+msgid ""
+"Configurable by a SysConfig setting, the system can be blocked, not allowing "
+"to perform any actions, if a certain number of days without time accounting "
+"registers has been passed (agents are redirected to Time Accounting Edit "
+"screen to fill the missing records)."
+msgstr ""
+
+#. type: Content of: <book><chapter><section><title>
+#: en/TimeAccounting.xml:122
+msgid "Mass Entries"
+msgstr ""
+
+#. type: Content of: <book><chapter><section><para>
+#: en/TimeAccounting.xml:124
+msgid ""
+"Disabled by default, this feature allows agents to set special time "
+"accounting information (such as: on vacation, overtime leaves and sick "
+"leave) to multiple days at the same time."
+msgstr ""
+
+#. type: Content of: <book><chapter><title>
+#: en/TimeAccounting.xml:135
+msgid "System Requirements"
+msgstr ""
+
+#. type: Content of: <book><chapter><section><title>
+#: en/TimeAccounting.xml:137
+msgid "Framework"
+msgstr ""
+
+#. type: Content of: <book><chapter><section><para>
+#: en/TimeAccounting.xml:138
+msgid "The following OTRS framework is required:"
+msgstr ""
+
+#. type: Content of: <book><chapter><section><para>
+#: en/TimeAccounting.xml:139
+msgid "$Framework"
+msgstr ""
+
+#. type: Content of: <book><chapter><section><title>
+#: en/TimeAccounting.xml:142
+msgid "Packages"
+msgstr ""
+
+#. type: Content of: <book><chapter><section><para>
+#: en/TimeAccounting.xml:143
+msgid "The following packages are required:"
+msgstr ""
+
+#. type: Content of: <book><chapter><section><para>
+#: en/TimeAccounting.xml:144
+msgid "$PackageRequired"
+msgstr ""
+
+#. type: Content of: <book><chapter><section><title>
+#: en/TimeAccounting.xml:147
+msgid "Operating System"
+msgstr ""
+
+#. type: Content of: <book><chapter><section><para>
+#: en/TimeAccounting.xml:148
+msgid "This package requires one of the following operating systems:"
+msgstr ""
+
+#. type: Content of: <book><chapter><section><para>
+#: en/TimeAccounting.xml:149
+msgid "$OS"
+msgstr ""
+
+#. type: Content of: <book><chapter><section><title>
+#: en/TimeAccounting.xml:152
+msgid "Third Party Software"
+msgstr ""
+
+#. type: Content of: <book><chapter><section><para>
+#: en/TimeAccounting.xml:153
+msgid "This third party software is required to use this package:"
+msgstr ""
+
+#. type: Content of: <book><chapter><section><itemizedlist><listitem><para>
+#: en/TimeAccounting.xml:156
+msgid "None."
+msgstr ""
+
+#. type: Content of: <book><chapter><title>
+#: en/TimeAccounting.xml:166
+msgid "Installation"
+msgstr ""
+
+#. type: Content of: <book><chapter><para>
+#: en/TimeAccounting.xml:168
+msgid "The following instructions explain how to install the package."
+msgstr ""
+
+#. type: Content of: <book><chapter><para>
+#: en/TimeAccounting.xml:171
+msgid ""
+"After having successfully completed the installation, please follow the "
+"instructions provided in the chapter &quot;First steps&quot;."
+msgstr ""
+
+#. type: Content of: <book><chapter><section><title>
+#: en/TimeAccounting.xml:175
+msgid "Admin Interface"
+msgstr ""
+
+#. type: Content of: <book><chapter><section><para>
+#: en/TimeAccounting.xml:177
+msgid ""
+"Please use the following URL to install the package utilizing the Admin "
+"Interface (please note that you need to be in the \"admin\" group)."
+msgstr ""
+
+#. type: Content of: <book><chapter><section><para>
+#: en/TimeAccounting.xml:181
+msgid ""
+"<ulink url=\"http://localhost/otrs/index.pl?Action=AdminPackageManager\"> "
+"http://localhost/otrs/index.pl?Action=AdminPackageManager </ulink>"
+msgstr ""
+
+#. type: Content of: <book><chapter><section><title>
+#: en/TimeAccounting.xml:187
+msgid "Command Line"
+msgstr ""
+
+#. type: Content of: <book><chapter><section><para>
+#: en/TimeAccounting.xml:189
+msgid ""
+"Whenever you cannot use the Admin Interface for whatever reason, you may use "
+"the following command line tool (\"bin/otrs.Console.pl "
+"Admin::Package::Install\") instead."
+msgstr ""
+
+#. type: Content of: <book><chapter><section><para><screen>
+#: en/TimeAccounting.xml:194
+#, no-wrap
+msgid ""
+"shell> bin/otrs.Console.pl Admin::Package::Install "
+"/path/to/$Name-$Version.opm\n"
+"            "
+msgstr ""
+
+#. type: Content of: <book><chapter><section><para>
+#: en/TimeAccounting.xml:193
+msgid "<placeholder type=\"screen\" id=\"0\"/>"
+msgstr ""
+
+#. type: Content of: <book><chapter><title>
+#: en/TimeAccounting.xml:204
+msgid "Configuration"
+msgstr ""
+
+#. type: Content of: <book><chapter><para>
+#: en/TimeAccounting.xml:205
+msgid ""
+"The package can be configured via the SysConfig in the Admin Interface. The "
+"following configuration options are available:"
+msgstr ""
+
+#. type: Content of: <book><chapter><section><title>
+#: en/TimeAccounting.xml:207
+msgid "Frontend::Module###AgentTimeAccountingEdit."
+msgstr ""
+
+#. type: Content of: <book><chapter><section><para>
+#: en/TimeAccounting.xml:208 en/TimeAccounting.xml:213 en/TimeAccounting.xml:218 en/TimeAccounting.xml:223 en/TimeAccounting.xml:228
+msgid "Group: TimeAccounting, Subgroup: Frontend::Agent::ModuleRegistration."
+msgstr ""
+
+#. type: Content of: <book><chapter><section><para>
+#: en/TimeAccounting.xml:209 en/TimeAccounting.xml:214 en/TimeAccounting.xml:219 en/TimeAccounting.xml:224 en/TimeAccounting.xml:229
+msgid "Frontend module registration for the agent interface."
+msgstr ""
+
+#. type: Content of: <book><chapter><section><title>
+#: en/TimeAccounting.xml:212
+msgid "Frontend::Module###AgentTimeAccountingOverview."
+msgstr ""
+
+#. type: Content of: <book><chapter><section><title>
+#: en/TimeAccounting.xml:217
+msgid "Frontend::Module###AgentTimeAccountingReporting."
+msgstr ""
+
+#. type: Content of: <book><chapter><section><title>
+#: en/TimeAccounting.xml:222
+msgid "Frontend::Module###AgentTimeAccountingSetting."
+msgstr ""
+
+#. type: Content of: <book><chapter><section><title>
+#: en/TimeAccounting.xml:227
+msgid "Frontend::Module###AgentTimeAccountingView."
+msgstr ""
+
+#. type: Content of: <book><chapter><section><title>
+#: en/TimeAccounting.xml:232
+msgid "Frontend::NotifyModule###888-TimeAccounting."
+msgstr ""
+
+#. type: Content of: <book><chapter><section><para>
+#: en/TimeAccounting.xml:233
+msgid "Group: TimeAccounting, Subgroup: Frontend::Agent::ModuleNotify."
+msgstr ""
+
+#. type: Content of: <book><chapter><section><para>
+#: en/TimeAccounting.xml:234
+msgid ""
+"This notification module gives a warning if there are too many incomplete "
+"working days."
+msgstr ""
+
+#. type: Content of: <book><chapter><section><title>
+#: en/TimeAccounting.xml:237
+msgid "Frontend::ToolBarModule###201-TimeAccounting::IncompleteWorkingDays."
+msgstr ""
+
+#. type: Content of: <book><chapter><section><para>
+#: en/TimeAccounting.xml:238
+msgid "Group: TimeAccounting, Subgroup: Frontend::Agent::ToolBarModule."
+msgstr ""
+
+#. type: Content of: <book><chapter><section><para>
+#: en/TimeAccounting.xml:239
+msgid ""
+"Agent interface notification module to see the number of incomplete working "
+"days for the user."
+msgstr ""
+
+#. type: Content of: <book><chapter><section><title>
+#: en/TimeAccounting.xml:242
+msgid "PreApplicationModule###AgentTimeAccounting."
+msgstr ""
+
+#. type: Content of: <book><chapter><section><para>
+#: en/TimeAccounting.xml:243 en/TimeAccounting.xml:338 en/TimeAccounting.xml:343 en/TimeAccounting.xml:348
+msgid "Group: TimeAccounting, Subgroup: Frontend::Agent."
+msgstr ""
+
+#. type: Content of: <book><chapter><section><para>
+#: en/TimeAccounting.xml:244
+msgid "This module forces inserts in TimeAccounting."
+msgstr ""
+
+#. type: Content of: <book><chapter><section><title>
+#: en/TimeAccounting.xml:247
+msgid "Stats::DynamicObjectRegistration###TimeAccounting."
+msgstr ""
+
+#. type: Content of: <book><chapter><section><para>
+#: en/TimeAccounting.xml:248
+msgid "Group: TimeAccounting, Subgroup: Core::Stats."
+msgstr ""
+
+#. type: Content of: <book><chapter><section><para>
+#: en/TimeAccounting.xml:249
+msgid ""
+"Determines if the statistics module may generate time accounting "
+"information."
+msgstr ""
+
+#. type: Content of: <book><chapter><section><title>
+#: en/TimeAccounting.xml:252
+msgid "TimeAccounting::ActionListConstraints."
+msgstr ""
+
+#. type: Content of: <book><chapter><section><para>
+#: en/TimeAccounting.xml:253 en/TimeAccounting.xml:258 en/TimeAccounting.xml:263 en/TimeAccounting.xml:323 en/TimeAccounting.xml:333 en/TimeAccounting.xml:353 en/TimeAccounting.xml:358 en/TimeAccounting.xml:363 en/TimeAccounting.xml:368
+msgid "Group: TimeAccounting, Subgroup: Frontend::Agent::TimeAccounting::ViewEdit."
+msgstr ""
+
+#. type: Content of: <book><chapter><section><para>
+#: en/TimeAccounting.xml:254
+msgid ""
+"Regular expressions for constraining action list according to selected "
+"project. Key contains regular expression for project(s), content contains "
+"regular expressions for action(s)."
+msgstr ""
+
+#. type: Content of: <book><chapter><section><title>
+#: en/TimeAccounting.xml:257
+msgid "TimeAccounting::ActiveFilter."
+msgstr ""
+
+#. type: Content of: <book><chapter><section><para>
+#: en/TimeAccounting.xml:259
+msgid ""
+"If enabled, the filter for the previous projects is active by default if "
+"there are the previous projects. It could be used only if "
+"EnableAutoCompletion and TimeAccounting::UseFilter are enabled."
+msgstr ""
+
+#. type: Content of: <book><chapter><section><title>
+#: en/TimeAccounting.xml:262
+msgid "TimeAccounting::AllowMassEntryForUser."
+msgstr ""
+
+#. type: Content of: <book><chapter><section><para>
+#: en/TimeAccounting.xml:264
+msgid ""
+"If enabled, the user is allowed to enter &quot;on vacation leave&quot;, "
+"&quot;on sick leave&quot; and &quot;on overtime leave&quot; to multiple "
+"dates at once."
+msgstr ""
+
+#. type: Content of: <book><chapter><section><title>
+#: en/TimeAccounting.xml:267
+msgid "TimeAccounting::DefaultActionName."
+msgstr ""
+
+#. type: Content of: <book><chapter><section><para>
+#: en/TimeAccounting.xml:268 en/TimeAccounting.xml:273 en/TimeAccounting.xml:278 en/TimeAccounting.xml:283 en/TimeAccounting.xml:288 en/TimeAccounting.xml:293 en/TimeAccounting.xml:298 en/TimeAccounting.xml:303 en/TimeAccounting.xml:308 en/TimeAccounting.xml:313 en/TimeAccounting.xml:318
+msgid ""
+"Group: TimeAccounting, Subgroup: "
+"Frontend::Agent::TimeAccounting::ViewSetting."
+msgstr ""
+
+#. type: Content of: <book><chapter><section><para>
+#: en/TimeAccounting.xml:269
+msgid "Default name for new actions."
+msgstr ""
+
+#. type: Content of: <book><chapter><section><title>
+#: en/TimeAccounting.xml:272
+msgid "TimeAccounting::DefaultActionStatus."
+msgstr ""
+
+#. type: Content of: <book><chapter><section><para>
+#: en/TimeAccounting.xml:274
+msgid "Default status for new actions."
+msgstr ""
+
+#. type: Content of: <book><chapter><section><title>
+#: en/TimeAccounting.xml:277
+msgid "TimeAccounting::DefaultProjectName."
+msgstr ""
+
+#. type: Content of: <book><chapter><section><para>
+#: en/TimeAccounting.xml:279
+msgid "Default name for new projects."
+msgstr ""
+
+#. type: Content of: <book><chapter><section><title>
+#: en/TimeAccounting.xml:282
+msgid "TimeAccounting::DefaultProjectStatus."
+msgstr ""
+
+#. type: Content of: <book><chapter><section><para>
+#: en/TimeAccounting.xml:284
+msgid "Default status for new projects."
+msgstr ""
+
+#. type: Content of: <book><chapter><section><title>
+#: en/TimeAccounting.xml:287
+msgid "TimeAccounting::DefaultUserDateEnd."
+msgstr ""
+
+#. type: Content of: <book><chapter><section><para>
+#: en/TimeAccounting.xml:289
+msgid "Default setting for date end."
+msgstr ""
+
+#. type: Content of: <book><chapter><section><title>
+#: en/TimeAccounting.xml:292
+msgid "TimeAccounting::DefaultUserDateStart."
+msgstr ""
+
+#. type: Content of: <book><chapter><section><para>
+#: en/TimeAccounting.xml:294
+msgid "Default setting for date start."
+msgstr ""
+
+#. type: Content of: <book><chapter><section><title>
+#: en/TimeAccounting.xml:297
+msgid "TimeAccounting::DefaultUserDescription."
+msgstr ""
+
+#. type: Content of: <book><chapter><section><para>
+#: en/TimeAccounting.xml:299
+msgid "Default setting for description."
+msgstr ""
+
+#. type: Content of: <book><chapter><section><title>
+#: en/TimeAccounting.xml:302
+msgid "TimeAccounting::DefaultUserLeaveDays."
+msgstr ""
+
+#. type: Content of: <book><chapter><section><para>
+#: en/TimeAccounting.xml:304
+msgid "Default setting for leave days."
+msgstr ""
+
+#. type: Content of: <book><chapter><section><title>
+#: en/TimeAccounting.xml:307
+msgid "TimeAccounting::DefaultUserOvertime."
+msgstr ""
+
+#. type: Content of: <book><chapter><section><para>
+#: en/TimeAccounting.xml:309
+msgid "Default setting for overtime."
+msgstr ""
+
+#. type: Content of: <book><chapter><section><title>
+#: en/TimeAccounting.xml:312
+msgid "TimeAccounting::DefaultUserStatus."
+msgstr ""
+
+#. type: Content of: <book><chapter><section><para>
+#: en/TimeAccounting.xml:314
+msgid "Default status for new users."
+msgstr ""
+
+#. type: Content of: <book><chapter><section><title>
+#: en/TimeAccounting.xml:317
+msgid "TimeAccounting::DefaultUserWeeklyHours."
+msgstr ""
+
+#. type: Content of: <book><chapter><section><para>
+#: en/TimeAccounting.xml:319
+msgid "Default setting for the standard weekly hours."
+msgstr ""
+
+#. type: Content of: <book><chapter><section><title>
+#: en/TimeAccounting.xml:322
+msgid "TimeAccounting::EnableAutoCompletion."
+msgstr ""
+
+#. type: Content of: <book><chapter><section><para>
+#: en/TimeAccounting.xml:324
+msgid ""
+"If enabled, the dropdown elements in the edit screen are changed to "
+"modernized autocompletion fields."
+msgstr ""
+
+#. type: Content of: <book><chapter><section><title>
+#: en/TimeAccounting.xml:327
+msgid "TimeAccounting::Frontend::ReportingProject###ShowOnlyActiveUsers."
+msgstr ""
+
+#. type: Content of: <book><chapter><section><para>
+#: en/TimeAccounting.xml:328
+msgid ""
+"Group: TimeAccounting, Subgroup: "
+"Frontend::Agent::TimeAccoutning::ViewReportingProject."
+msgstr ""
+
+#. type: Content of: <book><chapter><section><para>
+#: en/TimeAccounting.xml:329
+msgid ""
+"If enabled, only users that has added working time to the selected project "
+"are shown."
+msgstr ""
+
+#. type: Content of: <book><chapter><section><title>
+#: en/TimeAccounting.xml:332
+msgid "TimeAccounting::InputHoursWithoutStartEndTime."
+msgstr ""
+
+#. type: Content of: <book><chapter><section><para>
+#: en/TimeAccounting.xml:334
+msgid "Specifies if working hours can be inserted without start and end times."
+msgstr ""
+
+#. type: Content of: <book><chapter><section><title>
+#: en/TimeAccounting.xml:337
+msgid "TimeAccounting::MaxAllowedInsertDays."
+msgstr ""
+
+#. type: Content of: <book><chapter><section><para>
+#: en/TimeAccounting.xml:339
+msgid "For how many days ago you can insert working units."
+msgstr ""
+
+#. type: Content of: <book><chapter><section><title>
+#: en/TimeAccounting.xml:342
+msgid "TimeAccounting::MaxIntervalOfIncompleteDays."
+msgstr ""
+
+#. type: Content of: <book><chapter><section><para>
+#: en/TimeAccounting.xml:344
+msgid ""
+"Maximum number of working days after which the working units have to be "
+"inserted."
+msgstr ""
+
+#. type: Content of: <book><chapter><section><title>
+#: en/TimeAccounting.xml:347
+msgid "TimeAccounting::MaxIntervalOfIncompleteDaysBeforeWarning."
+msgstr ""
+
+#. type: Content of: <book><chapter><section><para>
+#: en/TimeAccounting.xml:349
+msgid ""
+"Maximum number of working days without working units entry after which a "
+"warning will be shown."
+msgstr ""
+
+#. type: Content of: <book><chapter><section><title>
+#: en/TimeAccounting.xml:352
+msgid "TimeAccounting::Project2RemarkRegExp."
+msgstr ""
+
+#. type: Content of: <book><chapter><section><para>
+#: en/TimeAccounting.xml:354
+msgid ""
+"Defines the projects for which a remark is required. If the RegExp matches "
+"on the project, you have to insert a remark too. The RegExp use the smx "
+"parameter."
+msgstr ""
+
+#. type: Content of: <book><chapter><section><title>
+#: en/TimeAccounting.xml:357
+msgid "TimeAccounting::ProjectListConstraints."
+msgstr ""
+
+#. type: Content of: <book><chapter><section><para>
+#: en/TimeAccounting.xml:359
+msgid ""
+"Regular expressions for constraining project list according to user "
+"groups. Key contains regular expression for project(s), content contains "
+"comma separated list of groups."
+msgstr ""
+
+#. type: Content of: <book><chapter><section><title>
+#: en/TimeAccounting.xml:362
+msgid "TimeAccounting::ReduceTime."
+msgstr ""
+
+#. type: Content of: <book><chapter><section><para>
+#: en/TimeAccounting.xml:364
+msgid ""
+"To use if some actions reduced the working hours (for example, if only half "
+"of the traveling time is paid Key =&gt; traveling; Content =&gt; 50)."
+msgstr ""
+
+#. type: Content of: <book><chapter><section><title>
+#: en/TimeAccounting.xml:367
+msgid "TimeAccounting::UseFilter."
+msgstr ""
+
+#. type: Content of: <book><chapter><section><para>
+#: en/TimeAccounting.xml:369
+msgid ""
+"If enabled, the filter for the previous projects can be used instead two "
+"list of projects (last and all ones). It could be used only if "
+"TimeAccounting::EnableAutoCompletion is enabled."
+msgstr ""
+
+#. type: Content of: <book><chapter><title>
+#: en/TimeAccounting.xml:377
+msgid "Usage"
+msgstr ""
+
+#. type: Content of: <book><chapter><para>
+#: en/TimeAccounting.xml:379
+msgid ""
+"This package adds a new group called \"time_accouting\". Depending on the "
+"permission over this group, agents are allowed to execute certain actions, "
+"in general having \"rw\" permission allows agents to use all screens while "
+"\"ro\" permissions only allows access to personal overview (Time Accounting "
+"Overview) and working hours registration (Time Accounting Edit)  screens."
+msgstr ""
+
+#. type: Content of: <book><chapter><section><title>
+#: en/TimeAccounting.xml:386
+msgid "Create A New Project"
+msgstr ""
+
+#. type: Content of: <book><chapter><section><para>
+#: en/TimeAccounting.xml:387
+msgid "This example shows how to create a new project to register working hours on."
+msgstr ""
+
+#. type: Content of: <book><chapter><section><note><para>
+#: en/TimeAccounting.xml:390
+msgid ""
+"For this and following examples a user with \"rw\" in \"time_accouting\" "
+"group is needed."
+msgstr ""
+
+#. type: Content of: <book><chapter><section><orderedlist><listitem><para>
+#: en/TimeAccounting.xml:395 en/TimeAccounting.xml:429 en/TimeAccounting.xml:460
+msgid "From Time Accounting menu choose \"Settings\"."
+msgstr ""
+
+#. type: Content of: <book><chapter><section><orderedlist><listitem><para>
+#: en/TimeAccounting.xml:398
+msgid ""
+"Click on \"Add Project\" from the Actions list in the sidebar, located in "
+"the left part of the screen."
+msgstr ""
+
+#. type: Content of: <book><chapter><section><orderedlist><listitem><para>
+#: en/TimeAccounting.xml:404
+msgid ""
+"In the new screen fill the name of the project and a description if needed "
+"(make sure that status is set to \"valid\")."
+msgstr ""
+
+#. type: Content of: <book><chapter><section><orderedlist><listitem><para>
+#: en/TimeAccounting.xml:410 en/TimeAccounting.xml:444 en/TimeAccounting.xml:490
+msgid "Click on \"Submit\" button."
+msgstr ""
+
+#. type: Content of: <book><chapter><section><orderedlist><listitem><para>
+#: en/TimeAccounting.xml:415
+msgid ""
+"After the redirect to the main Settings window, notice that the new project "
+"appears in the project list in the center of the screen."
+msgstr ""
+
+#. type: Content of: <book><chapter><section><note><para>
+#: en/TimeAccounting.xml:420
+msgid "Optionally register more projects, repeating the same steps."
+msgstr ""
+
+#. type: Content of: <book><chapter><section><title>
+#: en/TimeAccounting.xml:423
+msgid "Create A New Task"
+msgstr ""
+
+#. type: Content of: <book><chapter><section><para>
+#: en/TimeAccounting.xml:424
+msgid "This example shows how to create a new task to register working hours on."
+msgstr ""
+
+#. type: Content of: <book><chapter><section><note><para>
+#: en/TimeAccounting.xml:426
+msgid "Tasks are available to all projects."
+msgstr ""
+
+#. type: Content of: <book><chapter><section><orderedlist><listitem><para>
+#: en/TimeAccounting.xml:432
+msgid ""
+"Click on \"Add Task\" from the Actions list in the sidebar, located in the "
+"left part of the screen."
+msgstr ""
+
+#. type: Content of: <book><chapter><section><orderedlist><listitem><para>
+#: en/TimeAccounting.xml:438
+msgid ""
+"In the new screen fill the name of the task (make sure that status is set to "
+"\"valid\")."
+msgstr ""
+
+#. type: Content of: <book><chapter><section><orderedlist><listitem><para>
+#: en/TimeAccounting.xml:449
+msgid ""
+"After the redirect to the main Settings window, notice that the new task "
+"appears in the task list in the center of the screen."
+msgstr ""
+
+#. type: Content of: <book><chapter><section><note><para>
+#: en/TimeAccounting.xml:454
+msgid "Optionally register more tasks, repeating the same steps."
+msgstr ""
+
+#. type: Content of: <book><chapter><section><title>
+#: en/TimeAccounting.xml:457
+msgid "Add a User"
+msgstr ""
+
+#. type: Content of: <book><chapter><section><para>
+#: en/TimeAccounting.xml:458
+msgid "This example shows how to add an agent to the time accounting."
+msgstr ""
+
+#. type: Content of: <book><chapter><section><orderedlist><listitem><para>
+#: en/TimeAccounting.xml:463
+msgid ""
+"Select a user from the Actions list in the sidebar, located in the left part "
+"of the screen."
+msgstr ""
+
+#. type: Content of: <book><chapter><section><orderedlist><listitem><para>
+#: en/TimeAccounting.xml:467
+msgid "Click on \"New user\"."
+msgstr ""
+
+#. type: Content of: <book><chapter><section><orderedlist><listitem><para>
+#: en/TimeAccounting.xml:468
+msgid "In the new screen fill the comments if needed."
+msgstr ""
+
+#. type: Content of: <book><chapter><section><orderedlist><listitem><para>
+#: en/TimeAccounting.xml:471
+msgid ""
+"For this example we will leave unchecked \"Show Overtime\" and \"Allow "
+"project creation\" and we will use the default calendar."
+msgstr ""
+
+#. type: Content of: <book><chapter><section><orderedlist><listitem><para>
+#: en/TimeAccounting.xml:477
+msgid ""
+"In the period table choose a near date for \"Period Begin\" (otherwise the "
+"user will have to fill several time accounting records, due to the "
+"enforcement policy)."
+msgstr ""
+
+#. type: Content of: <book><chapter><section><orderedlist><listitem><para>
+#: en/TimeAccounting.xml:484
+msgid ""
+"Optionally change the \"Period End\" and leave all other columns with the "
+"defaults (for this example)."
+msgstr ""
+
+#. type: Content of: <book><chapter><section><orderedlist><listitem><para>
+#: en/TimeAccounting.xml:495
+msgid ""
+"After the redirect to the main Settings window, notice that the new user "
+"appears in the user list in the center of the screen."
+msgstr ""
+
+#. type: Content of: <book><chapter><section><title>
+#: en/TimeAccounting.xml:502
+msgid "Register Your Working Hours"
+msgstr ""
+
+#. type: Content of: <book><chapter><section><para>
+#: en/TimeAccounting.xml:503
+msgid "This example shows how to register the working hours in time accounting."
+msgstr ""
+
+#. type: Content of: <book><chapter><section><note><para>
+#: en/TimeAccounting.xml:506
+msgid ""
+"A previously added user to time accounting is needed for this example. This "
+"user needs also at least \"ro\" permissions over \"time_accouting\" group."
+msgstr ""
+
+#. type: Content of: <book><chapter><section><orderedlist><listitem><para>
+#: en/TimeAccounting.xml:511
+msgid "Login to OTRS with a proper user."
+msgstr ""
+
+#. type: Content of: <book><chapter><section><orderedlist><listitem><para>
+#: en/TimeAccounting.xml:512
+msgid "From Time Accounting menu choose \"Edit\"."
+msgstr ""
+
+#. type: Content of: <book><chapter><section><orderedlist><listitem><para>
+#: en/TimeAccounting.xml:515
+msgid ""
+"Navigate to the desired date by using the left and right arrows in the "
+"\"Date Navigation\" widget located in the sidebar, at the left part of the "
+"screen (navigation is automatic by clicking the arrows). Alternatively a "
+"date can be defined with the controls below. Click on \"Submit\" button "
+"within the widget to go to the selected date."
+msgstr ""
+
+#. type: Content of: <book><chapter><section><orderedlist><listitem><para>
+#: en/TimeAccounting.xml:524
+msgid ""
+"Select a project and task in the first row of the table in the central part "
+"of the screen."
+msgstr ""
+
+#. type: Content of: <book><chapter><section><orderedlist><listitem><para>
+#: en/TimeAccounting.xml:530
+msgid "Type a comment in the \"Remarks\" column."
+msgstr ""
+
+#. type: Content of: <book><chapter><section><orderedlist><listitem><para>
+#: en/TimeAccounting.xml:535
+msgid ""
+"Now fill the working hours. It can be done by setting the \"Start\" and "
+"\"End\" times in \"HH:MM\" format or register the period of time in the "
+"proper column."
+msgstr ""
+
+#. type: Content of: <book><chapter><section><orderedlist><listitem><example><title>
+#: en/TimeAccounting.xml:539
+msgid "Setting Working Hours For Two And A Half Hours"
+msgstr ""
+
+#. type: Content of: <book><chapter><section><orderedlist><listitem><example><para>
+#: en/TimeAccounting.xml:541
+msgid ""
+"Lets think that the working hours took place from 11:00 AM to 01:30 PM.  Set "
+"11:00 for the \"Start\" column and 13:30 for the \"End\" column, or "
+"alternatively to this, just set 2.5 (two and a half hours) in the \"Period\" "
+"column."
+msgstr ""
+
+#. type: Content of: <book><chapter><section><orderedlist><listitem><para>
+#: en/TimeAccounting.xml:550
+msgid ""
+"After setting working hours in one or more rows, make sure the \"Total\" (in "
+"the table footer) has the expected value, the sum of all working hours. Then "
+"click on \"Submit\" button on the lower part of the screen."
+msgstr ""
+
+#. type: Content of: <book><chapter><title>
+#: en/TimeAccounting.xml:575
+msgid "File List"
+msgstr ""
+
+#. type: Content of: <book><chapter><para>
+#: en/TimeAccounting.xml:576
+msgid "This list shows all included files and the referring permissions."
+msgstr ""
+
+#. type: Content of: <book><chapter><para>
+#: en/TimeAccounting.xml:577
+msgid "$Filelist"
+msgstr ""
+
+#. type: Content of: <book><chapter><title>
+#: en/TimeAccounting.xml:584
+msgid "Tests"
+msgstr ""
+
+#. type: Content of: <book><chapter><para>
+#: en/TimeAccounting.xml:585
+msgid "This module has been tested on the current state of the art in quality."
+msgstr ""
+
+#. type: Content of: <book><chapter><section><title>
+#: en/TimeAccounting.xml:587
+msgid "Test Cases"
+msgstr ""
+
+#. type: Content of: <book><chapter><section><para>
+#: en/TimeAccounting.xml:589
+msgid ""
+"To test this package please follow the examples described in the \"Usage\" "
+"section. All the tests cases should return the expected results defined at "
+"the beginning of each example."
+msgstr ""
+
+#. type: Content of: <book><chapter><section><title>
+#: en/TimeAccounting.xml:594
+msgid "Unit Tests"
+msgstr ""
+
+#. type: Content of: <book><chapter><section><para>
+#: en/TimeAccounting.xml:596
+msgid ""
+"To ensure the quality of the module, several so-called unit tests were "
+"created, to test the functionalities of this module. These unit tests can be "
+"run via command line."
+msgstr ""
+
+#. type: Content of: <book><chapter><section><para>
+#: en/TimeAccounting.xml:600
+msgid ""
+"ATTENTION: Please never run unit tests on a productive system, since the "
+"added test data to the system will no longer be removed. Always use a test "
+"system."
+msgstr ""
+
+#. type: Content of: <book><chapter><section><para>
+#: en/TimeAccounting.xml:603
+msgid "Run the package specific unit tests"
+msgstr ""
+
+#. type: Content of: <book><chapter><section><para>
+#: en/TimeAccounting.xml:605
+msgid ""
+"To run only the unit test which will be delivered with this package, use the "
+"following command on the command line:"
+msgstr ""
+
+#. type: Content of: <book><chapter><section><screen>
+#: en/TimeAccounting.xml:609
+#, no-wrap
+msgid ""
+"shell> perl bin/otrs.Console.pl Dev::UnitTest::Run --test TimeAccounting\n"
+"        "
+msgstr ""
+
+#. type: Content of: <book><chapter><section><para>
+#: en/TimeAccounting.xml:611
+msgid "Selenium unit tests"
+msgstr ""
+
+#. type: Content of: <book><chapter><section><para>
+#: en/TimeAccounting.xml:613
+msgid ""
+"To run the Selenium unit tests, make sure you have a complete Selenium "
+"environment setup in your Kernel/Config.pm file and a running a WebDriver."
+msgstr ""
+
+#. type: Content of: <book><chapter><section><screen>
+#: en/TimeAccounting.xml:616
+#, no-wrap
+msgid ""
+"shell> perl bin/otrs.Console.pl Dev::UnitTest::Run --test "
+"AgentTimeAccountingEdit:AgentTimeAccountingOverview:AgentTimeAccountingReporting:\n"
+"AgentTimeAccountingSetting:AgentTimeAccountingView\n"
+"shell> perl bin/otrs.Console.pl Dev::UnitTest::Run --test "
+"Notification/TimeAccounting:ToolBar/IncompleteWorkingDays\n"
+"         "
+msgstr ""
+
+#. type: Content of: <book><chapter><section><para>
+#: en/TimeAccounting.xml:620
+msgid "Run all available unit tests"
+msgstr ""
+
+#. type: Content of: <book><chapter><section><para>
+#: en/TimeAccounting.xml:622
+msgid ""
+"To run all available unit tests, use the following command on the command "
+"line:"
+msgstr ""
+
+#. type: Content of: <book><chapter><section><screen>
+#: en/TimeAccounting.xml:624
+#, no-wrap
+msgid "shell> perl bin/otrs.Console.pl Dev::UnitTest::Run"
+msgstr ""
+
+#. type: Content of: <book><chapter><title>
+#: en/TimeAccounting.xml:632
+msgid "ChangeLog"
+msgstr ""
+
+#. type: Content of: <book><chapter><para>
+#: en/TimeAccounting.xml:633
+msgid "$ChangeLog"
+msgstr ""
