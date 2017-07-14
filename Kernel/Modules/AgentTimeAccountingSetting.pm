@@ -1084,7 +1084,8 @@ sub _SettingOverview {
                     UserID => $UserID,
                 );
 
-                $Param{User}       = "$UserGeneralData{UserFullname} ($UserGeneralData{UserLogin})";
+                $Param{User}
+                    = "$UserGeneralData{UserFirstname} $UserGeneralData{UserLastname} ($UserGeneralData{UserLogin})";
                 $Param{UserID}     = $UserID;
                 $Param{Comment}    = $UserData{Description};
                 $Param{CalendarNo} = $UserData{Calendar};
