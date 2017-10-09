@@ -1,8 +1,5 @@
 # --
-# Kernel/Language/pt_BR_TimeAccounting.pm - translation file
-# Copyright (C) 2001-2011 OTRS AG, http://otrs.org/
-# --
-# $Id: pt_BR_TimeAccounting.pm,v 1.1.2.1 2011-05-19 15:47:03 en Exp $
+# Copyright (C) 2001-2017 OTRS AG, http://otrs.com/
 # --
 # This software comes with ABSOLUTELY NO WARRANTY. For details, see
 # the enclosed file COPYING for license information (AGPL). If you
@@ -12,6 +9,7 @@
 package Kernel::Language::pt_BR_TimeAccounting;
 
 use strict;
+use warnings;
 
 sub Data {
     my $Self = shift;

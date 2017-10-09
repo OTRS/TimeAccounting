@@ -1,8 +1,5 @@
 # --
-# Kernel/Output/HTML/ToolBarIncompleteWorkingDays.pm
-# Copyright (C) 2001-2011 OTRS AG, http://otrs.org/
-# --
-# $Id: ToolBarIncompleteWorkingDays.pm,v 1.3 2011-01-20 13:27:39 mn Exp $
+# Copyright (C) 2001-2017 OTRS AG, http://otrs.com/
 # --
 # This software comes with ABSOLUTELY NO WARRANTY. For details, see
 # the enclosed file COPYING for license information (AGPL). If you
@@ -15,9 +12,6 @@ use strict;
 use warnings;
 
 use Kernel::System::TimeAccounting;
-
-use vars qw($VERSION);
-$VERSION = qw($Revision: 1.3 $) [1];
 
 sub new {
     my ( $Type, %Param ) = @_;

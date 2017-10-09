@@ -1,8 +1,5 @@
 # --
-# Kernel/Output/HTML/NotificationTimeAccounting.pm
-# Copyright (C) 2001-2009 OTRS AG, http://otrs.org/
-# --
-# $Id: NotificationTimeAccounting.pm,v 1.6 2009-04-03 11:49:29 tr Exp $
+# Copyright (C) 2001-2017 OTRS AG, http://otrs.com/
 # --
 # This software comes with ABSOLUTELY NO WARRANTY. For details, see
 # the enclosed file COPYING for license information (AGPL). If you
@@ -16,9 +13,6 @@ use warnings;
 
 use Kernel::System::TimeAccounting;
 use Kernel::System::Time;
-
-use vars qw($VERSION);
-$VERSION = qw($Revision: 1.6 $) [1];
 
 sub new {
     my ( $Type, %Param ) = @_;
@@ -40,8 +34,9 @@ sub new {
 sub Run {
     my ( $Self, %Param ) = @_;
 
-    my ( $Sec, $Min, $Hour, $Day, $Month, $Year )
-        = $Self->{TimeObject}->SystemTime2Date( SystemTime => $Self->{TimeObject}->SystemTime(), );
+    my ( $Sec, $Min, $Hour, $Day, $Month, $Year ) = $Self->{TimeObject}->SystemTime2Date(
+        SystemTime => $Self->{TimeObject}->SystemTime(),
+    );
     my %User = $Self->{TimeAccountingObject}->UserCurrentPeriodGet(
         Year  => $Year,
         Month => $Month,
