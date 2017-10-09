@@ -1,6 +1,5 @@
 # --
-# Kernel/Modules/AgentTimeAccounting.pm - time accounting module
-# Copyright (C) 2001-2014 OTRS AG, http://otrs.com/
+# Copyright (C) 2001-2017 OTRS AG, http://otrs.com/
 # --
 # This software comes with ABSOLUTELY NO WARRANTY. For details, see
 # the enclosed file COPYING for license information (AGPL). If you
@@ -88,10 +87,9 @@ sub Run {
     # ---------------------------------------------------------- #
     if ( $Self->{ParamObject}->GetParam( Param => 'DeleteDay' ) ) {
 
-        my ( $Sec, $Min, $Hour, $Day, $Month, $Year )
-            = $Self->{TimeObject}->SystemTime2Date(
+        my ( $Sec, $Min, $Hour, $Day, $Month, $Year ) = $Self->{TimeObject}->SystemTime2Date(
             SystemTime => $Self->{TimeObject}->SystemTime(),
-            );
+        );
 
         # get params
         for my $Parameter (qw(Status Year Month Day)) {
@@ -141,8 +139,7 @@ sub Run {
         my %GetParam = ();
 
         $GetParam{UserID} = $Self->{ParamObject}->GetParam( Param => 'UserID' );
-        my $Periods
-            = $Self->{TimeAccountingObject}->UserLastPeriodNumberGet( UserID => $GetParam{UserID} );
+        my $Periods = $Self->{TimeAccountingObject}->UserLastPeriodNumberGet( UserID => $GetParam{UserID} );
 
         # check validity of periods
         my %Errors = $Self->_CheckValidityUserPeriods( Period => $Periods );
@@ -161,10 +158,9 @@ sub Run {
             my $Period = 1;
             my %PeriodData;
 
-            my %UserData
-                = $Self->{TimeAccountingObject}->SingleUserSettingsGet(
+            my %UserData = $Self->{TimeAccountingObject}->SingleUserSettingsGet(
                 UserID => $GetParam{UserID}
-                );
+            );
 
             # get parameters for all registered periods
             while ( $UserData{$Period} ) {
@@ -215,18 +211,16 @@ sub Run {
         my %Frontend   = ();
         my %Data       = ();
         my %ActionList = $Self->_ActionList();
-        my ( $Sec, $Min, $Hour, $Day, $Month, $Year )
-            = $Self->{TimeObject}->SystemTime2Date(
+        my ( $Sec, $Min, $Hour, $Day, $Month, $Year ) = $Self->{TimeObject}->SystemTime2Date(
             SystemTime => $Self->{TimeObject}->SystemTime(),
-            );
+        );
 
         # get params
         for my $Parameter (qw(Status Year Month Day Notification)) {
             $Param{$Parameter} = $Self->{ParamObject}->GetParam( Param => $Parameter ) || '';
         }
         $Param{RecordsNumber} = $Self->{ParamObject}->GetParam( Param => 'RecordsNumber' ) || 8;
-        $Param{InsertWorkingUnits}
-            = $Self->{ParamObject}->GetParam( Param => 'InsertWorkingUnits' );
+        $Param{InsertWorkingUnits} = $Self->{ParamObject}->GetParam( Param => 'InsertWorkingUnits' );
 
         # Check Date
         if ( !$Param{Year} || !$Param{Month} || !$Param{Day} ) {
@@ -262,8 +256,7 @@ sub Run {
         }
 
         my %IncompleteWorkingDays = $Self->{TimeAccountingObject}->WorkingUnitsCompletnessCheck();
-        my $MaxAllowedInsertDays
-            = $Self->{ConfigObject}->Get('TimeAccounting::MaxAllowedInsertDays') || '10';
+        my $MaxAllowedInsertDays = $Self->{ConfigObject}->Get('TimeAccounting::MaxAllowedInsertDays') || '10';
         ( $Param{YearAllowed}, $Param{MonthAllowed}, $Param{DayAllowed} )
             = Add_Delta_YMD( $Year, $Month, $Day, 0, 0, -$MaxAllowedInsertDays );
         if (
@@ -366,12 +359,10 @@ sub Run {
             for my $ID ( 1 .. $Param{RecordsNumber} ) {
 
                 # arrays to save the server errors block to show the error msgs
-                my ( @StartTimeServerErrorBlock, @EndTimeServerErrorBlock, @PeriodServerErrorBlock )
-                    = ();
+                my ( @StartTimeServerErrorBlock, @EndTimeServerErrorBlock, @PeriodServerErrorBlock ) = ();
 
                 for my $Parameter (qw(ProjectID ActionID Remark StartTime EndTime Period)) {
-                    $Param{$Parameter}
-                        = $Self->{ParamObject}->GetParam( Param => $Parameter . '[' . $ID . ']' );
+                    $Param{$Parameter} = $Self->{ParamObject}->GetParam( Param => $Parameter . '[' . $ID . ']' );
                     if ( $Param{$Parameter} ) {
                         my $ParamRef = \$Param{$Parameter};
 
@@ -659,8 +650,8 @@ sub Run {
             Day   => $Param{Day},
         );
 
-    # get number of working units (=records)
-    # if bigger than RecordsNumber, more than the number of default records were saved for this date
+        # get number of working units (=records)
+        # if bigger than RecordsNumber, more than the number of default records were saved for this date
         if ( $Data{WorkingUnits} ) {
             my $WorkingUnitsCount = @{ $Data{WorkingUnits} };
             if ( $WorkingUnitsCount > $Param{RecordsNumber} ) {
@@ -704,8 +695,7 @@ sub Run {
         }
         $Param{JSActionList} = '[' . ( join ', ', @JSActions ) . ']';
 
-        my $ActionListConstraints
-            = $Self->{ConfigObject}->Get('TimeAccounting::ActionListConstraints');
+        my $ActionListConstraints = $Self->{ConfigObject}->Get('TimeAccounting::ActionListConstraints');
         my @JSActionListConstraints;
         for my $ProjectNameRegExp ( sort keys %{$ActionListConstraints} ) {
             my $ActionNameRegExp = $ActionListConstraints->{$ProjectNameRegExp};
@@ -741,8 +731,7 @@ sub Run {
                     || '',
             );
 
-            $Param{ProjectID}
-                = $UnitRef->{ProjectID}
+            $Param{ProjectID} = $UnitRef->{ProjectID}
                 || $ServerErrorData{$ErrorIndex}{ProjectID}
                 || '';
             $Param{ProjectName} = '';
@@ -770,8 +759,8 @@ sub Run {
                 OnChange => "TimeAccounting.Agent.EditTimeRecords.FillActionList($ID);",
             );
 
-# action list initially only contains empty and selected element as well as elements configured for selected project
-# if no constraints are configured, all actions will be displayed
+    # action list initially only contains empty and selected element as well as elements configured for selected project
+    # if no constraints are configured, all actions will be displayed
             my $ActionData = $Self->_ActionListConstraints(
                 ProjectID => $UnitRef->{ProjectID} || $ServerErrorData{$ErrorIndex}{ProjectID},
                 ProjectList           => $ProjectList,
@@ -795,10 +784,10 @@ sub Run {
 
             $Frontend{ActionOption} = $Self->{LayoutObject}->BuildSelection(
 
-                Data       => $ActionData,
-                SelectedID => $UnitRef->{ActionID} || $ServerErrorData{$ErrorIndex}{ActionID} || '',
-                Name       => "ActionID[$ID]",
-                ID         => "ActionID$ID",
+                Data        => $ActionData,
+                SelectedID  => $UnitRef->{ActionID} || $ServerErrorData{$ErrorIndex}{ActionID} || '',
+                Name        => "ActionID[$ID]",
+                ID          => "ActionID$ID",
                 Translation => 0,
                 Class       => 'Validate_DependingRequiredAND Validate_Depending_ProjectID'
                     . $ID
@@ -826,8 +815,7 @@ sub Run {
             for my $TimePeriod (qw(StartTime EndTime)) {
                 if ($ShowError) {
                     if ( defined $ServerErrorData{$ErrorIndex}{$TimePeriod} ) {
-                        $Param{$TimePeriod}
-                            = $ServerErrorData{$ErrorIndex}{$TimePeriod} eq '00:00'
+                        $Param{$TimePeriod} = $ServerErrorData{$ErrorIndex}{$TimePeriod} eq '00:00'
                             ? ''
                             : $ServerErrorData{$ErrorIndex}{$TimePeriod};
                     }
@@ -837,8 +825,7 @@ sub Run {
                 }
                 else {
                     if ( $UnitRef->{$TimePeriod} ) {
-                        $Param{$TimePeriod}
-                            = $UnitRef->{$TimePeriod} eq '00:00' ? '' : $UnitRef->{$TimePeriod};
+                        $Param{$TimePeriod} = $UnitRef->{$TimePeriod} eq '00:00' ? '' : $UnitRef->{$TimePeriod};
                     }
                     else {
                         $Param{$TimePeriod} = '';
@@ -860,8 +847,7 @@ sub Run {
             if ( $Errors{$ErrorIndex} && $Errors{$ErrorIndex}{StartTimeInvalid} ) {
                 if ( scalar @{ $Errors{$ErrorIndex}{StartTimeServerErrorBlock} } > 0 ) {
                     while ( @{ $Errors{$ErrorIndex}{StartTimeServerErrorBlock} } ) {
-                        $ServerErrorBlockName
-                            = shift @{ $Errors{$ErrorIndex}{StartTimeServerErrorBlock} };
+                        $ServerErrorBlockName = shift @{ $Errors{$ErrorIndex}{StartTimeServerErrorBlock} };
                         $Self->{LayoutObject}->Block( Name => $ServerErrorBlockName );
                     }
                 }
@@ -872,8 +858,7 @@ sub Run {
             if ( $Errors{$ErrorIndex} && $Errors{$ErrorIndex}{EndTimeInvalid} ) {
                 if ( scalar @{ $Errors{$ErrorIndex}{EndTimeServerErrorBlock} } > 0 ) {
                     while ( @{ $Errors{$ErrorIndex}{EndTimeServerErrorBlock} } ) {
-                        $ServerErrorBlockName
-                            = shift @{ $Errors{$ErrorIndex}{EndTimeServerErrorBlock} };
+                        $ServerErrorBlockName = shift @{ $Errors{$ErrorIndex}{EndTimeServerErrorBlock} };
                         $Self->{LayoutObject}->Block( Name => $ServerErrorBlockName );
                     }
                 }
@@ -895,8 +880,7 @@ sub Run {
             if ( $Errors{$ErrorIndex} && $Errors{$ErrorIndex}{PeriodInvalid} ) {
                 if ( scalar @{ $Errors{$ErrorIndex}{PeriodServerErrorBlock} } > 0 ) {
                     while ( @{ $Errors{$ErrorIndex}{PeriodServerErrorBlock} } ) {
-                        $ServerErrorBlockName
-                            = shift @{ $Errors{$ErrorIndex}{PeriodServerErrorBlock} };
+                        $ServerErrorBlockName = shift @{ $Errors{$ErrorIndex}{PeriodServerErrorBlock} };
                         $Self->{LayoutObject}->Block( Name => $ServerErrorBlockName );
                     }
                 }
@@ -1025,8 +1009,7 @@ sub Run {
                     sort keys %{ $IncompleteWorkingDays{Incomplete}{$YearID}{$MonthID} }
                     )
                 {
-                    $IncompleteWorkingDaysList{"$YearID-$MonthID-$DayID"}
-                        = "$YearID-$MonthID-$DayID";
+                    $IncompleteWorkingDaysList{"$YearID-$MonthID-$DayID"} = "$YearID-$MonthID-$DayID";
                     $Param{Incomplete} = 1;
                 }
             }
@@ -1043,8 +1026,7 @@ sub Run {
                 );
 
                 for my $WorkingDays ( sort keys %IncompleteWorkingDaysList ) {
-                    my ( $Year, $Month, $Day )
-                        = split( /-/, $IncompleteWorkingDaysList{$WorkingDays} );
+                    my ( $Year, $Month, $Day ) = split( /-/, $IncompleteWorkingDaysList{$WorkingDays} );
                     $Self->{LayoutObject}->Block(
                         Name => 'IncompleteWorkingDaysMassEntrySingleDay',
                         Data => {
@@ -1126,8 +1108,7 @@ sub Run {
         $Param{RemarkRegExp} = $Self->_Project2RemarkRegExp();
 
         # enable autocompletion?
-        $Param{EnableAutocompletion}
-            = $Self->{ConfigObject}->Get("TimeAccounting::EnableAutoCompletion");
+        $Param{EnableAutocompletion} = $Self->{ConfigObject}->Get("TimeAccounting::EnableAutoCompletion");
 
         # build output
         my $Output = $Self->{LayoutObject}->Header( Title => 'Edit' );
@@ -1144,7 +1125,9 @@ sub Run {
                 UserID => $Self->{UserID},
             );
             if ( $UserData{CreateProject} ) {
-                $Self->{LayoutObject}->Block( Name => 'CreateProject', );
+                $Self->{LayoutObject}->Block(
+                    Name => 'CreateProject',
+                );
             }
         }
         else {
@@ -1164,7 +1147,9 @@ sub Run {
         }
         elsif ( defined $Param{SuccessfulInsert} )
         {
-            $Output .= $Self->{LayoutObject}->Notify( Info => 'Successful insert!', );
+            $Output .= $Self->{LayoutObject}->Notify(
+                Info => 'Successful insert!',
+            );
         }
 
         # show mass entry notification
@@ -1223,13 +1208,11 @@ sub Run {
         $Param{UserID} ||= $Self->{UserID};
 
         # get current date and time
-        my ( $Sec, $Min, $Hour, $Day, $Month, $Year )
-            = $Self->{TimeObject}->SystemTime2Date(
+        my ( $Sec, $Min, $Hour, $Day, $Month, $Year ) = $Self->{TimeObject}->SystemTime2Date(
             SystemTime => $Self->{TimeObject}->SystemTime(),
-            );
+        );
 
-        my $MaxAllowedInsertDays
-            = $Self->{ConfigObject}->Get('TimeAccounting::MaxAllowedInsertDays') || '10';
+        my $MaxAllowedInsertDays = $Self->{ConfigObject}->Get('TimeAccounting::MaxAllowedInsertDays') || '10';
         ( $Param{YearAllowed}, $Param{MonthAllowed}, $Param{DayAllowed} )
             = Add_Delta_YMD( $Year, $Month, $Day, 0, 0, -$MaxAllowedInsertDays );
 
@@ -1250,7 +1233,10 @@ sub Run {
 
         # show the naming of the agent which time accounting is visited
         if ( $Param{UserID} != $Self->{UserID} ) {
-            my %ShownUsers = $Self->{UserObject}->UserList( Type => 'Long', Valid => 1 );
+            my %ShownUsers = $Self->{UserObject}->UserList(
+                Type  => 'Long',
+                Valid => 1
+            );
             $Param{User} = $ShownUsers{ $Param{UserID} };
             $Self->{LayoutObject}->Block(
                 Name => 'User',
@@ -1394,10 +1380,9 @@ sub Run {
     # overview about the users time accounting
     # ---------------------------------------------------------- #
     elsif ( $Self->{Subaction} eq 'Overview' ) {
-        my ( $Sec, $Min, $Hour, $CurrentDay, $Month, $Year )
-            = $Self->{TimeObject}->SystemTime2Date(
+        my ( $Sec, $Min, $Hour, $CurrentDay, $Month, $Year ) = $Self->{TimeObject}->SystemTime2Date(
             SystemTime => $Self->{TimeObject}->SystemTime(),
-            );
+        );
 
         # permission check
         return $Self->{LayoutObject}->NoPermission( WithHeader => 'yes' ) if !$Self->{AccessRo};
@@ -1417,7 +1402,10 @@ sub Run {
             $Param{Subaction} = 'View';
         }
         if ( $Param{UserID} != $Self->{UserID} ) {
-            my %ShownUsers = $Self->{UserObject}->UserList( Type => 'Long', Valid => 1 );
+            my %ShownUsers = $Self->{UserObject}->UserList(
+                Type  => 'Long',
+                Valid => 1
+            );
             $Param{User} = $ShownUsers{ $Param{UserID} };
             $Self->{LayoutObject}->Block(
                 Name => 'User',
@@ -1467,10 +1455,8 @@ sub Run {
             );
 
             my $Date = sprintf( "%04d-%02d-%02d", $Param{Year}, $Param{Month}, $Day );
-            my $DayStartTime
-                = $Self->{TimeObject}->TimeStamp2SystemTime( String => $Date . ' 00:00:00' );
-            my $DayStopTime
-                = $Self->{TimeObject}->TimeStamp2SystemTime( String => $Date . ' 23:59:59' );
+            my $DayStartTime = $Self->{TimeObject}->TimeStamp2SystemTime( String => $Date . ' 00:00:00' );
+            my $DayStopTime  = $Self->{TimeObject}->TimeStamp2SystemTime( String => $Date . ' 23:59:59' );
 
             # add time zone to calculation
             my $UserCalendar = $UserData{Calendar} || '';
@@ -1535,8 +1521,7 @@ sub Run {
             )
         {
             $UserReport{ $Param{UserID} }{$ReportElement} ||= 0;
-            $Param{$ReportElement}
-                = sprintf( "%.2f", $UserReport{ $Param{UserID} }{$ReportElement} );
+            $Param{$ReportElement} = sprintf( "%.2f", $UserReport{ $Param{UserID} }{$ReportElement} );
         }
 
         if ( $UserData{ShowOvertime} ) {
@@ -1716,12 +1701,14 @@ sub Run {
     # time accounting reporting
     # ---------------------------------------------------------- #
     elsif ( $Self->{Subaction} eq 'Reporting' ) {
-        my %Frontend = ();
-        my %ShownUsers = $Self->{UserObject}->UserList( Type => 'Long', Valid => 0 );
-        my ( $Sec, $Min, $Hour, $CurrentDay, $Month, $Year )
-            = $Self->{TimeObject}->SystemTime2Date(
+        my %Frontend   = ();
+        my %ShownUsers = $Self->{UserObject}->UserList(
+            Type  => 'Long',
+            Valid => 0
+        );
+        my ( $Sec, $Min, $Hour, $CurrentDay, $Month, $Year ) = $Self->{TimeObject}->SystemTime2Date(
             SystemTime => $Self->{TimeObject}->SystemTime(),
-            );
+        );
 
         # permission check
         return $Self->{LayoutObject}->NoPermission( WithHeader => 'yes' ) if !$Self->{AccessRw};
@@ -1939,13 +1926,15 @@ sub Run {
         my %Project = $Self->{TimeAccountingObject}->ProjectSettingsGet();
         $Param{Project} = $Project{Project}{ $Param{ProjectID} };
 
-        my %ShownUsers = $Self->{UserObject}->UserList( Type => 'Long', Valid => 0 );
+        my %ShownUsers = $Self->{UserObject}->UserList(
+            Type  => 'Long',
+            Valid => 0
+        );
 
         # necassary because the ProjectActionReporting is not reworked
-        my ( $Sec, $Min, $Hour, $CurrentDay, $Month, $Year )
-            = $Self->{TimeObject}->SystemTime2Date(
+        my ( $Sec, $Min, $Hour, $CurrentDay, $Month, $Year ) = $Self->{TimeObject}->SystemTime2Date(
             SystemTime => $Self->{TimeObject}->SystemTime(),
-            );
+        );
         my %ProjectData = ();
         my %ProjectTime = ();
 
@@ -1991,7 +1980,9 @@ sub Run {
             my $TotalHours = 0;
             $Self->{LayoutObject}->Block(
                 Name => 'Action',
-                Data => { Action => $Action{$ActionID}, },
+                Data => {
+                    Action => $Action{$ActionID},
+                },
             );
             for my $UserID ( sort { $ShownUsers{$a} cmp $ShownUsers{$b} } keys %ShownUsers ) {
                 $TotalHours += $ProjectTime{$ActionID}{$UserID}{Hours} || 0;
@@ -2007,7 +1998,9 @@ sub Run {
             # Total
             $Self->{LayoutObject}->Block(
                 Name => 'User',
-                Data => { Hours => sprintf( "%.2f", $TotalHours ), },
+                Data => {
+                    Hours => sprintf( "%.2f", $TotalHours ),
+                },
             );
         }
         $Param{TotalAll} = 0;
@@ -2015,7 +2008,9 @@ sub Run {
             $Param{TotalAll} += $Total{$UserID};
             $Self->{LayoutObject}->Block(
                 Name => 'UserTotal',
-                Data => { Total => sprintf( "%.2f", $Total{$UserID} ), },
+                Data => {
+                    Total => sprintf( "%.2f", $Total{$UserID} ),
+                },
             );
         }
 
@@ -2106,8 +2101,7 @@ sub Run {
         else {
 
             # check that the name is unique
-            my %ExistingProject
-                = $Self->{TimeAccountingObject}->ProjectGet( Project => $GetParam{Project} );
+            my %ExistingProject = $Self->{TimeAccountingObject}->ProjectGet( Project => $GetParam{Project} );
             if (%ExistingProject) {
                 $Errors{ProjectInvalid}   = 'ServerError';
                 $Errors{ProjectErrorType} = 'ProjectDuplicateName';
@@ -2213,8 +2207,7 @@ sub Run {
         else {
 
             # check that the name is unique
-            my %ExistingProject
-                = $Self->{TimeAccountingObject}->ProjectGet( Project => $GetParam{Project} );
+            my %ExistingProject = $Self->{TimeAccountingObject}->ProjectGet( Project => $GetParam{Project} );
 
             # if the project name is found, check that the ID is different
             if ( %ExistingProject && $ExistingProject{ID} ne $GetParam{ID} ) {
@@ -2311,8 +2304,7 @@ sub Run {
         else {
 
             # check that the name is unique
-            my %ExistingTask
-                = $Self->{TimeAccountingObject}->ActionGet( Action => $GetParam{Task} );
+            my %ExistingTask = $Self->{TimeAccountingObject}->ActionGet( Action => $GetParam{Task} );
             if (%ExistingTask) {
                 $Errors{TaskInvalid}   = 'ServerError';
                 $Errors{TaskErrorType} = 'TaskDuplicateName';
@@ -2424,8 +2416,7 @@ sub Run {
         else {
 
             # check that the name is unique
-            my %ExistingTask
-                = $Self->{TimeAccountingObject}->ActionGet( Action => $GetParam{Task} );
+            my %ExistingTask = $Self->{TimeAccountingObject}->ActionGet( Action => $GetParam{Task} );
 
             # if the task name is found, check that the ID is different
             if ( %ExistingTask && $ExistingTask{ID} ne $GetParam{ActionID} ) {
@@ -2687,8 +2678,7 @@ sub _CheckValidityUserPeriods {
 
         # check for needed data
         for my $Parameter (qw(DateStart DateEnd LeaveDays)) {
-            $GetParam{$Parameter}
-                = $Self->{ParamObject}->GetParam( Param => $Parameter . "[$Period]" );
+            $GetParam{$Parameter} = $Self->{ParamObject}->GetParam( Param => $Parameter . "[$Period]" );
             if ( !$GetParam{$Parameter} ) {
                 $Errors{ $Parameter . '-' . $Period . 'Invalid' }   = 'ServerError';
                 $Errors{ $Parameter . '-' . $Period . 'ErrorType' } = 'MissingValue';
@@ -2890,7 +2880,7 @@ sub _ProjectList {
     }
 
     @List = $Self->_ProjectListConstraints(
-        List => \@List,
+        List       => \@List,
         SelectedID => $Param{SelectedID} || '',
     );
 
@@ -2901,9 +2891,8 @@ sub _ProjectListConstraints {
     my ( $Self, %Param ) = @_;
 
     my @List;
-    my $ProjectCount = 0;
-    my $ProjectListConstraints
-        = $Self->{ConfigObject}->Get('TimeAccounting::ProjectListConstraints');
+    my $ProjectCount           = 0;
+    my $ProjectListConstraints = $Self->{ConfigObject}->Get('TimeAccounting::ProjectListConstraints');
 
     if ( keys %{$ProjectListConstraints} ) {
 
@@ -3040,7 +3029,9 @@ sub _SettingOverview {
     my %Data    = ();
 
     # build output
-    $Self->{LayoutObject}->Block( Name => 'Setting', );
+    $Self->{LayoutObject}->Block(
+        Name => 'Setting',
+    );
     $Self->{LayoutObject}->Block( Name => 'ActionListSetting' );
     $Self->{LayoutObject}->Block( Name => 'ActionAddProject' );
 
@@ -3077,7 +3068,9 @@ sub _SettingOverview {
             );
             $Self->{LayoutObject}->Block(
                 Name => 'ActionAddUser',
-                Data => { NewUserOption => $NewUserOption, },
+                Data => {
+                    NewUserOption => $NewUserOption,
+                },
             );
         }
     }
@@ -3254,8 +3247,8 @@ sub _UserSettingsEdit {
         $GetParam{$Parameter} = $Self->{ParamObject}->GetParam( Param => $Parameter );
     }
 
-# the datepicker used in this screen is non-standard
-# Therefor we have to define this var in the LayoutObject for automatic config generation in the JS footer
+    # the datepicker used in this screen is non-standard
+    # Therefor we have to define this var in the LayoutObject for automatic config generation in the JS footer
     $Self->{LayoutObject}->{HasDatepicker} = 1;
 
     $Self->{LayoutObject}->Block(
@@ -3299,9 +3292,11 @@ sub _UserSettingsEdit {
         Data => {
             %Param,
             ShowOvertime => ( $GetParam{ShowOvertime} || $UserData{ShowOvertime} )
-            ? 'checked="checked"' : '',
+            ? 'checked="checked"'
+            : '',
             CreateProject => ( $GetParam{CreateProject} || $UserData{CreateProject} )
-            ? 'checked="checked"' : '',
+            ? 'checked="checked"'
+            : '',
             }
     );
 
@@ -3323,8 +3318,7 @@ sub _UserSettingsEdit {
         for ( my $Period = 1; $Period <= $Param{Periods}; $Period++ ) {
 
             for my $Parameter (qw(DateStart DateEnd LeaveDays WeeklyHours Overtime PeriodStatus )) {
-                $GetParam{$Parameter}
-                    = $Self->{ParamObject}->GetParam( Param => "$Parameter\[$Period\]" );
+                $GetParam{$Parameter} = $Self->{ParamObject}->GetParam( Param => "$Parameter\[$Period\]" );
             }
 
             $Param{$Period}{PeriodStatusOption} = $Self->{LayoutObject}->BuildSelection(
@@ -3372,10 +3366,9 @@ sub _UserSettingsEdit {
 
         # show user data
         if (%User) {
-            my $LastPeriodNumber
-                = $Self->{TimeAccountingObject}->UserLastPeriodNumberGet(
+            my $LastPeriodNumber = $Self->{TimeAccountingObject}->UserLastPeriodNumberGet(
                 UserID => $Param{UserID}
-                );
+            );
 
             for ( my $Period = 1; $Period <= $LastPeriodNumber; $Period++ ) {
                 my %PeriodParam = ();

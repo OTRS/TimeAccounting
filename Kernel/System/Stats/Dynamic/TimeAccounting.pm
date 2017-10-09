@@ -1,6 +1,5 @@
 # --
-# Kernel/System/Stats/Dynamic/TimeAccounting.pm - all advice functions
-# Copyright (C) 2001-2012 OTRS AG, http://otrs.org/
+# Copyright (C) 2001-2017 OTRS AG, http://otrs.com/
 # --
 # This software comes with ABSOLUTELY NO WARRANTY. For details, see
 # the enclosed file COPYING for license information (AGPL). If you
@@ -372,8 +371,7 @@ sub ExportWrapper {
                 for my $ID ( @{$Values} ) {
                     next ID if !$ID;
 
-                    my %TmpProjectData
-                        = $Self->{TimeAccountingObject}->ProjectGet( ID => $ID->{Content} );
+                    my %TmpProjectData = $Self->{TimeAccountingObject}->ProjectGet( ID => $ID->{Content} );
                     $ID->{Content} = $TmpProjectData{Project};
                 }
             }
@@ -382,8 +380,7 @@ sub ExportWrapper {
                 for my $ID ( @{$Values} ) {
                     next ID if !$ID;
 
-                    my %TmpActionData
-                        = $Self->{TimeAccountingObject}->ActionGet( ID => $ID->{Content} );
+                    my %TmpActionData = $Self->{TimeAccountingObject}->ActionGet( ID => $ID->{Content} );
                     $ID->{Content} = $TmpActionData{Action};
                 }
             }
@@ -410,8 +407,7 @@ sub ImportWrapper {
                     next ID if !$ID;
 
                     if ( $Self->{UserObject}->UserLookup( UserLogin => $ID->{Content} ) ) {
-                        $ID->{Content}
-                            = $Self->{UserObject}->UserLookup( UserLogin => $ID->{Content} );
+                        $ID->{Content} = $Self->{UserObject}->UserLookup( UserLogin => $ID->{Content} );
                     }
                     else {
                         $Self->{LogObject}->Log(
@@ -592,8 +588,7 @@ sub _GetStatData {
             {
 
                 # build matching hash for selected projects
-                my %SelectedProjectIDs
-                    = map { ( $_ => 1 ) } @{ $Param{Param}{Restrictions}->{Project} };
+                my %SelectedProjectIDs = map { ( $_ => 1 ) } @{ $Param{Param}{Restrictions}->{Project} };
 
                 # filter only selected projects
                 my @FilteredProjectWUs = grep {
@@ -611,8 +606,7 @@ sub _GetStatData {
             {
 
                 # build matching hash for selected actions
-                my %SelectedActionIDs
-                    = map { ( $_ => 1 ) } @{ $Param{Param}{Restrictions}->{ProjectAction} };
+                my %SelectedActionIDs = map { ( $_ => 1 ) } @{ $Param{Param}{Restrictions}->{ProjectAction} };
 
                 # filter only selected actions
                 my @FilteredActionWUs = grep {

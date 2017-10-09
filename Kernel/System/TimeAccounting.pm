@@ -1,6 +1,5 @@
-#--
-# Kernel/System/TimeAccounting.pm - all time accounting functions
-# Copyright (C) 2001-2012 OTRS AG, http://otrs.org/
+# --
+# Copyright (C) 2001-2017 OTRS AG, http://otrs.com/
 # --
 # This software comes with ABSOLUTELY NO WARRANTY. For details, see
 # the enclosed file COPYING for license information (AGPL). If you
@@ -337,15 +336,12 @@ sub UserReporting {
             }
         }
 
-        $CurrentUserData{Overtime} = $CurrentUserData{WorkingHours} - $CurrentUserData{TargetState};
-        $CurrentUserData{OvertimeTotal}
-            = $UserCurrentPeriod{$UserID}{Overtime}
+        $CurrentUserData{Overtime}      = $CurrentUserData{WorkingHours} - $CurrentUserData{TargetState};
+        $CurrentUserData{OvertimeTotal} = $UserCurrentPeriod{$UserID}{Overtime}
             + $CurrentUserData{WorkingHoursTotal}
             - $CurrentUserData{TargetStateTotal};
-        $CurrentUserData{OvertimeUntil}
-            = $CurrentUserData{OvertimeTotal} - $CurrentUserData{Overtime};
-        $CurrentUserData{LeaveDayRemaining}
-            = $UserCurrentPeriod{$UserID}{LeaveDays} - $CurrentUserData{LeaveDayTotal};
+        $CurrentUserData{OvertimeUntil}     = $CurrentUserData{OvertimeTotal} - $CurrentUserData{Overtime};
+        $CurrentUserData{LeaveDayRemaining} = $UserCurrentPeriod{$UserID}{LeaveDays} - $CurrentUserData{LeaveDayTotal};
 
         $Data{$UserID} = \%CurrentUserData;
     }
@@ -423,7 +419,10 @@ sub ProjectGet {
 
     # check needed stuff
     if ( !$Param{ID} && !$Param{Project} ) {
-        $Self->{LogObject}->Log( Priority => 'error', Message => 'Need ID or project name!' );
+        $Self->{LogObject}->Log(
+            Priority => 'error',
+            Message  => 'Need ID or project name!'
+        );
         return;
     }
 
@@ -536,7 +535,10 @@ sub ProjectSettingsUpdate {
     # check needed stuff
     for my $Needed (qw(ID Project)) {
         if ( !$Param{$Needed} ) {
-            $Self->{LogObject}->Log( Priority => 'error', Message => "Need $Needed!" );
+            $Self->{LogObject}->Log(
+                Priority => 'error',
+                Message  => "Need $Needed!"
+            );
             return;
         }
     }
@@ -565,7 +567,9 @@ sub ActionSettingsGet {
     my $Self = shift;
 
     # db select
-    $Self->{DBObject}->Prepare( SQL => 'SELECT id, action, status FROM time_accounting_action', );
+    $Self->{DBObject}->Prepare(
+        SQL => 'SELECT id, action, status FROM time_accounting_action',
+    );
 
     # fetch the data
     my %Data;
@@ -608,7 +612,10 @@ sub ActionGet {
 
     # check needed stuff
     if ( !$Param{ID} && !$Param{Action} ) {
-        $Self->{LogObject}->Log( Priority => 'error', Message => 'Need ID or Action!' );
+        $Self->{LogObject}->Log(
+            Priority => 'error',
+            Message  => 'Need ID or Action!'
+        );
         return;
     }
 
@@ -700,7 +707,10 @@ sub ActionSettingsUpdate {
     # check needed stuff
     for my $Needed (qw(ActionID Action)) {
         if ( !$Param{$Needed} ) {
-            $Self->{LogObject}->Log( Priority => 'error', Message => "Need $Needed!" );
+            $Self->{LogObject}->Log(
+                Priority => 'error',
+                Message  => "Need $Needed!"
+            );
             return;
         }
     }
@@ -874,7 +884,10 @@ sub SingleUserSettingsGet {
 
     # check needed stuff
     if ( !$Param{UserID} ) {
-        $Self->{LogObject}->Log( Priority => 'error', Message => 'Need ID!' );
+        $Self->{LogObject}->Log(
+            Priority => 'error',
+            Message  => 'Need ID!'
+        );
         return;
     }
 
@@ -915,7 +928,10 @@ sub UserLastPeriodNumberGet {
 
     # check needed stuff
     if ( !$Param{UserID} ) {
-        $Self->{LogObject}->Log( Priority => 'error', Message => 'Need UserID!' );
+        $Self->{LogObject}->Log(
+            Priority => 'error',
+            Message  => 'Need UserID!'
+        );
         return;
     }
 
@@ -950,7 +966,10 @@ sub UserSettingsInsert {
     # check needed stuff
     for my $Needed (qw (UserID Period)) {
         if ( !$Param{$Needed} ) {
-            $Self->{LogObject}->Log( Priority => 'error', Message => "Need $Needed" );
+            $Self->{LogObject}->Log(
+                Priority => 'error',
+                Message  => "Need $Needed"
+            );
             return;
         }
     }
@@ -1188,10 +1207,8 @@ sub WorkingUnitsCompletnessCheck {
                 );
 
                 my $Date = sprintf( "%04d-%02d-%02d", $Year, $Month, $Day );
-                my $DayStartTime
-                    = $Self->{TimeObject}->TimeStamp2SystemTime( String => $Date . ' 00:00:00' );
-                my $DayStopTime
-                    = $Self->{TimeObject}->TimeStamp2SystemTime( String => $Date . ' 23:59:59' );
+                my $DayStartTime = $Self->{TimeObject}->TimeStamp2SystemTime( String => $Date . ' 00:00:00' );
+                my $DayStopTime  = $Self->{TimeObject}->TimeStamp2SystemTime( String => $Date . ' 23:59:59' );
 
                 # add time zone to calculation
                 my $Zone = $Self->{ConfigObject}->Get( "TimeZone::Calendar" . $Calendar || '' );
@@ -1223,8 +1240,7 @@ sub WorkingUnitsCompletnessCheck {
             }
         }
     }
-    my $MaxIntervallOfIncompleteDays
-        = $Self->{ConfigObject}->Get('TimeAccounting::MaxIntervalOfIncompleteDays') || '5';
+    my $MaxIntervallOfIncompleteDays = $Self->{ConfigObject}->Get('TimeAccounting::MaxIntervalOfIncompleteDays') || '5';
     my $MaxIntervallOfIncompleteDaysBeforeWarning
         = $Self->{ConfigObject}->Get('TimeAccounting::MaxIntervalOfIncompleteDaysBeforeWarning')
         || '3';
@@ -1428,7 +1444,10 @@ sub WorkingUnitsInsert {
         ];
 
         # db insert
-        return if !$Self->{DBObject}->Do( SQL => $SQL, Bind => $Bind );
+        return if !$Self->{DBObject}->Do(
+            SQL  => $SQL,
+            Bind => $Bind
+        );
     }
 
     return 1;
