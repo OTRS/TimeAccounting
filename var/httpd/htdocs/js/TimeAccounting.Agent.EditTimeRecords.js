@@ -1,9 +1,5 @@
 // --
-// TimeAccounting.Agent.EditTimeRecords.js - provides the special module functions for the
-// edit screen
-// Copyright (C) 2001-2011 OTRS AG, http://otrs.org/\n";
-// --
-// $Id: TimeAccounting.Agent.EditTimeRecords.js,v 1.10 2011-01-28 15:56:55 mn Exp $
+// Copyright (C) 2001-2017 OTRS AG, http://otrs.com/\n";
 // --
 // This software comes with ABSOLUTELY NO WARRANTY. For details, see
 // the enclosed file COPYING for license information (AGPL). If you
