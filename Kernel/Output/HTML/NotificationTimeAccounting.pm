@@ -1,6 +1,5 @@
 # --
-# Kernel/Output/HTML/NotificationTimeAccounting.pm
-# Copyright (C) 2001-2014 OTRS AG, http://otrs.com/
+# Copyright (C) 2001-2017 OTRS AG, http://otrs.com/
 # --
 # This software comes with ABSOLUTELY NO WARRANTY. For details, see
 # the enclosed file COPYING for license information (AGPL). If you
@@ -35,8 +34,9 @@ sub new {
 sub Run {
     my ( $Self, %Param ) = @_;
 
-    my ( $Sec, $Min, $Hour, $Day, $Month, $Year )
-        = $Self->{TimeObject}->SystemTime2Date( SystemTime => $Self->{TimeObject}->SystemTime(), );
+    my ( $Sec, $Min, $Hour, $Day, $Month, $Year ) = $Self->{TimeObject}->SystemTime2Date(
+        SystemTime => $Self->{TimeObject}->SystemTime(),
+    );
     my %User = $Self->{TimeAccountingObject}->UserCurrentPeriodGet(
         Year  => $Year,
         Month => $Month,
