@@ -1,4 +1,6 @@
-#5.0.8 2017-??-??
+#5.0.9 2017-??-??
+
+#5.0.8 2017-10-17
  - 2017-09-25 Updated translations, thanks to all translators.
  - 2017-09-25 Added Bulgarian language.
  - 2017-09-25 Added Norwegian language.
