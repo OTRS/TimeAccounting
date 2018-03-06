@@ -6,7 +6,15 @@
 # the enclosed file COPYING for license information (AGPL). If you
 # did not receive this file, see http://www.gnu.org/licenses/agpl.txt.
 # --
-4.0.2 -2015-??-??
+4.0.5 - 20??-??-??
+
+4.0.4 - 2018-03-13
+ - 2018-03-06 Code cleanup.
+
+4.0.3 - 2017-01-17
+ - 2017-01-17 Code cleanup.
+
+4.0.2 -2016-11-02
  - 2016-05-13 Fixed bug#12076 - "User's project overview" wrong "Monthly" hours and protect list.
  - 2015-10-06 Added Galician language, thanks to the translation team.
  - 2015-10-06 Added Malay language, thanks to the translation team.
