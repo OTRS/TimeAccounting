@@ -848,7 +848,7 @@ sub _ProjectSettingsEdit {
 
     my $ProjectStatus = 1;
     if ( defined $Param{ProjectStatus} ) {
-        $ProjectStatus = $Param{ProjectStatus}
+        $ProjectStatus = $Param{ProjectStatus};
     }
 
     $Param{StatusOption} = $LayoutObject->BuildSelection(
@@ -1140,7 +1140,7 @@ sub _TaskSettingsEdit {
 
     my $TaskStatus = 1;
     if ( defined $Param{TaskStatus} ) {
-        $TaskStatus = $Param{TaskStatus}
+        $TaskStatus = $Param{TaskStatus};
     }
 
     $Param{StatusOption} = $LayoutObject->BuildSelection(

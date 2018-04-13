@@ -357,7 +357,7 @@ sub Run {
                 $Param{$Element}         = 'checked="checked"';
             }
             else {
-                $Param{$Element} = ''
+                $Param{$Element} = '';
             }
         }
 
@@ -752,7 +752,7 @@ sub Run {
     # build a working unit array
     my @Units = (undef);
     if ( $Data{WorkingUnits} ) {
-        push @Units, @{ $Data{WorkingUnits} }
+        push @Units, @{ $Data{WorkingUnits} };
     }
 
     $ErrorIndex = 0;
@@ -833,7 +833,7 @@ sub Run {
         # configured for selected project
         # if no constraints are configured, all actions will be displayed
         my $ActionData = $Self->_ActionListConstraints(
-            ProjectID => $UnitRef->{ProjectID} || $ServerErrorData{$ErrorIndex}->{ProjectID},
+            ProjectID             => $UnitRef->{ProjectID} || $ServerErrorData{$ErrorIndex}->{ProjectID},
             ProjectList           => $ProjectList,
             ActionList            => \%ActionList,
             ActionListConstraints => $ActionListConstraints,
