@@ -513,7 +513,7 @@ sub Run {
     my $Output = $Self->{LayoutObject}->Header( Title => 'Reporting' );
     $Output .= $Self->{LayoutObject}->NavigationBar();
     $Output .= $Self->{LayoutObject}->Output(
-        Data => { %Param, %Frontend },
+        Data         => { %Param, %Frontend },
         TemplateFile => 'AgentTimeAccountingReporting'
     );
     $Output .= $Self->{LayoutObject}->Footer();
