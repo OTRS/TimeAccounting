@@ -174,9 +174,9 @@ sub Data {
     $Self->{Translation}->{'Successfully inserted entries for several dates!'} = 'A bejegyzések sikeresen beillesztve a különböző dátumokhoz!';
     $Self->{Translation}->{'Entered date was invalid! Date was changed to today.'} = 'A megadott dátum érvénytelen volt! A dátum a mai napra lett módosítva.';
     $Self->{Translation}->{'No time period configured, or the specified date is outside of the defined time periods.'} =
-        '';
+        'Nincs időszak beállítva, vagy a megadott dátum a meghatározott időszakokon kívül van.';
     $Self->{Translation}->{'Please contact the time accounting administrator to update your time periods!'} =
-        '';
+        'Vegye fel a kapcsolatot az időelszámolás adminisztrátorával, hogy frissítse az időszakait!';
     $Self->{Translation}->{'Last Selected Projects'} = 'Legutóbb kiválasztott projektek';
     $Self->{Translation}->{'All Projects'} = 'Minden projekt';
 
@@ -251,7 +251,7 @@ sub Data {
     $Self->{Translation}->{'This module forces inserts in TimeAccounting.'} = 'Ez a modul kikényszeríti a beszúrásokat az időelszámolásban.';
     $Self->{Translation}->{'This notification module gives a warning if there are too many incomplete working days.'} =
         'Ez az értesítési modul egy figyelmeztetést ad, ha túl sok befejezetlen munkanap található.';
-    $Self->{Translation}->{'Time Accounting'} = '';
+    $Self->{Translation}->{'Time Accounting'} = 'Időelszámolás';
     $Self->{Translation}->{'Time accounting edit.'} = 'Időelszámolás szerkesztés.';
     $Self->{Translation}->{'Time accounting overview.'} = 'Időelszámolás áttekintő.';
     $Self->{Translation}->{'Time accounting reporting.'} = 'Időelszámolás jelentés.';

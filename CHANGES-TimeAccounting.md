@@ -1,4 +1,5 @@
 #5.0.11 20??-??-??
+ - 2018-06-20 Updated Hungarian translations.
 
 #5.0.10 2018-06-12
  - 2018-06-05 Code cleanup.

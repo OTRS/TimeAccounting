@@ -1,6 +1,6 @@
 # 
 # Translators:
-# Balázs Úr <urbalazs@gmail.com>, 2014-2016
+# Balázs Úr <urbalazs@gmail.com>, 2014-2018
 msgid ""
 msgstr ""
 "Project-Id-Version: OTRS\n"
@@ -559,12 +559,16 @@ msgid ""
 "No time period configured, or the specified date is outside of the defined "
 "time periods."
 msgstr ""
+"Nincs időszak beállítva, vagy a megadott dátum a meghatározott időszakokon "
+"kívül van."
 
 #. Perl Module: Kernel/Modules/AgentTimeAccountingEdit.pm
 msgid ""
 "Please contact the time accounting administrator to update your time "
 "periods!"
 msgstr ""
+"Vegye fel a kapcsolatot az időelszámolás adminisztrátorával, hogy frissítse "
+"az időszakait!"
 
 #. Perl Module: Kernel/Modules/AgentTimeAccountingEdit.pm
 msgid "Last Selected Projects"
@@ -800,7 +804,7 @@ msgstr "Ez az értesítési modul egy figyelmeztetést ad, ha túl sok befejezet
 
 #. SysConfig
 msgid "Time Accounting"
-msgstr ""
+msgstr "Időelszámolás"
 
 #. SysConfig
 msgid "Time accounting edit."
