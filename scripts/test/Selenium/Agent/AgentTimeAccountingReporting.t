@@ -13,23 +13,21 @@ use utf8;
 
 use vars (qw($Self));
 
-# get selenium object
 my $Selenium = $Kernel::OM->Get('Kernel::System::UnitTest::Selenium');
 
 $Selenium->RunTest(
     sub {
 
-        # get helper object
         my $Helper = $Kernel::OM->Get('Kernel::System::UnitTest::Helper');
 
-        # set MaxIntervalOfIncompleteDays SysConfig on 50 days for test purpose
+        # Set MaxIntervalOfIncompleteDays SysConfig on 50 days for test purpose.
         $Helper->ConfigSettingChange(
             Valid => 1,
             Key   => 'TimeAccounting::MaxIntervalOfIncompleteDays',
             Value => 50,
         );
 
-        # use a calendar with the same business hours for every day so that the UT runs correctly
+        # Use a calendar with the same business hours for every day so that the UT runs correctly
         # on every day of the week and outside usual business hours.
         my %Week;
         my @Days = qw(Sun Mon Tue Wed Thu Fri Sat);
@@ -47,45 +45,43 @@ $Selenium->RunTest(
             Value => \%Week,
         );
 
-        # create test user and login
+        # Create test user and login.
         my $TestUserLogin = $Helper->TestUserCreate(
             Groups => [ 'admin', 'users', 'time_accounting' ],
         ) || die "Did not get test user";
 
-        # get test user ID
+        # Get test user ID.
         my $TestUserID = $Kernel::OM->Get('Kernel::System::User')->UserLookup(
             UserLogin => $TestUserLogin,
         );
 
-        # get time accounting object
         my $TimeAccountingObject = $Kernel::OM->Get('Kernel::System::TimeAccounting');
 
-        # insert test user into account setting
+        # Insert test user into account setting.
         $TimeAccountingObject->UserSettingsInsert(
             UserID => $TestUserID,
             Period => '1',
         );
 
-        # get time object
         my $TimeObject = $Kernel::OM->Get('Kernel::System::Time');
 
-        # get test start time - 40 days of current time
+        # Get test start time - 40 days of current time.
         my ( $SecStart, $MinStart, $HourStart, $DayStart, $MonthStart, $YearStart ) = $TimeObject->SystemTime2Date(
             SystemTime => $TimeObject->SystemTime() - 60 * 60 * 24 * 40,
         );
 
-        # get work test time + 1 second then start time
+        # Get work test time + 1 second then start time.
         my ( $SecCurrent, $MinCurrent, $HourCurrent, $DayCurrent, $MonthCurrent, $YearCurrent )
             = $TimeObject->SystemTime2Date(
             SystemTime => $TimeObject->SystemTime() - 60 * 60 * 24 * 40 + 1,
             );
 
-        # get test end time + 1 day of current time
+        # Get test end time + 1 day of current time.
         my ( $SecEnd, $MinEnd, $HourEnd, $DayEnd, $MonthEnd, $YearEnd ) = $TimeObject->SystemTime2Date(
             SystemTime => $TimeObject->SystemTime() + 60 * 60 * 24,
         );
 
-        # update user time account setting
+        # Update user time account setting.
         $TimeAccountingObject->UserSettingsUpdate(
             UserID        => $TestUserID,
             Description   => 'Selenium test accounting user',
@@ -103,7 +99,7 @@ $Selenium->RunTest(
             },
         );
 
-        # create test project
+        # Create test project.
         my $ProjectTitle = 'Project ' . $Helper->GetRandomID();
         my $ProjectID    = $TimeAccountingObject->ProjectSettingsInsert(
             Project            => $ProjectTitle,
@@ -111,7 +107,7 @@ $Selenium->RunTest(
             ProjectStatus      => 1,
         );
 
-        # create test action
+        # Create test action.
         my $ActionTitle = 'Action ' . $Helper->GetRandomID();
         $TimeAccountingObject->ActionSettingsInsert(
             Action       => $ActionTitle,
@@ -122,7 +118,7 @@ $Selenium->RunTest(
         );
         my $ActionID = $ActionData{ID};
 
-        # add working units for test user
+        # Add working units for test user.
         $TimeAccountingObject->WorkingUnitsInsert(
             Year         => $YearCurrent,
             Month        => $MonthCurrent,
@@ -141,57 +137,59 @@ $Selenium->RunTest(
             UserID => $TestUserID,
         );
 
-        # log in test user
+        # Login as test user.
         $Selenium->Login(
             Type     => 'Agent',
             User     => $TestUserLogin,
             Password => $TestUserLogin,
         );
 
-        # get script alias
         my $ScriptAlias = $Kernel::OM->Get('Kernel::Config')->Get('ScriptAlias');
 
-        # navigate to AgentTimeAccountingReporting
+        # Navigate to AgentTimeAccountingReporting.
         $Selenium->VerifiedGet("${ScriptAlias}index.pl?Action=AgentTimeAccountingReporting");
 
-        # select month and year that are used for testing
-        $Selenium->find_element( "#Month option[value='$MonthStart']", 'css' )->VerifiedClick();
-        $Selenium->find_element( "#Year option[value='$YearStart']",   'css' )->VerifiedClick();
+        sleep 2;
+
+        # Select month and year that are used for testing.
+        $Selenium->find_element( "#Month option[value='$MonthStart']", 'css' )->click();
+        $Selenium->find_element( "#Year option[value='$YearStart']",   'css' )->click();
         $Selenium->find_element( "#NavigationSelect",                  'css' )->VerifiedClick();
 
-        # check page layout
+        sleep 2;
+
+        # Check page layout.
         $Selenium->find_element( "table",             'css' );
         $Selenium->find_element( "table thead tr th", 'css' );
         $Selenium->find_element( "table tbody tr td", 'css' );
 
-        # verify there is link to test user reports
+        # Verify there is link to test user reports.
         my $UserReportElement = $Selenium->find_element( "$TestUserLogin $TestUserLogin", 'link_text' );
         $UserReportElement->is_enabled();
         $UserReportElement->is_displayed();
 
-        # verify there is link to test user project reports
+        # Verify there is link to test user project reports.
         my $ProjectReportElement = $Selenium->find_element( "$ProjectTitle", 'link_text' );
         $ProjectReportElement->is_enabled();
         $ProjectReportElement->is_displayed();
 
-        # select test created project
+        # Select test created project.
         $Selenium->find_element( $ProjectTitle, 'link_text' )->VerifiedClick();
 
-        # check page layout
+        # Check page layout.
         $Selenium->find_element( "table",             'css' );
         $Selenium->find_element( "table thead tr th", 'css' );
         $Selenium->find_element( "table tbody tr td", 'css' );
 
-        # verify there is test created action
+        # Verify there is test created action.
         $Self->True(
             index( $Selenium->get_page_source(), $ActionTitle ) > -1,
             "$ActionTitle is found",
         );
 
-        # get DB object
         my $DBObject = $Kernel::OM->Get('Kernel::System::DB');
 
-        # get DB clean-up data
+        # Get DB clean-up data.
         my @DBCleanData = (
             {
                 Quoted  => $ProjectTitle,
@@ -227,7 +225,7 @@ $Selenium->RunTest(
             },
         );
 
-        # clean system from test created data
+        # Clean system from test created data.
         for my $Delete (@DBCleanData) {
             if ( $Delete->{Quoted} ) {
                 $Delete->{Bind} = $DBObject->Quote( $Delete->{Quoted} );
