@@ -137,7 +137,7 @@ sub Run {
             Icon        => $Icon,
             Link        => $URL . 'Action=' . $Action,
             AccessKey   => '',
-            }
+        }
     );
 
     return %Return;

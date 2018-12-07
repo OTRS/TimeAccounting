@@ -249,7 +249,7 @@ sub Run {
                 "%.2f",
                 $TimeAccountingObject->ProjectTotalHours(
                     ProjectID => $Param{ProjectID},
-                    )
+                )
             );
 
             $LayoutObject->Block(
@@ -447,7 +447,7 @@ sub Run {
             my $ActionsRef = $ProjectRef->{Actions};
 
             $Param{Project} = '';
-            $Param{Status} = $ProjectRef->{Status} ? '' : 'passiv';
+            $Param{Status}  = $ProjectRef->{Status} ? '' : 'passiv';
 
             my $Total      = 0;
             my $TotalTotal = 0;

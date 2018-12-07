@@ -190,7 +190,7 @@ sub Run {
         }
 
         # split up dates
-        my @Dates = split /[|]/, $Param{Dates};
+        my @Dates       = split /[|]/, $Param{Dates};
         my $InsertError = 0;
 
         # save entries in the db
@@ -238,7 +238,7 @@ sub Run {
     for my $Parameter (qw(Status Year Month Day Notification)) {
         $Param{$Parameter} = $ParamObject->GetParam( Param => $Parameter ) || '';
     }
-    $Param{RecordsNumber} = $ParamObject->GetParam( Param => 'RecordsNumber' ) || 8;
+    $Param{RecordsNumber}      = $ParamObject->GetParam( Param => 'RecordsNumber' ) || 8;
     $Param{InsertWorkingUnits} = $ParamObject->GetParam( Param => 'InsertWorkingUnits' );
 
     my ( $Sec, $Min, $Hour, $Day, $Month, $Year ) = $TimeObject->SystemTime2Date(
@@ -1107,7 +1107,7 @@ sub Run {
                 )
             {
                 $IncompleteWorkingDaysList{"$YearID-$MonthID-$DayID"} = "$YearID-$MonthID-$DayID";
-                $Param{Incomplete} = 1;
+                $Param{Incomplete}                                    = 1;
             }
         }
     }
