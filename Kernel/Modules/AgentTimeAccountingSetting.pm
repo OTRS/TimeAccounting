@@ -248,7 +248,7 @@ sub Run {
         my ( %GetParam, %Errors );
 
         # get parameters
-        $GetParam{ID} = $Self->{ParamObject}->GetParam( Param => 'ID' ) || '';
+        $GetParam{ID}            = $Self->{ParamObject}->GetParam( Param => 'ID' ) || '';
         $GetParam{ProjectStatus} = $Self->{ParamObject}->GetParam( Param => 'ProjectStatus' )
             || '0';
         for my $Parameter (qw(Project ProjectDescription)) {
@@ -350,7 +350,7 @@ sub Run {
         my ( %GetParam, %Errors );
 
         # get parameters
-        $GetParam{Task} = $Self->{ParamObject}->GetParam( Param => 'Task' ) || '';
+        $GetParam{Task}       = $Self->{ParamObject}->GetParam( Param => 'Task' ) || '';
         $GetParam{TaskStatus} = $Self->{ParamObject}->GetParam( Param => 'TaskStatus' )
             || '0';
 
@@ -577,7 +577,7 @@ sub Run {
                 );
             }
 
-            my %Groups = $Self->{GroupObject}->GroupList( Valid => 1 );
+            my %Groups    = $Self->{GroupObject}->GroupList( Valid => 1 );
             my %GroupData = $Self->{GroupObject}->GroupMemberList(
                 UserID => $NewUserID,
                 Type   => 'ro',
@@ -603,7 +603,7 @@ sub Run {
             }
         }
 
-        my %User = $Self->{UserObject}->GetUserData( UserID => $NewUserID );
+        my %User   = $Self->{UserObject}->GetUserData( UserID => $NewUserID );
         my $Output = $Self->{LayoutObject}->Header();
         $Output .= $Self->{LayoutObject}->NavigationBar();
         $Self->_UserSettingsEdit(
@@ -632,7 +632,7 @@ sub Run {
             );
         }
 
-        my $NewTimePeriod = $Self->{ParamObject}->GetParam( Param => 'NewTimePeriod' );
+        my $NewTimePeriod    = $Self->{ParamObject}->GetParam( Param => 'NewTimePeriod' );
         my $LastPeriodNumber = $Self->{TimeAccountingObject}->UserLastPeriodNumberGet(
             UserID => $ID,
         );
@@ -1090,7 +1090,7 @@ sub _UserSettingsEdit {
 
     # fill up the calendar list
     my $CalendarListRef = { 0 => 'Default' };
-    my $CalendarIndex = 1;
+    my $CalendarIndex   = 1;
     while ( $Self->{ConfigObject}->Get( "TimeZone::Calendar" . $CalendarIndex . "Name" ) ) {
         $CalendarListRef->{$CalendarIndex}
             = $Self->{ConfigObject}->Get( "TimeZone::Calendar" . $CalendarIndex . "Name" );
@@ -1119,7 +1119,7 @@ sub _UserSettingsEdit {
             CreateProject => ( $GetParam{CreateProject} || $UserData{CreateProject} )
             ? 'checked="checked"'
             : '',
-            }
+        }
     );
 
     # shows header
@@ -1157,7 +1157,7 @@ sub _UserSettingsEdit {
                     Period           => $Period,
                     DateStartInvalid => $Param{Errors}->{ 'DateStart-' . $Period . 'Invalid' }
                         || '',
-                    DateEndInvalid => $Param{Errors}->{ 'DateEnd-' . $Period . 'Invalid' } || '',
+                    DateEndInvalid   => $Param{Errors}->{ 'DateEnd-' . $Period . 'Invalid' } || '',
                     LeaveDaysInvalid => $Param{Errors}->{ 'LeaveDays-' . $Period . 'Invalid' }
                         || '',
                     DateStart          => $GetParam{DateStart},

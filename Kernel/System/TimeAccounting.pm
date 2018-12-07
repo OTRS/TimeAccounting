@@ -468,7 +468,7 @@ sub ProjectSettingsInsert {
     # get config object
     my $ConfigObject = $Kernel::OM->Get('Kernel::Config');
 
-    $Param{Project} ||= $ConfigObject->Get('TimeAccounting::DefaultProjectName');
+    $Param{Project}            ||= $ConfigObject->Get('TimeAccounting::DefaultProjectName');
     $Param{ProjectDescription} ||= '';
 
     if ( $Param{ProjectStatus} ne '0' && $Param{ProjectStatus} ne '1' ) {
@@ -983,7 +983,7 @@ sub UserLastPeriodNumberGet {
     );
 
     # fetch the data
-    my @Row = $DBObject->FetchrowArray();
+    my @Row              = $DBObject->FetchrowArray();
     my $LastPeriodNumber = $Row[0] || 0;
 
     return $LastPeriodNumber;
@@ -1175,7 +1175,7 @@ sub UserSettingsUpdate {
                 \$Param{Period}->{$Period}{DateEnd},     \$Param{Period}->{$Period}{Overtime},
                 \$Param{Period}->{$Period}{WeeklyHours}, \$Param{Period}->{$Period}{UserStatus},
                 \$UserID, \$Period,
-                ]
+            ]
         );
     }
 
@@ -1277,7 +1277,7 @@ sub WorkingUnitsCompletnessCheck {
         for my $Month ( $MonthStartPoint .. $MonthEndPoint ) {
 
             my $DayStartPoint = $Year == $YearStart && $Month == $MonthStart ? $DayStart : 1;
-            my $DayEndPoint = $Year == $YearEnd
+            my $DayEndPoint   = $Year == $YearEnd
                 && $Month == $MonthEnd ? $DayEnd : Days_in_Month( $Year, $Month );
             my $MonthString = sprintf( "%02d", $Month );
 
@@ -1627,8 +1627,8 @@ sub ProjectActionReporting {
 
     # hours per month
     my $DaysInMonth = Days_in_Month( $Param{Year}, $Param{Month} );
-    my $DateString = $Param{Year} . "-" . sprintf( "%02d", $Param{Month} );
-    my $SQLDate = "$DateString-$DaysInMonth 23:59:59";
+    my $DateString  = $Param{Year} . "-" . sprintf( "%02d", $Param{Month} );
+    my $SQLDate     = "$DateString-$DaysInMonth 23:59:59";
 
     my $SQL = '
         SELECT project_id, action_id, period

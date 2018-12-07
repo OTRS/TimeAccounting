@@ -167,7 +167,7 @@ sub Run {
                     StartTime => $UnitRef->{StartTime},
                     EndTime   => $UnitRef->{EndTime},
                     Period    => $UnitRef->{Period},
-                    }
+                }
             );
         }
 
@@ -187,7 +187,7 @@ sub Run {
                 Sick     => $Param{Sick},
                 LeaveDay => $Param{LeaveDay},
                 Overtime => $Param{Overtime},
-                }
+            }
         );
     }
 
