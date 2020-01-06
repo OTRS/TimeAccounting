@@ -1360,7 +1360,7 @@ sub _ActionListConstraints {
                 for my $ProjectNameRegExp ( sort keys %{ $Param{ActionListConstraints} } ) {
                     my $ActionNameRegExp = $Param{ActionListConstraints}->{$ProjectNameRegExp};
                     if (
-                        $ProjectName =~ m{$ProjectNameRegExp}smx
+                        $ProjectName   =~ m{$ProjectNameRegExp}smx
                         && $ActionName =~ m{$ActionNameRegExp}smx
                         )
                     {

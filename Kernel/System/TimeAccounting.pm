@@ -1290,7 +1290,7 @@ sub WorkingUnitsCompletnessCheck {
                     Calendar => $Calendar || '',
                 );
 
-                my $Date = sprintf( "%04d-%02d-%02d", $Year, $Month, $Day );
+                my $Date         = sprintf( "%04d-%02d-%02d", $Year, $Month, $Day );
                 my $DayStartTime = $TimeObject->TimeStamp2SystemTime( String => $Date . ' 00:00:00' );
                 my $DayStopTime  = $TimeObject->TimeStamp2SystemTime( String => $Date . ' 23:59:59' );
 
