@@ -126,7 +126,7 @@ sub Run {
             Calendar => $UserData{Calendar},
         );
 
-        my $Date = sprintf( "%04d-%02d-%02d", $Param{Year}, $Param{Month}, $Day );
+        my $Date         = sprintf( "%04d-%02d-%02d", $Param{Year}, $Param{Month}, $Day );
         my $DayStartTime = $Self->{TimeObject}->TimeStamp2SystemTime( String => $Date . ' 00:00:00' );
         my $DayStopTime  = $Self->{TimeObject}->TimeStamp2SystemTime( String => $Date . ' 23:59:59' );
 

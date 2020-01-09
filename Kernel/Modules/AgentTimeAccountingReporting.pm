@@ -173,7 +173,7 @@ sub Run {
                     },
                 );
                 for my $UserID ( sort { $ShownUsers{$a} cmp $ShownUsers{$b} } keys %ShownUsers ) {
-                    $TotalHours += $ProjectTime{$ActionID}{$UserID}{Hours} || 0;
+                    $TotalHours     += $ProjectTime{$ActionID}{$UserID}{Hours} || 0;
                     $Total{$UserID} += $ProjectTime{$ActionID}{$UserID}{Hours} || 0;
                     $Self->{LayoutObject}->Block(
                         Name => 'User',
